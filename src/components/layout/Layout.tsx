@@ -1,7 +1,5 @@
 import Header from "../navigation/Header";
 
-import SubjectNavbar from "../navigation/SubjectNavbar";
-
 export default function Layout({
   children,
 }: {
@@ -10,21 +8,10 @@ export default function Layout({
   return (
     <div className="min-h-screen bg-black text-white">
 
-      {/* 
-        Top header
-      */}
+      {/* Top Header */}
       <Header />
 
-      {/* 
-        Desktop subject navigation
-
-        Hidden on mobile internally
-      */}
-      <SubjectNavbar />
-
-      {/* 
-        Page content
-      */}
+      {/* Page Content */}
       <main>
         {children}
       </main>

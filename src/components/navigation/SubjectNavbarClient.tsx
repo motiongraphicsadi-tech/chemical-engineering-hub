@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+
 import { usePathname } from "next/navigation";
 
 type Subject = {
@@ -9,12 +10,15 @@ type Subject = {
 };
 
 type Props = {
+  category: string;
   subjects: Subject[];
 };
 
 export default function SubjectNavbarClient({
+  category,
   subjects,
 }: Props) {
+
   const pathname = usePathname();
 
   return (
@@ -31,13 +35,9 @@ export default function SubjectNavbarClient({
         px-4
         py-3
         text-sm
-
-        /*
-          Improvement:
-          Scrollable mobile navigation
-        */
       "
     >
+
       {subjects.map((subject) => {
 
         const slug = subject.slug;
@@ -48,7 +48,9 @@ export default function SubjectNavbarClient({
         return (
           <Link
             key={slug}
-            href={`/core-subjects/${slug}/introduction`}
+
+            href={`/${category}/${slug}/introduction`}
+
             className={`
               pb-1
               transition-all
@@ -65,6 +67,7 @@ export default function SubjectNavbarClient({
           </Link>
         );
       })}
+
     </div>
   );
 }

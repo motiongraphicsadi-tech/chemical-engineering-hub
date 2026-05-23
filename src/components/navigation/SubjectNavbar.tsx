@@ -1,10 +1,22 @@
 import { getSubjects } from "@/lib/getSubjects";
+
 import SubjectNavbarClient from "./SubjectNavbarClient";
 
-export default function SubjectNavbar() {
-  const subjects = getSubjects();
+type Props = {
+  category: string;
+};
+
+export default function SubjectNavbar({
+  category,
+}: Props) {
+
+  const subjects =
+    getSubjects(category);
 
   return (
-    <SubjectNavbarClient subjects={subjects} />
+    <SubjectNavbarClient
+      category={category}
+      subjects={subjects}
+    />
   );
 }

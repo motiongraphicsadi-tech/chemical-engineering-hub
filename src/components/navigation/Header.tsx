@@ -1,134 +1,98 @@
 "use client";
 
 import Link from "next/link";
+
 import { usePathname } from "next/navigation";
 
-// ✅ Mobile sidebar drawer component
 import MobileSidebar from "./MobileSidebar";
 
 const categories = [
   {
     name: "Subject Prep",
-
-    // Default landing route
     href: "/core-subjects/heat-transfer/introduction",
-
-    // Used for active route highlighting
     match: "/core-subjects/",
   },
 
   {
     name: "Interview Prep",
-    href: "/interview",
+    href: "/interview/hr/introduction",
     match: "/interview",
   },
 
   {
     name: "Industrial Knowledge",
-    href: "/industrial-knowledge",
+    href: "/industrial-knowledge/operations/introduction",
     match: "/industrial-knowledge",
   },
 
   {
     name: "Case Studies",
-    href: "/case-studies",
+    href: "/case-studies/startup/introduction",
     match: "/case-studies",
   },
 
   {
     name: "Tools",
-    href: "/tools",
+    href: "/tools/calculators/introduction",
     match: "/tools",
   },
 ];
 
 export default function Header() {
+
   const pathname = usePathname();
 
   return (
     <header
       className="
-        min-h-14
+        h-14
         border-b
         border-gray-800
         bg-black
         px-4
-        md:px-6
         flex
         items-center
-        gap-4
-        md:gap-8
-        text-sm
         text-white
       "
     >
 
-      {/* 
-        ✅ MOBILE SIDEBAR BUTTON
+      {/* LEFT SECTION */}
+      <div className="flex items-center gap-4">
 
-        IMPORTANT:
-        We DO NOT import Sidebar here.
+        {/* Mobile Menu */}
+        <MobileSidebar />
 
-        WHY?
-
-        Sidebar uses:
-        - fs
-        - path
-
-        which only work in SERVER components.
-
-        Header is a CLIENT component.
-
-        Importing Sidebar here causes:
-        ❌ Module not found: fs
-      */}
-      <div className="md:hidden">
-
-        <MobileSidebar>
-
-          {/* 
-            Temporary mobile navigation placeholder
-
-            Later:
-            dynamic mobile sidebar will go here
-          */}
-          <div className="p-4 text-white">
-            Mobile Navigation
-          </div>
-
-        </MobileSidebar>
+        {/* Logo */}
+        <Link
+          href="/"
+          className="
+            text-lg
+            md:text-xl
+            font-bold
+            whitespace-nowrap
+          "
+        >
+          ChemEng
+        </Link>
 
       </div>
 
-      {/* ✅ PLATFORM TITLE */}
-      <h1 className="text-xl font-bold whitespace-nowrap">
-        ChemEng Platform
-      </h1>
-
-      {/* 
-        ✅ MAIN NAVIGATION
-
-        overflow-x-auto
-        = prevents navbar breaking on mobile
-
-        whitespace-nowrap
-        = keeps items in single row
-      */}
+      {/* RIGHT NAVIGATION */}
       <nav
         className="
-          flex
-          gap-3
-          md:gap-6
-          overflow-x-auto
-          whitespace-nowrap
+          hidden
+          md:flex
+          items-center
+          gap-6
+          text-sm
+          ml-auto
         "
       >
+
         {categories.map((category) => {
 
-          // ✅ Detect active route
-          const isActive = pathname.includes(
-            category.match
-          );
+          const isActive =
+            pathname.includes(category.match);
 
           return (
             <Link
@@ -150,7 +114,9 @@ export default function Header() {
             </Link>
           );
         })}
+
       </nav>
+
     </header>
   );
 }

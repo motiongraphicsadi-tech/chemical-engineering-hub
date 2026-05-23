@@ -9,11 +9,12 @@ type Topic = {
 };
 
 type Props = {
+  category: string;
   subject: string;
   topics: Topic[];
 };
-
 export default function SidebarClient({
+  category,
   subject,
   topics,
 }: Props) {
@@ -52,7 +53,8 @@ export default function SidebarClient({
           return (
             <Link
               key={topic.slug}
-              href={`/core-subjects/${subject}/${topic.slug}`}
+              href={`/${category}/${subject}/${topic.slug}`}
+            
 
               className={`
                 block

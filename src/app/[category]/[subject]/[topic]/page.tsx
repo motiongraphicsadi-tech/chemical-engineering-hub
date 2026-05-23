@@ -6,6 +6,8 @@ import Breadcrumb from "@/components/navigation/Breadcrumb";
 
 import Sidebar from "@/components/navigation/Sidebar";
 
+import SubjectNavbar from "@/components/navigation/SubjectNavbar";
+
 /* MDX Components */
 import TopicHero from "@/components/mdx/TopicHero";
 
@@ -18,7 +20,6 @@ import EquationBlock from "@/components/mdx/EquationBlock";
 import WarningBox from "@/components/mdx/WarningBox";
 
 import DiagramBox from "@/components/mdx/DiagramBox";
-
 
 /*
   SEO Metadata
@@ -99,7 +100,6 @@ export default async function TopicPage({
       EquationBlock,
       WarningBox,
       DiagramBox,
-
     };
 
     /*
@@ -117,51 +117,59 @@ export default async function TopicPage({
 
     return (
 
-      /*
-        Main Layout
-      */
-      <div className="flex">
+      <div className="flex flex-col min-h-screen">
 
-        {/* Desktop Sidebar */}
-        <Sidebar
-          subject={resolvedParams.subject}
+        {/* Subject Navigation */}
+        <SubjectNavbar
+          category={resolvedParams.category}
         />
 
-        {/* Main Content */}
-        <main
-          className="
-            flex-1
-            overflow-x-hidden
-            px-6
-            py-10
-          "
-        >
+        {/* Main Content Area */}
+        <div className="flex flex-1">
 
-          <div
+          {/* Desktop Sidebar */}
+          <Sidebar
+            category={resolvedParams.category}
+            subject={resolvedParams.subject}
+          />
+
+          {/* Main Content */}
+          <main
             className="
-              mx-auto
-              max-w-4xl
+              flex-1
+              overflow-x-hidden
+              px-6
+              py-10
             "
           >
 
-            {/* Breadcrumb */}
-            <Breadcrumb />
-
-            {/* MDX Content */}
-            <article
+            <div
               className="
-                prose
-                prose-invert
-                max-w-none
-                mt-8
+                mx-auto
+                max-w-4xl
               "
             >
-              {mdx.content}
-            </article>
 
-          </div>
+              {/* Breadcrumb */}
+              <Breadcrumb />
 
-        </main>
+              {/* MDX Content */}
+              <article
+                className="
+                  prose
+                  prose-invert
+                  max-w-none
+                  mt-8
+                "
+              >
+                {mdx.content}
+              </article>
+
+            </div>
+
+          </main>
+
+        </div>
 
       </div>
     );

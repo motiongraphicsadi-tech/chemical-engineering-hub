@@ -1,17 +1,24 @@
 import fs from "fs";
+
 import path from "path";
+
 import { formatTitle } from "./slug";
 
-const CONTENT_PATH = path.join(
-  process.cwd(),
-  "src/content/core-subjects"
-);
+export function getSubjects(
+  category: string
+) {
 
-export function getSubjects() {
-  const subjects = fs.readdirSync(CONTENT_PATH);
+  const contentPath = path.join(
+    process.cwd(),
+    `src/content/${category}`
+  );
+
+  const subjects =
+    fs.readdirSync(contentPath);
 
   return subjects.map((subject) => ({
     slug: subject,
+
     title: formatTitle(subject),
   }));
 }
