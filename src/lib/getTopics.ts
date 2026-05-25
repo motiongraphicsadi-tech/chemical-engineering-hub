@@ -14,6 +14,38 @@ export function getTopics(
     `src/content/${category}/${subject}`
   );
 
+  /*
+    Read manual topic order
+    from meta.json
+  */
+  const metaPath = path.join(
+    subjectPath,
+    "meta.json"
+  );
+
+  /*
+    If meta.json exists,
+    use custom ordered topics
+  */
+  if (
+    fs.existsSync(metaPath)
+  ) {
+
+    const metaData =
+      fs.readFileSync(
+        metaPath,
+        "utf-8"
+      );
+
+    return JSON.parse(
+      metaData
+    );
+  }
+
+  /*
+    Fallback:
+    automatic filesystem order
+  */
   const files =
     fs.readdirSync(subjectPath);
 
@@ -22,10 +54,18 @@ export function getTopics(
       file.endsWith(".mdx")
     )
     .map((file) => ({
-      slug: file.replace(".mdx", ""),
+
+      slug: file.replace(
+        ".mdx",
+        ""
+      ),
 
       title: formatTitle(
-        file.replace(".mdx", "")
+        file.replace(
+          ".mdx",
+          ""
+        )
       ),
+
     }));
 }
