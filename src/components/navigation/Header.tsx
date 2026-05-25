@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { usePathname } from "next/navigation";
 
-import MobileSidebar from "./MobileSidebar";
+
 
 const categories = [
   {
@@ -59,8 +59,7 @@ export default function Header() {
       {/* LEFT SECTION */}
       <div className="flex items-center gap-4">
 
-        {/* Mobile Menu */}
-        <MobileSidebar />
+        
 
         {/* Logo */}
         <Link
