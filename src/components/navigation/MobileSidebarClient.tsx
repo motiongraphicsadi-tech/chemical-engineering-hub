@@ -43,20 +43,15 @@ export default function MobileSidebarClient({
           md:hidden
 
           fixed
-          top-20
-          left-4
+          top-1
+          left-1
 
-          z-[999999]
+          z-[50]
 
           pointer-events-auto
 
           p-3
           rounded-full
-
-          bg-black
-
-          border
-          border-gray-700
 
           shadow-lg
         "

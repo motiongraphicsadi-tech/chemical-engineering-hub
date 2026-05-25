@@ -44,13 +44,21 @@ export default function Header() {
 
     <header
       className="
+        
+        relative
+
         h-14
         border-b
         border-gray-800
+
         bg-black
-        px-4
+
+        pl-14
+        pr-4
+
         flex
         items-center
+
         text-white
       "
     >
