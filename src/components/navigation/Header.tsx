@@ -4,8 +4,6 @@ import Link from "next/link";
 
 import { usePathname } from "next/navigation";
 
-
-
 const categories = [
   {
     name: "Subject Prep",
@@ -43,6 +41,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
+
     <header
       className="
         h-14
@@ -57,9 +56,14 @@ export default function Header() {
     >
 
       {/* LEFT SECTION */}
-      <div className="flex items-center gap-4">
-
-        
+      <div
+        className="
+          flex
+          items-center
+          gap-3
+          shrink-0
+        "
+      >
 
         {/* Logo */}
         <Link
@@ -78,15 +82,22 @@ export default function Header() {
 
       {/* RIGHT NAVIGATION */}
       <nav
-  className="
-    hidden
-    md:flex
-    items-center
-    gap-6
-    text-sm
-    ml-8
-  "
->
+        className="
+          flex
+          items-center
+          gap-4
+          text-sm
+
+          overflow-x-auto
+          overflow-y-hidden
+
+          scrollbar-hide
+
+          ml-4
+
+          md:ml-8
+        "
+      >
 
         {categories.map((category) => {
 
@@ -94,14 +105,19 @@ export default function Header() {
             pathname.includes(category.match);
 
           return (
+
             <Link
               key={category.name}
               href={category.href}
               className={`
                 pb-1
+                whitespace-nowrap
+
                 transition-all
                 duration-200
+
                 hover:text-white
+
                 ${
                   isActive
                     ? "text-white border-b-2 border-blue-500"
@@ -109,7 +125,9 @@ export default function Header() {
                 }
               `}
             >
+
               {category.name}
+
             </Link>
           );
         })}

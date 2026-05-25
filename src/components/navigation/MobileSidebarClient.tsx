@@ -36,12 +36,29 @@ export default function MobileSidebarClient({
 
       {/* Hamburger */}
       <button
-        onClick={() => setOpen(!open)}
+        onClick={() =>
+          setOpen(!open)
+        }
         className="
-          p-2
-          rounded-md
-          hover:bg-gray-800
-          transition-colors
+          md:hidden
+
+          fixed
+          top-20
+          left-4
+
+          z-[999999]
+
+          pointer-events-auto
+
+          p-3
+          rounded-full
+
+          bg-black
+
+          border
+          border-gray-700
+
+          shadow-lg
         "
       >
 
@@ -53,94 +70,109 @@ export default function MobileSidebarClient({
 
       </button>
 
-      {/* Mobile Drawer */}
-      {open && (
-
-        <div
-          className="
+      {/* Sidebar Drawer */}
+      <aside
+        className={
+          `
             fixed
-            inset-0
-            top-14
+            top-0
+            left-0
+
+            h-screen
+            w-72
+
             bg-black
-            z-[9999]
-            overflow-y-auto
-            border-t
+            border-r
             border-gray-800
-            p-6
+
+            z-[100000]
+
+            overflow-y-auto
+
+            transition-transform
+            duration-300
+
+            pt-20
+            px-4
+
+            md:hidden
+          ` +
+          (open
+            ? " translate-x-0"
+            : " -translate-x-full")
+        }
+      >
+
+        {/* Subject */}
+        <h2
+          className="
+            text-lg
+            font-semibold
+            text-white
+            mb-6
           "
         >
 
-          {/* Subject Title */}
-          <h2
-            className="
-              text-lg
-              font-semibold
-              text-white
-              mb-6
-            "
-          >
+          {subject
+            ?.replace(/-/g, " ")
+            ?.replace(
+              /\b\w/g,
+              (char) =>
+                char.toUpperCase()
+            )}
 
-            {subject
-              .replace("-", " ")
-              .replace(
-                /\b\w/g,
-                (char) =>
-                  char.toUpperCase()
-              )}
+        </h2>
 
-          </h2>
+        {/* Topics */}
+        <div className="space-y-2">
 
-          {/* Topics */}
-          <div className="space-y-2">
+          {topics?.map((topic) => {
 
-            {topics.map((topic) => {
+            const href =
+              `/${category}/${subject}/${topic.slug}`;
 
-              const href =
-                `/${category}/${subject}/${topic.slug}`;
+            const isActive =
+              pathname === href;
 
-              const isActive =
-                pathname === href;
+            return (
 
-              return (
+              <Link
+                key={topic.slug}
 
-                <Link
-                  key={topic.slug}
+                href={href}
 
-                  href={href}
+                onClick={() =>
+                  setOpen(false)
+                }
 
-                  onClick={() =>
-                    setOpen(false)
+                className={`
+                  block
+                  rounded-lg
+
+                  px-4
+                  py-3
+
+                  transition-colors
+
+                  ${
+                    isActive
+                      ? "bg-blue-500/20 text-white"
+                      : "text-gray-400 hover:text-white hover:bg-gray-900"
                   }
+                `}
+              >
 
-                  className={`
-                    block
-                    px-4
-                    py-3
-                    rounded-lg
-                    transition-colors
+                {topic.title}
 
-                    ${
-                      isActive
-                        ? "bg-blue-500/20 text-white"
-                        : "text-gray-400 hover:text-white hover:bg-gray-900"
-                    }
-                  `}
-                >
+              </Link>
 
-                  {topic.title}
-
-                </Link>
-
-              );
-            })}
-
-          </div>
+            );
+          })}
 
         </div>
 
-      )}
+      </aside>
 
     </>
-
   );
 }

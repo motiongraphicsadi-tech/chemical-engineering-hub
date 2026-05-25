@@ -22,29 +22,25 @@ export default function Sidebar({
 
   return (
     <>
-  
+
       {/* Desktop Sidebar */}
       <div className="hidden md:block">
-  
+
         <SidebarClient
           category={category}
           subject={subject}
           topics={topics}
         />
-  
+
       </div>
-  
+
       {/* Mobile Sidebar */}
-      <div className="md:hidden">
-  
-        <MobileSidebarClient
-          category={category}
-          subject={subject}
-          topics={topics}
-        />
-  
-      </div>
-  
+      <MobileSidebarClient
+        category={category}
+        subject={subject}
+        topics={topics}
+      />
+
     </>
   );
 }

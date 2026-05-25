@@ -24,12 +24,13 @@ export default function SubjectNavbarClient({
   return (
     <div
       className="
-        hidden
-        md:flex
+        flex
         items-center
         gap-4
+        overflow-y-hidden
+        scrollbar-hide
         overflow-x-auto
-        whitespace-nowrap
+        whit space-nowrap
         border-b
         border-gray-800
         bg-gray-950
@@ -53,6 +54,7 @@ export default function SubjectNavbarClient({
             href={`/${category}/${slug}/introduction`}
 
             className={`
+              whitespace-nowrap
               pb-1
               transition-all
               duration-200
