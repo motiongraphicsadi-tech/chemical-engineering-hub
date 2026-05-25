@@ -52,17 +52,15 @@ export default function MobileSidebar() {
 
         <div
           className="
-            absolute
-            top-14
-            left-0
-            w-full
-            bg-black
-            border-t
-            border-gray-800
-            z-50
-            p-6
-            overflow-y-auto
-            max-h-[calc(100vh-56px)]
+            fixed
+      inset-0
+      top-14
+      bg-black
+      border-t
+      border-gray-800
+      z-[9999]
+      p-6
+      overflow-y-auto
           "
         >
 

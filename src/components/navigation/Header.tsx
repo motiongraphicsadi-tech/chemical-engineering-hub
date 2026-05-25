@@ -15,7 +15,7 @@ const categories = [
 
   {
     name: "Interview Prep",
-    href: "/interview/hr/introduction",
+    href: "/Interview-Prep/heat-transfer/introduction",
     match: "/interview",
   },
 
@@ -79,15 +79,15 @@ export default function Header() {
 
       {/* RIGHT NAVIGATION */}
       <nav
-        className="
-          hidden
-          md:flex
-          items-center
-          gap-6
-          text-sm
-          ml-auto
-        "
-      >
+  className="
+    hidden
+    md:flex
+    items-center
+    gap-6
+    text-sm
+    ml-8
+  "
+>
 
         {categories.map((category) => {
 

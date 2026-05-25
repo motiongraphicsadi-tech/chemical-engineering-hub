@@ -1,0 +1,204 @@
+---
+title: "Steady and Unsteady State Heat Transfer"
+description: "Learn steady state heat transfer, unsteady state heat transfer, lumped heat transfer, and Biot number for heat transfer interviews."
+keywords:
+  - steady state heat transfer
+  - unsteady state heat transfer
+  - lumped heat transfer
+  - biot number
+  - heat transfer interview questions
+  - chemical engineering interview
+---
+
+<TopicHero
+  title="Steady and Unsteady State Heat Transfer"
+  description="Understand steady state, unsteady state, lumped heat transfer, and Biot number concepts used in heat transfer systems."
+/>
+
+#  Steady and Unsteady State Heat Transfer
+
+# Introduction
+
+Heat transfer systems may operate under steady or unsteady conditions depending on whether temperature changes with time.
+
+Understanding these concepts is important for:
+- heat exchanger analysis
+- reactor heating
+- cooling systems
+- startup and shutdown operations
+- transient heat transfer calculations
+
+<IndustrialInsight>
+  Most industrial plants aim for steady-state operation because it provides stable production and easier process control.
+</IndustrialInsight>
+
+---
+
+## 3. Define steady state heat transfer?
+
+<InterviewQuestion
+  question="What is steady state heat transfer?"
+  answer="Steady-state heat transfer is a condition where temperature does not change with time at any location in the system."
+/>
+
+## Characteristics of Steady State
+
+- temperature remains constant with time
+- heat transfer rate remains constant
+- no energy accumulation occurs
+
+## Industrial Examples
+
+- continuous heat exchanger operation
+- boiler operating at constant load
+- stable distillation column operation
+
+<EquationBlock
+  title="Steady-State Condition"
+  equation="dT/dt = 0"
+  description="In steady-state heat transfer, temperature does not change with time."
+/>
+
+---
+
+## 4. Define unsteady state heat transfer?
+
+<InterviewQuestion
+  question="What is unsteady state heat transfer?"
+  answer="Unsteady-state heat transfer is a condition where temperature changes with time."
+/>
+
+## Characteristics of Unsteady State
+
+- temperature varies with time
+- heat transfer rate changes continuously
+- energy accumulation occurs
+
+## Industrial Examples
+
+- plant startup
+- plant shutdown
+- heating of storage tanks
+- cooling of hot metal objects
+
+<EquationBlock
+  title="Unsteady-State Condition"
+  equation="dT/dt ≠ 0"
+  description="In unsteady-state heat transfer, temperature changes with time."
+/>
+
+<WarningBox>
+  Unsteady-state heat transfer is also called transient heat transfer.
+</WarningBox>
+
+---
+
+## 5. Example from industry?
+
+## Steady-State Examples
+
+- shell and tube heat exchanger
+- refinery distillation column
+- continuous evaporator system
+- utility steam line
+
+## Unsteady-State Examples
+
+- reactor startup heating
+- cooling tower startup
+- furnace shutdown cooling
+- batch reactor heating
+
+<IndustrialInsight>
+  Startup and shutdown conditions in chemical plants are usually unsteady-state operations because temperatures and process conditions continuously change.
+</IndustrialInsight>
+
+---
+
+## 6. What is lumped heat transfer?
+
+<InterviewQuestion
+  question="What is lumped heat transfer?"
+  answer="Lumped heat transfer assumes the entire body remains at uniform temperature during heating or cooling."
+/>
+
+# Lumped System Analysis
+
+In lumped heat transfer:
+- temperature inside the body is assumed uniform
+- internal temperature gradient is neglected
+- temperature changes only with time
+
+## Conditions for Lumped Analysis
+
+Lumped analysis is valid when internal conduction resistance is very small compared to external convection resistance.
+
+## Applications
+
+- small metal objects
+- thermocouples
+- electronic components
+- small spherical particles
+
+---
+
+## 6.1 What is Biot number?
+
+<InterviewQuestion
+  question="What is Biot number?"
+  answer="Biot number is the ratio of internal conduction resistance to external convection resistance."
+/>
+
+<EquationBlock
+  title="Biot Number"
+  equation="Bi = hL/k"
+  description="Biot number compares internal conduction resistance with external convection resistance."
+/>
+
+Where:
+- h = heat transfer coefficient
+- L = characteristic length
+- k = thermal conductivity
+
+## Important Condition
+
+<EquationBlock
+  title="Condition for Lumped Heat Transfer"
+  equation="Bi < 0.1"
+  description="If Biot number is less than 0.1, lumped heat transfer analysis is valid."
+/>
+
+## Importance of Biot Number
+
+Biot number helps determine:
+- whether lumped analysis is valid
+- temperature distribution inside solids
+- transient heat transfer behavior
+
+<IndustrialInsight>
+  Engineers use Biot number in transient heating and cooling calculations for industrial equipment and solid materials.
+</IndustrialInsight>
+
+---
+
+# Related Topics
+
+- Equation of Energy
+- Heat Transfer Coefficient
+- Boundary Layer
+- Fourier’s Law
+- Heat Exchanger Basics
+- Conduction Heat Transfer
+
+---
+
+# Summary
+
+Steady and unsteady heat transfer are fundamental concepts in heat transfer analysis.
+
+Key points:
+- steady state means temperature does not change with time
+- unsteady state means temperature changes with time
+- lumped analysis assumes uniform temperature inside the body
+- Biot number determines validity of lumped heat transfer analysis
+- these concepts are widely used in industrial heat transfer systems

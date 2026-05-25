@@ -24,7 +24,8 @@ export default function SubjectNavbarClient({
   return (
     <div
       className="
-        flex
+        hidden
+        md:flex
         items-center
         gap-4
         overflow-x-auto
