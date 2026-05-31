@@ -5,6 +5,9 @@ import SidebarClient from "./SidebarClient";
 import MobileSidebarClient
 from "./MobileSidebarClient";
 
+import { getSubjectsWithTopics }
+from "@/lib/getSubjectsWithTopics";
+
 type Props = {
   category: string;
   subject: string;
@@ -19,6 +22,11 @@ export default function Sidebar({
     category,
     subject
   );
+
+  const subjects =
+    getSubjectsWithTopics(
+      category
+    );
 
   return (
     <>
@@ -39,6 +47,7 @@ export default function Sidebar({
         category={category}
         subject={subject}
         topics={topics}
+        subjects={subjects}
       />
 
     </>

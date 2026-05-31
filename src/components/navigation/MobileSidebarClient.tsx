@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -17,26 +18,42 @@ type Props = {
     slug: string;
     title: string;
   }[];
+
+  subjects: {
+    slug: string;
+    title: string;
+
+    topics: {
+      slug: string;
+      title: string;
+    }[];
+  }[];
 };
 
 export default function MobileSidebarClient({
   category,
   subject,
-  topics,
+  subjects,
 }: Props) {
 
-  const pathname = usePathname();
+  const pathname =
+    usePathname();
 
   const [open, setOpen] =
     useState(false);
 
-  return (
+  const [expandedSubject, setExpandedSubject] =
+    useState(subject);
 
+  const [showCategorySelector, setShowCategorySelector] =
+    useState(false);
+
+  return (
     <>
 
       {/* Hamburger */}
       <button
-        onClick={() =>
+         onClick={() =>
           setOpen(!open)
         }
         className="
@@ -46,128 +63,358 @@ export default function MobileSidebarClient({
           top-1
           left-1
 
-          z-[50]
-
-          pointer-events-auto
+          z-[999999]
 
           p-3
-          rounded-full
 
-          shadow-lg
+          rounded-lg
+
+          bg-black/80
+          backdrop-blur
+
+          text-white
         "
       >
-
-        {open ? (
-          <X className="w-6 h-6 text-white" />
-        ) : (
-          <Menu className="w-6 h-6 text-white" />
-        )}
-
+          {open ? (
+           <X className="w-6 h-6" />
+          ) : (
+          <Menu className="w-6 h-6" />
+          )}
       </button>
+      {/*overlay*/}
+      {open && (
+           <div
+           onClick={() => setOpen(false)}
+            className="
+              fixed
+              inset-0
 
-      {/* Sidebar Drawer */}
+              bg-black/50
+              backdrop-blur-sm
+
+              z-[9999]
+
+              md:hidden
+             "
+           />
+           )}  
+
+      {/* Drawer */}
       <aside
-        className={
-          `
-            fixed
-            top-0
-            left-0
+        className={`
+          fixed
+          top-0
+          left-0
+ 
+          h-screen
+          w-[85%]
+          max-w-[380px]
 
-            h-screen
-            w-72
+          bg-black
 
-            bg-black
-            border-r
-            border-gray-800
+          z-[10000]
 
-            z-[100000]
+          overflow-y-auto
 
-            overflow-y-auto
+          transition-transform
+          duration-300
 
-            transition-transform
-            duration-300
+          md:hidden
 
-            pt-20
-            px-4
-
-            md:hidden
-          ` +
-          (open
-            ? " translate-x-0"
-            : " -translate-x-full")
-        }
+          ${
+            open
+              ? "translate-x-0"
+              : "-translate-x-full"
+          }
+        `}
       >
 
-        {/* Subject */}
-        <h2
+        {/* Header */}
+        <div
           className="
-            text-lg
-            font-semibold
-            text-white
-            mb-6
+             sticky
+             top-0
+
+             bg-black
+
+             border-b
+             border-gray-800
+
+             py-4
+             pr-4
+
+             flex
+             justify-end
           "
         >
 
-          {subject
-            ?.replace(/-/g, " ")
-            ?.replace(
-              /\b\w/g,
-              (char) =>
-                char.toUpperCase()
-            )}
-
-        </h2>
-
-        {/* Topics */}
-        <div className="space-y-2">
-
-          {topics?.map((topic) => {
-
-            const href =
-              `/${category}/${subject}/${topic.slug}`;
-
-            const isActive =
-              pathname === href;
-
-            return (
-
-              <Link
-                key={topic.slug}
-
-                href={href}
-
-                onClick={() =>
-                  setOpen(false)
-                }
-
-                className={`
-                  block
-                  rounded-lg
-
-                  px-4
-                  py-3
-
-                  transition-colors
-
-                  ${
-                    isActive
-                      ? "bg-blue-500/20 text-white"
-                      : "text-gray-400 hover:text-white hover:bg-gray-900"
-                  }
-                `}
-              >
-
-                {topic.title}
-
-              </Link>
-
-            );
-          })}
+          <button
+            onClick={() =>
+              setShowCategorySelector(
+                !showCategorySelector
+              )
+            }
+            className="
+              text-sm
+              font-medium
+              text-blue-400
+            "
+          >
+            {showCategorySelector
+              ? "Browse Topics"
+              : "Change Subject"}
+          </button>
 
         </div>
+
+        {/* CATEGORY SELECTOR */}
+        {showCategorySelector ? (
+
+          <div className="p-4 space-y-4">
+
+            <Link
+              href="/core-subjects/heat-transfer/introduction"
+              onClick={() =>
+                setOpen(false)
+              }
+              className="
+                block
+
+                rounded-2xl
+                border
+                border-gray-800
+
+                p-5
+              "
+            >
+              <h3 className="text-emerald-400 font-semibold">
+                ChemE Basics 📘
+              </h3>
+
+              <p className="mt-2 text-sm text-gray-400">
+                Core chemical engineering fundamentals.
+              </p>
+            </Link>
+
+            <Link
+              href="/industrial-knowledge/industry-basics/introduction"
+              onClick={() =>
+                setOpen(false)
+              }
+              className="
+                block
+
+                rounded-2xl
+                border
+                border-gray-800
+
+                p-5
+              "
+            >
+              <h3 className="text-emerald-400 font-semibold">
+                Industrial Knowledge 🏭
+              </h3>
+
+              <p className="mt-2 text-sm text-gray-400">
+                Learn how industry operates.
+              </p>
+            </Link>
+
+            <Link
+              href="/industrial-safety/safety-basics/introduction"
+              onClick={() =>
+                setOpen(false)
+              }
+              className="
+                block
+
+                rounded-2xl
+                border
+                border-gray-800
+
+                p-5
+              "
+            >
+              <h3 className="text-emerald-400 font-semibold">
+                Industrial Safety 🛡️
+              </h3>
+
+              <p className="mt-2 text-sm text-gray-400">
+                Safety, hazards and risk awareness.
+              </p>
+            </Link>
+
+            <Link
+              href="/case-studies/startup/introduction"
+              onClick={() =>
+                setOpen(false)
+              }
+              className="
+                block
+
+                rounded-2xl
+                border
+                border-gray-800
+
+                p-5
+              "
+            >
+              <h3 className="text-emerald-400 font-semibold">
+                Case Studies 📊
+              </h3>
+
+              <p className="mt-2 text-sm text-gray-400">
+                Real industrial incidents and lessons.
+              </p>
+            </Link>
+
+            <Link
+              href="/tools/calculators/introduction"
+              onClick={() =>
+                setOpen(false)
+              }
+              className="
+                block
+
+                rounded-2xl
+                border
+                border-gray-800
+
+                p-5
+              "
+            >
+              <h3 className="text-emerald-400 font-semibold">
+                Tools 🧮
+              </h3>
+
+              <p className="mt-2 text-sm text-gray-400">
+                Engineering calculators and utilities.
+              </p>
+            </Link>
+
+          </div>
+
+        ) : (
+
+          <div className="px-4 py-6">
+
+            {subjects.map(
+              (currentSubject) => (
+
+                <div
+                  key={
+                    currentSubject.slug
+                  }
+                  className="
+                    mb-8
+                    border-b
+                    border-gray-800
+                    pb-6
+                  "
+                >
+
+                  <button
+                    onClick={() =>
+                      setExpandedSubject(
+                        expandedSubject === currentSubject.slug
+                          ? ""
+                          : currentSubject.slug
+                      )
+                    }
+                    className="
+                      w-full
+
+                      flex
+                      items-center
+                      justify-between
+
+                      text-left
+
+                      text-white
+                      text-lg
+                      font-semibold
+                    "
+                  >
+
+                    <span>
+                      {currentSubject.title}
+                    </span>
+
+                    <span>
+                      {expandedSubject === currentSubject.slug
+                        ? "▼"
+                        : "▶"}
+                    </span>
+
+                  </button>
+
+                  {expandedSubject === currentSubject.slug && (
+
+                    <div
+                      className="
+                        mt-4
+
+                        flex
+                        flex-col
+                        gap-2
+                      "
+                    >
+
+                      {currentSubject.topics.map(
+                        (topic) => {
+
+                          const href =
+                            `/${category}/${currentSubject.slug}/${topic.slug}`;
+
+                          const isActive =
+                            pathname === href;
+
+                          return (
+
+                            <Link
+                              key={
+                                topic.slug
+                              }
+                              href={href}
+                              onClick={() =>
+                                setOpen(false)
+                              }
+                              className={`
+                                px-4
+                                py-3
+
+                                rounded-lg
+
+                                ${
+                                  isActive
+                                    ? "bg-blue-500/20 text-white"
+                                    : "text-gray-400 hover:text-white hover:bg-gray-900"
+                                }
+                              `}
+                            >
+                              {topic.title}
+                            </Link>
+
+                          );
+                        }
+                      )}
+
+                    </div>
+
+                  )}
+
+                </div>
+
+              )
+            )}
+
+          </div>
+
+        )}
 
       </aside>
 
     </>
   );
 }
+

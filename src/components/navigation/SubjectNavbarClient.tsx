@@ -24,20 +24,21 @@ export default function SubjectNavbarClient({
   return (
     <div
       className="
-        flex
-        items-center
-        gap-4
-        overflow-y-hidden
-        scrollbar-hide
-        overflow-x-auto
-        whit space-nowrap
-        border-b
-        border-gray-800
-        bg-gray-950
-        px-4
-        py-3
-        text-sm
-      "
+           hidden md:flex
+
+           items-center
+           gap-4
+           overflow-y-hidden
+           scrollbar-hide
+           overflow-x-auto
+           whitespace-nowrap
+           border-b
+           border-gray-800
+           bg-gray-950
+           px-4
+           py-3
+           text-sm
+          "
     >
 
       {subjects.map((subject) => {
