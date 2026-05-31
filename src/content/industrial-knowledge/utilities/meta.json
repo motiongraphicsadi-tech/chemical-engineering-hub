@@ -1,0 +1,46 @@
+[
+    {
+      "slug": "steam-system",
+      "title": "Steam System"
+    },
+  
+    {
+      "slug": "cooling-water-system",
+      "title": "Cooling Water System"
+    },
+  
+    {
+      "slug": "chilled-water",
+      "title": "Chilled Water"
+    },
+  
+    {
+      "slug": "compressed-air",
+      "title": "Compressed Air"
+    },
+  
+    {
+      "slug": "nitrogen-system",
+      "title": "Nitrogen System"
+    },
+  
+    {
+      "slug": "vacuum-system",
+      "title": "Vacuum System"
+    },
+  
+    {
+      "slug": "boiler-basics",
+      "title": "Boiler Basics"
+    },
+  
+    {
+      "slug": "power-distribution",
+      "title": "Power Distribution"
+    },
+  
+    {
+      "slug": "hvac-basics",
+      "title": "HVAC Basics"
+    }
+  ]

@@ -1,0 +1,46 @@
+[
+    {
+      "slug": "continuous-plant-operation",
+      "title": "How Plants Run 24/7"
+    },
+  
+    {
+      "slug": "shift-system",
+      "title": "Shift System"
+    },
+  
+    {
+      "slug": "control-room-basics",
+      "title": "Control Room Basics"
+    },
+  
+    {
+      "slug": "dcs-overview",
+      "title": "DCS Overview"
+    },
+  
+    {
+      "slug": "startup-shutdown",
+      "title": "Start-up and Shutdown"
+    },
+  
+    {
+      "slug": "sops",
+      "title": "SOPs"
+    },
+  
+    {
+      "slug": "troubleshooting-basics",
+      "title": "Troubleshooting Basics"
+    },
+  
+    {
+      "slug": "alarms-and-interlocks",
+      "title": "Alarms and Interlocks"
+    },
+  
+    {
+      "slug": "utility-systems",
+      "title": "Utility Systems"
+    }
+  ]

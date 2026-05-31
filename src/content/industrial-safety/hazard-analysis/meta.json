@@ -1,0 +1,43 @@
+[
+  
+    {
+      "slug": "hazop-introduction",
+      "title": "HAZOP Introduction"
+    },
+    {
+      "slug": "what-if-analysis",
+      "title": "What-If Analysis"
+    },
+    {
+      "slug": "job-safety-&-hazard-analysis",
+      "title": "Job Safety & Hazard Analysis"
+    },
+    {
+      "slug": "risk-matrix",
+      "title": "Risk Matrix"
+    },
+    {
+      "slug": "sil-basics",
+      "title": "SIL Basics"
+    },
+    {
+      "slug": "root-cause-analysis",
+      "title": "Root Cause Analysis"
+    },
+    {
+      "slug": "near-miss-investigation",
+      "title": "Near Miss Investigation"
+    },
+    {
+      "slug": "incident-reporting",
+      "title": "Incident Reporting"
+    },
+    {
+      "slug": "bow-tie-analysis",
+      "title": "Bow-Tie Analysis"
+    },
+    {
+      "slug": "failure-scenarios",
+      "title": "Failure Scenarios"
+    }
+  ]

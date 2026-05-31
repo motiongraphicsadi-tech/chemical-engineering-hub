@@ -1,8 +1,5 @@
 [
-    {
-      "slug": "introduction",
-      "title": "Introduction"
-    },
+    
   
     {
       "slug": "What-is-a-process-industry",
@@ -10,17 +7,33 @@
     },
   
     {
-      "slug": "Types-of-Chemical-Industries",
+      "slug": "types-of-chemical-industries",
       "title": "Types of Chemical Industries"
     },
   
     {
-      "slug": "pump",
-      "title": "pump"
+      "slug": "batch-vs-continuous-process",
+      "title": "batch vs continuous process"
     },
   
     {
-      "slug": "heat-exchangers",
-      "title": "Heat Exchangers"
+      "slug": "upstream-downstream-processing",
+      "title": "Up & Downstream processing"
+    },
+
+    {
+      "slug": "plant-hierarchy",
+      "title": "Plant hierarchy"
+    },
+
+    {
+      "slug": "departments-in-a-plant",
+      "title": "Departments In A Plant"
+    },
+
+    {
+      "slug": "roles-of-chemical-engineers",
+      "title": "Roles Of Chemical Engineers"
     }
+
   ]

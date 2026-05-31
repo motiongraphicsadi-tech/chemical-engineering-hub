@@ -34,55 +34,43 @@ export default function HomePage() {
           ✅ Reduced visual clutter
           ✅ Better mobile UX
         */}
-        <section className="space-y-6">
+        <section className="max-w-4xl space-y-8">
 
-          {/* 
-            Main heading
+<div className="space-y-3">
 
-            Improvements:
-            ✅ Removed oversized text
-            ✅ Removed "Intelligence Platform"
-            ✅ Responsive font scaling
-          */}
-          <h1
-            className="
-              text-4xl
-              sm:text-5xl
-              md:text-6xl
-              font-extrabold
-              tracking-tight
-              leading-tight
-            "
-          >
-            Learn Chemical Engineering
-          </h1>
+  <p
+    className="
+      text-sm
+      font-medium
+      uppercase
+      tracking-[0.2em]
+      text-zinc-500
+    "
+  >
+    ChemicalEngineeringHub.com
+  </p>
 
-          {/* 
-            Supporting description
+  <h1
+  className="
+    text-2xl
+    md:text-3xl
+    font-bold
+    tracking-tight
+    leading-tight
+    text-white
+  "
+>
+  Learn Chemical Engineering{" "}
+  <span className="text-emerald-400">
+    Industry Way.
+  </span>
+</h1>
 
-            Improvements:
-            ✅ Better readability
-            ✅ Controlled line width
-            ✅ Softer visual contrast
-          */}
-          <p
-            className="
-              max-w-2xl
-              text-base
-              md:text-lg
-              leading-8
-              text-gray-400
-            "
-          >
-            Structured chemical engineering
-            knowledge focused on theory,
-            industrial understanding,
-            troubleshooting,
-            optimization,
-            and operational thinking.
-          </p>
+</div>
 
-        </section>
+
+
+</section>
 
       </div>
 

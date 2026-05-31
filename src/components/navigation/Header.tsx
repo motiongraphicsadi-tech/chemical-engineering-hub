@@ -6,21 +6,21 @@ import { usePathname } from "next/navigation";
 
 const categories = [
   {
-    name: "Subject Prep",
+    name: "ChemE basics",
     href: "/core-subjects/heat-transfer/introduction",
     match: "/core-subjects/",
   },
 
   {
-    name: "Interview Prep",
-    href: "/Interview-Prep/heat-transfer/introduction",
-    match: "/interview",
+    name: "Industrial Knowledge",
+    href: "/industrial-knowledge/industry-basics/introduction",
+    match: "/industrial-knowledge",
   },
 
   {
-    name: "Industrial Knowledge",
-    href: "/industrial-knowledge/operations/introduction",
-    match: "/industrial-knowledge",
+    name: "Industrial Safety",
+    href: "/industrial-safety/safety-basics/introduction",
+    match: "/industrial-safety",
   },
 
   {
