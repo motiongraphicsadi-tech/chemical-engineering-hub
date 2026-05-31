@@ -1,4 +1,3 @@
-
 import fs from "fs";
 import path from "path";
 
@@ -13,47 +12,112 @@ export function getSubjectsWithTopics(
     `src/content/${category}`
   );
 
-  const subjects =
-    fs.readdirSync(categoryPath);
+  /*
+  =====================================
+  Read Subject Order from meta.json
+  =====================================
+  */
 
-  return subjects.map((subject) => {
+  const metaPath = path.join(
+    categoryPath,
+    "meta.json"
+  );
 
-    const subjectPath =
-      path.join(
-        categoryPath,
-        subject
-      );
+  let subjects: {
+    slug: string;
+    title: string;
+  }[] = [];
 
-    const topicFiles =
-      fs.readdirSync(subjectPath);
+  if (fs.existsSync(metaPath)) {
 
-    const topics =
-      topicFiles
-        .filter(
-          (file) =>
-            file.endsWith(".mdx")
-        )
-        .map((file) => ({
-          slug:
-            file.replace(
-              ".mdx",
-              ""
-            ),
+    subjects = JSON.parse(
+      fs.readFileSync(
+        metaPath,
+        "utf8"
+      )
+    );
 
-          title:
-            formatTitle(
+  } else {
+
+    /*
+    Fallback to folder order
+    */
+
+    subjects = fs
+      .readdirSync(categoryPath)
+      .filter((item) => {
+
+        const fullPath =
+          path.join(
+            categoryPath,
+            item
+          );
+
+        return fs
+          .statSync(fullPath)
+          .isDirectory();
+
+      })
+      .map((subject) => ({
+        slug: subject,
+        title: formatTitle(subject),
+      }));
+  }
+
+  /*
+  =====================================
+  Build Topics
+  =====================================
+  */
+
+  return subjects.map(
+    (subject) => {
+
+      const subjectPath =
+        path.join(
+          categoryPath,
+          subject.slug
+        );
+
+      const topicFiles =
+        fs.readdirSync(subjectPath);
+
+      const topics =
+        topicFiles
+          .filter(
+            (file) =>
+              file.endsWith(".mdx")
+          )
+          .map((file) => ({
+
+            slug:
               file.replace(
                 ".mdx",
                 ""
-              )
-            ),
-        }));
+              ),
 
-    return {
-      slug: subject,
-      title: formatTitle(subject),
-      topics,
-    };
-  });
+            title:
+              formatTitle(
+                file.replace(
+                  ".mdx",
+                  ""
+                )
+              ),
+
+          }));
+
+      return {
+
+        slug:
+          subject.slug,
+
+        title:
+          subject.title,
+
+        topics,
+
+      };
+
+    }
+  );
 }
-

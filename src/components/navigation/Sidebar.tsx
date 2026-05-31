@@ -2,11 +2,9 @@ import { getTopics } from "@/lib/getTopics";
 
 import SidebarClient from "./SidebarClient";
 
-import MobileSidebarClient
-from "./MobileSidebarClient";
+import MobileSidebarClient from "./MobileSidebarClient";
 
-import { getSubjectsWithTopics }
-from "@/lib/getSubjectsWithTopics";
+import { getSubjectsWithTopics } from "@/lib/getSubjectsWithTopics";
 
 type Props = {
   category: string;
@@ -30,15 +28,14 @@ export default function Sidebar({
 
   return (
     <>
-
       {/* Desktop Sidebar */}
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
 
-        <SidebarClient
-          category={category}
-          subject={subject}
-          topics={topics}
-        />
+      <SidebarClient
+        category={category}
+        subject={subject}
+        subjects={subjects}
+      />
 
       </div>
 

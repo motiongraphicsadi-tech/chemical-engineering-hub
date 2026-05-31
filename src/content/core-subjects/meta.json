@@ -1,0 +1,30 @@
+[
+    {
+      "slug": "thermodynamics",
+      "title": "Thermodynamics"
+    },
+    {
+      "slug": "fluid-mechanics",
+      "title": "Fluid Mechanics"
+    },
+    {
+      "slug": "heat-transfer",
+      "title": "Heat Transfer"
+    },
+    {
+      "slug": "mass-transfer",
+      "title": "Mass Transfer"
+    },
+    {
+      "slug": "cre",
+      "title": "Chemical Reaction Engineering"
+    },
+    {
+      "slug": "process-control",
+      "title": "Process Control"
+    },
+    {
+      "slug": "ipc",
+      "title": "Instrumentation & Process Control"
+    }
+  ]

@@ -1,3 +1,4 @@
+
 import { compileMDX } from "next-mdx-remote/rsc";
 
 import { getMDXContent } from "@/lib/mdx";
@@ -5,8 +6,6 @@ import { getMDXContent } from "@/lib/mdx";
 import Breadcrumb from "@/components/navigation/Breadcrumb";
 
 import Sidebar from "@/components/navigation/Sidebar";
-
-import SubjectNavbar from "@/components/navigation/SubjectNavbar";
 
 import remarkGfm from "remark-gfm";
 
@@ -29,13 +28,14 @@ import QuizCard from "@/components/mdx/QuizCard";
 
 import QuizModal from "@/components/mdx/QuizModal";
 
-import  InfoBox  from "@/components/mdx/InfoBox";
-
+import InfoBox from "@/components/mdx/InfoBox";
 
 
 
 /*
-  SEO Metadata
+|--------------------------------------------------------------------------
+| SEO Metadata
+|--------------------------------------------------------------------------
 */
 export async function generateMetadata({
   params,
@@ -46,11 +46,9 @@ export async function generateMetadata({
     topic: string;
   }>;
 }) {
-
   const resolvedParams = await params;
 
   try {
-
     const filepath =
       `src/content/${resolvedParams.category}/${resolvedParams.subject}/${resolvedParams.topic}.mdx`;
 
@@ -81,7 +79,9 @@ export async function generateMetadata({
 }
 
 /*
-  Topic Page
+|--------------------------------------------------------------------------
+| Topic Page
+|--------------------------------------------------------------------------
 */
 export default async function TopicPage({
   params,
@@ -96,9 +96,9 @@ export default async function TopicPage({
   const resolvedParams = await params;
 
   const quiz =
-  quizzes[
-    resolvedParams.topic as keyof typeof quizzes
-  ] || [];
+    quizzes[
+      resolvedParams.topic as keyof typeof quizzes
+    ] || [];
 
   try {
 
@@ -109,7 +109,9 @@ export default async function TopicPage({
       await getMDXContent(filepath);
 
     /*
-      Registered MDX Components
+    |--------------------------------------------------------------------------
+    | Registered MDX Components
+    |--------------------------------------------------------------------------
     */
     const components = {
       TopicHero,
@@ -120,18 +122,20 @@ export default async function TopicPage({
       DiagramBox,
 
       QuizCard: (props: any) => (
-          <QuizCard
-           {...props}
-             questions={quiz}
-           />
-       ),
+        <QuizCard
+          {...props}
+          questions={quiz}
+        />
+      ),
 
       QuizModal,
       InfoBox,
     };
 
     /*
-      Compile MDX
+    |--------------------------------------------------------------------------
+    | Compile MDX
+    |--------------------------------------------------------------------------
     */
     const mdx = await compileMDX({
       source: content,
@@ -139,87 +143,166 @@ export default async function TopicPage({
       components,
 
       options: {
-
         parseFrontmatter: true,
-      
+
         mdxOptions: {
-      
           remarkPlugins: [
             remarkGfm,
           ],
-      
         },
-      
       },
     });
 
     return (
 
-      <div className="flex flex-col min-h-screen">
+      <>
+        
+{/* =======================================================
+    DESKTOP LAYOUT
+======================================================== */}
 
-        {/* Subject Navigation */}
-        <SubjectNavbar
-          category={resolvedParams.category}
-        />
+<div
+  className="
+    hidden
+    lg:grid
 
-        {/* Main Content Area */}
-        <div className="flex flex-1">
+    min-h-screen
 
-          {/* Desktop Sidebar */}
+    grid-cols-[320px_minmax(0,1fr)]
+  "
+>
+
+  {/* ===================================================
+      LEFT SIDEBAR
+  ==================================================== */}
+  <Sidebar
+    category={resolvedParams.category}
+    subject={resolvedParams.subject}
+  />
+
+  {/* ===================================================
+      RIGHT SIDE
+  ==================================================== */}
+  <div
+  className="
+    min-w-0
+  "
+>
+
+  <main
+    className="
+      overflow-x-hidden
+
+      px-10
+      py-8
+    "
+  >
+
+      <div className="mx-auto max-w-5xl">
+
+        {/* Breadcrumb */}
+        <Breadcrumb />
+
+        {/* MDX Content */}
+        <article
+          className="
+            prose
+            prose-invert
+
+            max-w-4xl
+
+            mt-8
+
+            [&_table]:w-full
+            [&_table]:border-collapse
+
+            [&_th]:border
+            [&_td]:border
+
+            [&_th]:border-gray-700
+            [&_td]:border-gray-700
+
+            [&_th]:px-4
+            [&_td]:px-4
+
+            [&_th]:py-3
+            [&_td]:py-3
+
+            [&_th]:text-left
+
+            [&_th]:bg-gray-900
+          "
+        >
+          {mdx.content}
+        </article>
+
+      </div>
+
+    </main>
+
+  </div>
+
+</div>
+
+
+
+        {/* =======================================================
+            MOBILE LAYOUT
+            Hamburger Navigation
+        ======================================================== */}
+
+        <div className="lg:hidden">
+
           <Sidebar
             category={resolvedParams.category}
             subject={resolvedParams.subject}
           />
 
-          {/* Main Content */}
           <main
-              className="
-              flex-1
-              overflow-x-hidden
+            className="
               px-6
-              lg:px-10
               py-8
+              
             "
           >
 
-            <div className="  mx-auto max-w-6xl" >
-              
-               
+            <div className="mx-auto max-w-4xl">
+
               {/* Breadcrumb */}
               <Breadcrumb />
 
-              {/* MDX Content */}
+              {/* MDX Article */}
               <article
-  className="
-    prose
-    prose-invert
+                className="
+                  prose
+                  prose-invert
 
-    max-w-5xl
+                  max-w-full
 
-    mt-8
+                  mt-8
 
-    [&_table]:w-full
-    [&_table]:border-collapse
+                  [&_table]:w-full
+                  [&_table]:border-collapse
 
-    [&_th]:border
-    [&_td]:border
+                  [&_th]:border
+                  [&_td]:border
 
-    [&_th]:border-gray-700
-    [&_td]:border-gray-700
+                  [&_th]:border-gray-700
+                  [&_td]:border-gray-700
 
-    [&_th]:px-4
-    [&_td]:px-4
+                  [&_th]:px-4
+                  [&_td]:px-4
 
-    [&_th]:py-3
-    [&_td]:py-3
+                  [&_th]:py-3
+                  [&_td]:py-3
 
-    [&_th]:text-left
+                  [&_th]:text-left
 
-    [&_th]:bg-gray-900
-  "
->
-  {mdx.content}
-</article>
+                  [&_th]:bg-gray-900
+                "
+              >
+                {mdx.content}
+              </article>
 
             </div>
 
@@ -227,7 +310,7 @@ export default async function TopicPage({
 
         </div>
 
-      </div>
+      </>
     );
 
   } catch (error) {
@@ -240,8 +323,10 @@ export default async function TopicPage({
         className="
           mx-auto
           max-w-3xl
+
           px-6
           py-20
+
           text-white
         "
       >
@@ -255,6 +340,8 @@ export default async function TopicPage({
         </p>
 
       </main>
+
     );
   }
 }
+

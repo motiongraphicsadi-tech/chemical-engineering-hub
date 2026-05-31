@@ -53,9 +53,13 @@ export default function MobileSidebarClient({
 
       {/* Hamburger */}
       <button
-         onClick={() =>
-          setOpen(!open)
-        }
+         onClick={() => {
+          setOpen(!open);
+        
+          if (!open) {
+            setShowCategorySelector(false);
+          }
+        }}
         className="
           md:hidden
 
@@ -84,7 +88,10 @@ export default function MobileSidebarClient({
       {/*overlay*/}
       {open && (
            <div
-           onClick={() => setOpen(false)}
+           onClick={() => {
+            setOpen(false);
+            setShowCategorySelector(false);
+          }}
             className="
               fixed
               inset-0
@@ -174,9 +181,10 @@ export default function MobileSidebarClient({
 
             <Link
               href="/core-subjects/heat-transfer/introduction"
-              onClick={() =>
-                setOpen(false)
-              }
+              onClick={() =>{
+                setShowCategorySelector(false);
+                setOpen(false);
+              }}
               className="
                 block
 
@@ -198,9 +206,10 @@ export default function MobileSidebarClient({
 
             <Link
               href="/industrial-knowledge/industry-basics/introduction"
-              onClick={() =>
-                setOpen(false)
-              }
+              onClick={() =>{
+                setShowCategorySelector(false);
+                setOpen(false);
+              }}
               className="
                 block
 
@@ -222,9 +231,10 @@ export default function MobileSidebarClient({
 
             <Link
               href="/industrial-safety/safety-basics/introduction"
-              onClick={() =>
-                setOpen(false)
-              }
+              onClick={() =>{
+                setShowCategorySelector(false);
+                setOpen(false);
+              }}
               className="
                 block
 
@@ -246,9 +256,10 @@ export default function MobileSidebarClient({
 
             <Link
               href="/case-studies/startup/introduction"
-              onClick={() =>
-                setOpen(false)
-              }
+              onClick={() =>{
+                setShowCategorySelector(false);
+                setOpen(false);
+              }}
               className="
                 block
 
@@ -270,9 +281,10 @@ export default function MobileSidebarClient({
 
             <Link
               href="/tools/calculators/introduction"
-              onClick={() =>
-                setOpen(false)
-              }
+              onClick={() =>{
+                setShowCategorySelector(false);
+                setOpen(false);
+              }}
               className="
                 block
 
