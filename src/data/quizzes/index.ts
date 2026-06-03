@@ -143,6 +143,29 @@ from "./industrial-safety/hazard-analysis/sil-basics";
 import whatIfAnalysis
 from "./industrial-safety/hazard-analysis/what-if-analysis";
 
+// ipc //
+
+import advancedControlStrategies from "./core-subjects/ipc/advanced-control-strategies";
+import closedLoopControl from "./core-subjects/ipc/closed-loop-control";
+import controlValves from "./core-subjects/ipc/control-valves";
+import controllerTuning from "./core-subjects/ipc/controller-tuning";
+import controllers from "./core-subjects/ipc/controllers";
+import dynamicSystems from "./core-subjects/ipc/dynamic-systems";
+import firstOrderSystemsBasics from "./core-subjects/ipc/first-order-systems-basics";
+import firstOrderSystemsExamples from "./core-subjects/ipc/first-order-systems-examples";
+import firstOrderSystemsResponses from "./core-subjects/ipc/first-order-systems-responses";
+import inverseResponse from "./core-subjects/ipc/inverse-response";
+import ipcBasics from "./core-subjects/ipc/ipc-basics";
+import laplaceTransformApplications from "./core-subjects/ipc/laplace-transform-applications";
+import laplaceTransformFundamentals from "./core-subjects/ipc/laplace-transform-fundamentals";
+import processModeling from "./core-subjects/ipc/process-modeling";
+import secondOrderSystemsBasics from "./core-subjects/ipc/second-order-systems-basics";
+import secondOrderSystemsOscillatoryBehavior from "./core-subjects/ipc/second-order-systems-oscillatory-behavior";
+import secondOrderSystemsPerformanceParameter from "./core-subjects/ipc/second-order-systems-performance-parameter";
+import stabilityAnalysis from "./core-subjects/ipc/stability-analysis";
+
+
+
 export const quizzes = {
 
   /* Industry Basics */
@@ -293,5 +316,24 @@ export const quizzes = {
 "failure-scenarios":
   failureScenarios,  
 
+  // ipc //
 
+  "advanced-control-strategies": advancedControlStrategies,
+  "closed-loop-control": closedLoopControl,
+  "control-valves": controlValves,
+  "controller-tuning": controllerTuning,
+  "controllers": controllers,
+  "dynamic-systems": dynamicSystems,
+  "first-order-systems-basics": firstOrderSystemsBasics,
+  "first-order-systems-examples": firstOrderSystemsExamples,
+  "first-order-systems-responses": firstOrderSystemsResponses,
+  "inverse-response": inverseResponse,
+  "ipc-basics": ipcBasics,
+  "laplace-transform-applications": laplaceTransformApplications,
+  "laplace-transform-fundamentals": laplaceTransformFundamentals,
+  "process-modeling": processModeling,
+  "second-order-systems-basics": secondOrderSystemsBasics,
+  "second-order-systems-oscillatory-behavior": secondOrderSystemsOscillatoryBehavior,
+  "second-order-systems-performance-parameter":secondOrderSystemsPerformanceParameter,
+  "stability-analysis": stabilityAnalysis,
 };

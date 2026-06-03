@@ -62,6 +62,7 @@ export function getSubjectsWithTopics(
         slug: subject,
         title: formatTitle(subject),
       }));
+
   }
 
   /*
@@ -79,32 +80,74 @@ export function getSubjectsWithTopics(
           subject.slug
         );
 
-      const topicFiles =
-        fs.readdirSync(subjectPath);
+      /*
+      =====================================
+      Read Topic Order from meta.json
+      =====================================
+      */
 
-      const topics =
-        topicFiles
-          .filter(
-            (file) =>
-              file.endsWith(".mdx")
+      const topicMetaPath =
+        path.join(
+          subjectPath,
+          "meta.json"
+        );
+
+      let topics: {
+        slug: string;
+        title: string;
+      }[] = [];
+
+      if (
+        fs.existsSync(
+          topicMetaPath
+        )
+      ) {
+
+        topics = JSON.parse(
+          fs.readFileSync(
+            topicMetaPath,
+            "utf8"
           )
-          .map((file) => ({
+        );
 
-            slug:
-              file.replace(
-                ".mdx",
-                ""
-              ),
+      } else {
 
-            title:
-              formatTitle(
+        /*
+        Fallback to filesystem
+        */
+
+        const topicFiles =
+          fs.readdirSync(
+            subjectPath
+          );
+
+        topics =
+          topicFiles
+            .filter(
+              (file) =>
+                file.endsWith(
+                  ".mdx"
+                )
+            )
+            .map((file) => ({
+
+              slug:
                 file.replace(
                   ".mdx",
                   ""
-                )
-              ),
+                ),
 
-          }));
+              title:
+                formatTitle(
+                  file.replace(
+                    ".mdx",
+                    ""
+                  )
+                ),
+
+            }));
+
+      }
 
       return {
 
