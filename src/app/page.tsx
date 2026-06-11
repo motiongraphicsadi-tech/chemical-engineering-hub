@@ -157,7 +157,7 @@ export default function HomePage() {
                 </p>
               </a>
 
-              <a
+              {/*<a
                 href="/case-studies/startup/introduction"
                 className="
                   group
@@ -205,7 +205,7 @@ export default function HomePage() {
                 <p className="mt-3 text-zinc-400">
                   Engineering calculators and practical utilities.
                 </p>
-              </a>
+              </a>*/}
 
             </div>
 

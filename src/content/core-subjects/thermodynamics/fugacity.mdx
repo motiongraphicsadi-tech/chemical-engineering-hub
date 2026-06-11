@@ -1,0 +1,506 @@
+---
+title: "Fugacity"
+description: "Learn the concept of fugacity, fugacity coefficient, escaping tendency, pure component fugacity, mixture fugacity, and its applications in phase equilibrium calculations."
+keywords:
+  - fugacity
+  - fugacity coefficient
+  - escaping tendency
+  - phase equilibrium
+  - chemical potential
+  - real gases
+  - thermodynamics
+  - equation of state
+  - vapor liquid equilibrium
+  - chemical engineering
+---
+
+<TopicHero
+  title="Fugacity"
+  description="Understand fugacity and fugacity coefficients used to describe real fluid behavior and phase equilibrium in chemical engineering."
+/>
+
+# Introduction
+
+Fugacity is one of the most important concepts in advanced thermodynamics and phase equilibrium.
+
+While pressure adequately describes ideal gas behavior, real fluids deviate significantly from ideality at high pressures and near critical conditions.
+
+To account for these deviations, engineers use a corrected pressure-like property called **fugacity**.
+
+Fugacity provides a more accurate measure of the tendency of a substance to escape from a phase.
+
+It plays a central role in:
+
+- Vapor-Liquid Equilibrium (VLE)
+- Phase equilibrium calculations
+- Equations of State
+- Chemical potential calculations
+- Process simulation
+
+---
+
+# Why It Matters
+
+Real industrial systems rarely behave ideally.
+
+Examples include:
+
+- Natural gas processing
+- Petroleum refining
+- High-pressure reactors
+- Refrigeration systems
+- Supercritical fluid processes
+
+Using pressure alone can produce significant errors.
+
+Fugacity provides a thermodynamically rigorous method for:
+
+- Predicting phase behavior
+- Calculating equilibrium compositions
+- Modeling real fluids
+- Designing separation processes
+
+---
+
+# Core Concept
+
+Pressure measures the mechanical force exerted by a fluid.
+
+However, equilibrium behavior depends on the molecular tendency to escape from a phase.
+
+This escaping tendency is represented by fugacity.
+
+For an ideal gas:
+
+$$
+f=P
+$$
+
+For a real gas:
+
+$$
+f \neq P
+$$
+
+Thus fugacity acts as an effective pressure that accounts for non-ideal behavior.
+
+---
+
+# Working Principle
+
+As pressure increases:
+
+- Molecules interact more strongly.
+- Attractive and repulsive forces become significant.
+- Real gases deviate from ideal gas laws.
+
+Fugacity corrects for these molecular interactions.
+
+At low pressures:
+
+$$
+f \rightarrow P
+$$
+
+At high pressures:
+
+$$
+f \neq P
+$$
+
+The greater the deviation from ideality, the greater the difference between fugacity and pressure.
+
+---
+
+# Mathematical Definition
+
+For a real gas:
+
+$$
+d\mu = RT\,d\ln f
+$$
+
+where:
+
+- \( \mu \) = Chemical Potential
+- \( f \) = Fugacity
+- \( R \) = Gas Constant
+- \( T \) = Temperature
+
+This equation forms the thermodynamic basis of fugacity.
+
+---
+
+# Why Fugacity is Needed
+
+Pressure alone is insufficient for describing:
+
+- Real gas behavior
+- High-pressure systems
+- Phase equilibrium
+
+For ideal gases:
+
+$$
+\mu = \mu^\circ + RT\ln P
+$$
+
+For real gases:
+
+$$
+\mu = \mu^\circ + RT\ln f
+$$
+
+Replacing pressure with fugacity allows the same mathematical framework to be applied to real systems.
+
+---
+
+# Concept of Escaping Tendency
+
+Fugacity is often described as the escaping tendency of a substance.
+
+A substance with higher fugacity has a greater tendency to leave its current phase.
+
+Examples:
+
+- Vapor has higher escaping tendency than liquid.
+- High-pressure gases have greater escaping tendency.
+
+At equilibrium:
+
+Escaping tendencies become equal.
+
+This leads to:
+
+$$
+f^V = f^L
+$$
+
+which is the fundamental condition for phase equilibrium.
+
+---
+
+# Fugacity Definition
+
+Fugacity is defined as the pressure that an ideal gas would need to have in order to possess the same chemical potential as the real fluid.
+
+Mathematically:
+
+$$
+\mu = \mu^\circ + RT\ln f
+$$
+
+Fugacity therefore serves as a corrected pressure term for real fluids.
+
+---
+
+# Fugacity Coefficient
+
+The fugacity coefficient measures deviation from ideal behavior.
+
+It is defined as:
+
+$$
+\phi = \frac{f}{P}
+$$
+
+Where:
+
+- \( \phi \) = Fugacity Coefficient
+- \( f \) = Fugacity
+- \( P \) = Pressure
+
+For an ideal gas:
+
+$$
+\phi = 1
+$$
+
+For real gases:
+
+$$
+\phi \neq 1
+$$
+
+---
+
+# Pure Component Fugacity
+
+For a pure fluid:
+
+$$
+f = \phi P
+$$
+
+At low pressures:
+
+$$
+\phi \approx 1
+$$
+
+Therefore:
+
+$$
+f \approx P
+$$
+
+As pressure increases, fugacity increasingly deviates from pressure.
+
+---
+
+# Mixture Fugacity
+
+For component \(i\) in a mixture:
+
+$$
+f_i = y_i \phi_i P
+$$
+
+Where:
+
+- \(y_i\) = Vapor Mole Fraction
+- \(\phi_i\) = Fugacity Coefficient
+- \(P\) = Total Pressure
+
+Mixture fugacities are essential for:
+
+- VLE calculations
+- Flash calculations
+- Distillation design
+
+---
+
+# Relation with EOS
+
+Fugacity coefficients are commonly obtained using Equations of State (EOS).
+
+Examples:
+
+- Van der Waals EOS
+- Redlich-Kwong EOS
+- Soave-Redlich-Kwong EOS
+- Peng-Robinson EOS
+
+EOS models allow engineers to calculate:
+
+$$
+\phi
+$$
+
+and subsequently:
+
+$$
+f
+$$
+
+for real fluids.
+
+---
+
+# Applications in Phase Equilibrium
+
+Fugacity is extensively used in phase equilibrium calculations.
+
+At equilibrium:
+
+$$
+f_i^V=f_i^L
+$$
+
+This criterion is applied in:
+
+- Vapor-Liquid Equilibrium
+- Liquid-Liquid Equilibrium
+- Vapor-Solid Equilibrium
+- Flash calculations
+
+Modern process simulators use fugacity-based methods extensively.
+
+---
+
+# Industrial Applications
+
+Fugacity calculations are used in:
+
+- Petroleum Refineries
+- LNG Plants
+- Natural Gas Processing
+- Distillation Systems
+- High-Pressure Reactors
+- Phase Equilibrium Modeling
+
+Software packages such as Aspen Plus and HYSYS routinely use fugacity-based calculations.
+
+---
+
+# Advantages
+
+Fugacity provides:
+
+- Accurate real-fluid modeling
+- Reliable phase equilibrium predictions
+- Thermodynamic consistency
+- Better high-pressure calculations
+- Improved process simulations
+
+It is the preferred approach for advanced thermodynamic analysis.
+
+---
+
+# Limitations
+
+Fugacity calculations:
+
+- Require EOS models
+- Can be mathematically intensive
+- Depend on accurate thermodynamic data
+- Become complex for multicomponent mixtures
+
+Advanced software is often used in industrial applications.
+
+---
+
+# Engineering Perspective
+
+Chemical engineers frequently encounter fugacity in:
+
+- Process simulation
+- VLE calculations
+- Distillation design
+- Natural gas processing
+- Reservoir engineering
+
+A strong understanding of fugacity is essential for advanced thermodynamics and phase equilibrium studies.
+
+---
+
+# Solved Example
+
+A gas exists at:
+
+$$
+P = 50\;bar
+$$
+
+with fugacity coefficient:
+
+$$
+\phi = 0.92
+$$
+
+Calculate fugacity.
+
+Using:
+
+$$
+f = \phi P
+$$
+
+Substituting:
+
+$$
+f = 0.92 \times 50
+$$
+
+$$
+f = 46\;bar
+$$
+
+Therefore:
+
+$$
+f = 46\;bar
+$$
+
+---
+
+# Common Mistakes
+
+Students commonly:
+
+- Assume fugacity equals pressure under all conditions
+- Confuse fugacity with fugacity coefficient
+- Forget that fugacity approaches pressure only at low pressure
+- Ignore EOS dependence
+- Misapply fugacity in ideal systems
+
+<WarningBox>
+Fugacity equals pressure only for ideal gases. Real fluids generally require fugacity corrections.
+</WarningBox>
+
+---
+
+# Key Takeaways
+
+- Fugacity represents escaping tendency.
+- Fugacity is a corrected pressure for real fluids.
+- Fugacity equals pressure only for ideal gases.
+- Fugacity coefficient measures deviation from ideality.
+- EOS models are commonly used to calculate fugacity.
+- Fugacity is fundamental in phase equilibrium calculations.
+- VLE calculations rely heavily on fugacity equality.
+- Process simulators use fugacity-based thermodynamic models.
+
+---
+
+# Interview Questions
+
+<InterviewQuestion
+  question="What is fugacity?"
+  answer="Fugacity is a corrected pressure-like property that represents the escaping tendency of a real fluid."
+/>
+
+<InterviewQuestion
+  question="What is the fugacity coefficient?"
+  answer="The fugacity coefficient is the ratio of fugacity to pressure and measures deviation from ideal gas behavior."
+/>
+
+<InterviewQuestion
+  question="Why is fugacity important in phase equilibrium?"
+  answer="Because equilibrium occurs when the fugacity of a component is equal in all phases."
+/>
+
+<InterviewQuestion
+  question="How is fugacity related to an Equation of State?"
+  answer="EOS models are commonly used to calculate fugacity coefficients and fugacity values for real fluids."
+/>
+
+---
+
+<QuizCard
+  title="Fugacity Quiz"
+  description="Test your understanding of fugacity, fugacity coefficients, escaping tendency, and phase equilibrium applications."
+/>
+
+---
+
+# Related Topics
+
+- Phase Equilibrium
+- Vapor Liquid Equilibrium
+- Equations of State
+- Chemical Potential
+- Thermodynamic Relations
+- Real Gas Behavior
+- Compressibility Factor
+- Peng-Robinson EOS
+
+---
+
+# References / Further Reading
+
+- Introduction to Chemical Engineering Thermodynamics by Smith, Van Ness and Abbott
+- Molecular Thermodynamics of Fluid Phase Equilibria by Prausnitz
+- Thermodynamics by Yunus Cengel
+- Engineering Thermodynamics by P. K. Nag
+
+---
+
+# Summary
+
+Fugacity is a thermodynamic property that represents the escaping tendency of a real fluid and serves as a corrected pressure for non-ideal systems.
+
+By introducing fugacity and fugacity coefficients, engineers can accurately model real-fluid behavior, predict phase equilibrium, and perform reliable VLE calculations.
+
+Fugacity is one of the most important concepts in advanced thermodynamics and chemical process simulation.
+

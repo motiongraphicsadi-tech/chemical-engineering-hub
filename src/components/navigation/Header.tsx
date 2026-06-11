@@ -9,7 +9,7 @@ import { Home } from "lucide-react";
 const categories = [
   {
     name: "ChemE Basics",
-    href: "/core-subjects/heat-transfer/introduction",
+    href: "/core-subjects/thermodynamics/introduction",
     match: "/core-subjects/",
   },
 
@@ -21,21 +21,21 @@ const categories = [
 
   {
     name: "Industrial Safety",
-    href: "/industrial-safety/safety-basics/introduction",
+    href: "/industrial-safety/hazard-analysis/introduction",
     match: "/industrial-safety",
   },
 
-  {
-    name: "Case Studies",
-    href: "/case-studies/startup/introduction",
-    match: "/case-studies",
-  },
+  // {
+  //   name: "Case Studies",
+  //   href: "/case-studies/startup/introduction",
+  //   match: "/case-studies",
+  // },
 
-  {
-    name: "Tools",
-    href: "/tools/calculators/introduction",
-    match: "/tools",
-  },
+  // {
+  //   name: "Tools",
+  //   href: "/tools/calculators/introduction",
+  //   match: "/tools",
+  // },
 ];
 
 export default function Header() {

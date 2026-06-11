@@ -1,0 +1,666 @@
+---
+title: "Energy Balances"
+description: "Learn energy balance equations, steady-state and unsteady-state analysis, mechanical energy balance, shaft work, flow work, kinetic and potential energy changes, and industrial process applications."
+keywords:
+  - energy balances
+  - energy balance equation
+  - steady state energy balance
+  - unsteady state energy balance
+  - mechanical energy balance
+  - shaft work
+  - flow work
+  - SFEE
+  - chemical engineering thermodynamics
+  - process energy analysis
+---
+
+<TopicHero
+  title="Energy Balances"
+  description="Understand energy balance principles used for analyzing industrial processes, equipment, and thermodynamic systems."
+/>
+
+# Introduction
+
+Energy balances are among the most important tools used by chemical engineers.
+
+Every industrial process involves energy entering, leaving, or accumulating within a system.
+
+Energy balance calculations help engineers determine:
+
+- Heating requirements
+- Cooling requirements
+- Power consumption
+- Equipment performance
+- Process efficiency
+
+Energy balances are based directly on the First Law of Thermodynamics.
+
+---
+
+# Why It Matters
+
+Energy costs represent a major portion of industrial operating expenses.
+
+Engineers use energy balances to:
+
+- Reduce utility consumption
+- Improve efficiency
+- Size equipment
+- Troubleshoot processes
+- Optimize plant operations
+
+Energy balance calculations are performed in:
+
+- Refineries
+- Power plants
+- Fertilizer plants
+- Petrochemical industries
+- Pharmaceutical industries
+
+---
+
+# Core Concept
+
+The fundamental principle behind energy balances is:
+
+$$
+Energy\ In
+-
+Energy\ Out
+=
+Accumulation
+$$
+
+This equation applies to all thermodynamic systems.
+
+The energy entering a system must either:
+
+- Leave the system
+- Accumulate within the system
+
+Energy cannot disappear.
+
+---
+
+# Working Principle
+
+Energy balance calculations generally follow these steps:
+
+1. Define the system boundary.
+2. Identify all energy inputs.
+3. Identify all energy outputs.
+4. Determine accumulation.
+5. Apply the First Law.
+6. Solve for the unknown quantity.
+
+This structured approach is used in industrial process analysis.
+
+---
+
+# Mathematical Definition
+
+The general energy balance equation is:
+
+$$
+Input
+-
+Output
+=
+Accumulation
+$$
+
+More formally:
+
+$$
+Energy\ In
+-
+Energy\ Out
+=
+\frac{dE_{system}}{dt}
+$$
+
+This equation is the foundation of all energy balance calculations.
+
+---
+
+# General Energy Balance Equation
+
+For any thermodynamic system:
+
+$$
+Q - W + E_{in} - E_{out}
+=
+Accumulation
+$$
+
+Where:
+
+- $Q$ = Heat Transfer
+- $W$ = Work Transfer
+- $E_{in}$ = Energy Entering with Mass
+- $E_{out}$ = Energy Leaving with Mass
+
+This equation applies to both open and closed systems.
+
+---
+
+# Accumulation Term
+
+Accumulation represents energy stored within the system.
+
+Mathematically:
+
+$$
+Accumulation
+=
+\frac{dE}{dt}
+$$
+
+If system energy increases:
+
+$$
+Accumulation > 0
+$$
+
+If system energy decreases:
+
+$$
+Accumulation < 0
+$$
+
+Accumulation becomes zero at steady state.
+
+---
+
+# Input and Output Terms
+
+Energy may enter or leave a system through:
+
+- Heat Transfer
+- Work Transfer
+- Mass Flow
+
+Energy associated with mass flow includes:
+
+$$
+h
+$$
+
+Enthalpy
+
+$$
+\frac{V^2}{2}
+$$
+
+Kinetic Energy
+
+$$
+gz
+$$
+
+Potential Energy
+
+These terms are included in open-system analyses.
+
+---
+
+# Steady State Energy Balance
+
+At steady state:
+
+$$
+\frac{dE}{dt}=0
+$$
+
+Therefore:
+
+$$
+Energy\ In
+=
+Energy\ Out
+$$
+
+System properties do not change with time.
+
+Most continuous industrial processes operate under steady-state conditions.
+
+Examples:
+
+- Pumps
+- Compressors
+- Turbines
+- Heat Exchangers
+
+---
+
+# Unsteady State Energy Balance
+
+In unsteady-state systems:
+
+$$
+\frac{dE}{dt}\neq0
+$$
+
+Energy accumulates or depletes with time.
+
+Examples:
+
+- Batch reactors
+- Storage tanks
+- Startup operations
+- Shutdown operations
+
+System properties vary continuously.
+
+---
+
+# Mechanical Energy Balance
+
+Mechanical energy balances focus on:
+
+- Pressure Energy
+- Kinetic Energy
+- Potential Energy
+
+A simplified mechanical energy equation is:
+
+$$
+\frac{P}{\rho}
++
+\frac{V^2}{2}
++
+gz
++
+W_s
+=
+Constant
+$$
+
+Mechanical energy balances are widely used in fluid flow systems.
+
+---
+
+# Shaft Work
+
+Shaft work is mechanical work transferred through rotating equipment.
+
+Examples:
+
+- Pumps
+- Compressors
+- Turbines
+- Agitators
+
+Symbol:
+
+$$
+W_s
+$$
+
+Applications:
+
+- Power calculations
+- Equipment design
+- Efficiency analysis
+
+---
+
+# Flow Work
+
+Flow work is the work required to push fluid into or out of a control volume.
+
+Mathematically:
+
+$$
+Flow\ Work = PV
+$$
+
+Per unit mass:
+
+$$
+Pv
+$$
+
+Flow work is included within enthalpy.
+
+Therefore:
+
+$$
+h=u+Pv
+$$
+
+---
+
+# Kinetic Energy Changes
+
+Kinetic energy arises from fluid motion.
+
+Per unit mass:
+
+$$
+KE=\frac{V^2}{2}
+$$
+
+Where:
+
+- \(V\) = Velocity
+
+Kinetic energy changes are important in:
+
+- Nozzles
+- Diffusers
+- Jet systems
+
+---
+
+# Potential Energy Changes
+
+Potential energy arises from elevation.
+
+Per unit mass:
+
+$$
+PE=gz
+$$
+
+Where:
+
+- \(g\) = Gravitational acceleration
+- \(z\) = Elevation
+
+Potential energy changes are important in:
+
+- Pumping systems
+- Hydroelectric systems
+- Elevated storage tanks
+
+---
+
+# Process Applications
+
+Energy balances are used throughout process industries.
+
+Important applications include:
+
+- Mixing
+- Heating
+- Cooling
+- Expansion
+- Compression
+
+---
+
+# Mixing
+
+Mixing processes combine streams having different:
+
+- Temperatures
+- Flow rates
+- Compositions
+
+Energy balances determine:
+
+- Outlet temperature
+- Heating requirements
+- Cooling requirements
+
+Mixing calculations are common in chemical plants.
+
+---
+
+# Heating
+
+Heating operations increase fluid temperature.
+
+Examples:
+
+- Boilers
+- Heaters
+- Furnaces
+
+Energy balances determine:
+
+$$
+Q_{required}
+$$
+
+for the process.
+
+---
+
+# Cooling
+
+Cooling removes thermal energy from a system.
+
+Examples:
+
+- Coolers
+- Condensers
+- Refrigeration systems
+
+Energy balances determine:
+
+$$
+Q_{removed}
+$$
+
+from the process stream.
+
+---
+
+# Expansion
+
+Expansion processes occur in:
+
+- Turbines
+- Nozzles
+
+Pressure energy decreases while:
+
+- Velocity may increase
+- Work may be produced
+
+Energy balances predict outlet conditions.
+
+---
+
+# Compression
+
+Compression processes occur in:
+
+- Compressors
+- Pumps
+
+Mechanical work is supplied to increase pressure.
+
+Energy balances determine:
+
+$$
+W_{required}
+$$
+
+for operation.
+
+---
+
+# Industrial Applications
+
+Energy balances are applied in:
+
+- Boilers
+- Turbines
+- Compressors
+- Pumps
+- Heat Exchangers
+- Distillation Columns
+- Reactors
+- Refrigeration Systems
+
+Virtually every industrial process requires energy balance analysis.
+
+---
+
+# Advantages
+
+Energy balances help engineers:
+
+- Predict energy requirements
+- Improve efficiency
+- Reduce utility costs
+- Design equipment
+- Optimize processes
+
+They form the basis of process engineering calculations.
+
+---
+
+# Limitations
+
+Energy balances:
+
+- Do not indicate process direction
+- Do not predict process feasibility
+- Ignore entropy generation
+- Cannot determine maximum efficiency
+
+These topics require the Second Law of Thermodynamics.
+
+---
+
+# Engineering Perspective
+
+Chemical engineers routinely perform energy balances during:
+
+- Process design
+- Process simulation
+- Utility optimization
+- Equipment sizing
+- Troubleshooting
+
+Energy balances are among the most frequently used engineering calculations in industry.
+
+---
+
+# Solved Example
+
+A heater supplies:
+
+$$
+Q=5000\;kJ/hr
+$$
+
+to a process stream.
+
+No shaft work is involved.
+
+Assuming steady state:
+
+$$
+Accumulation = 0
+$$
+
+Therefore:
+
+$$
+Energy\ In = Energy\ Out
+$$
+
+The process stream gains:
+
+$$
+5000\;kJ/hr
+$$
+
+of thermal energy.
+
+---
+
+# Common Mistakes
+
+Students commonly:
+
+- Ignore accumulation terms
+- Use incorrect sign conventions
+- Forget kinetic energy terms
+- Forget potential energy terms
+- Misapply steady-state assumptions
+
+<WarningBox>
+Never assume steady-state conditions unless the problem explicitly indicates that system properties remain constant with time.
+</WarningBox>
+
+---
+
+# Key Takeaways
+
+- Energy balances are based on the First Law of Thermodynamics.
+- Energy In − Energy Out = Accumulation.
+- Steady-state systems have zero accumulation.
+- Unsteady-state systems have changing energy content.
+- Shaft work is important in rotating equipment.
+- Flow work is included within enthalpy.
+- Kinetic and potential energy changes may be significant in some systems.
+- Energy balances are essential for industrial process analysis.
+
+---
+
+# Interview Questions
+
+<InterviewQuestion
+  question="What is the general energy balance equation?"
+  answer="Energy In minus Energy Out equals Accumulation."
+/>
+
+<InterviewQuestion
+  question="What is the difference between steady-state and unsteady-state energy balances?"
+  answer="Steady-state systems have zero energy accumulation, while unsteady-state systems have changing energy content with time."
+/>
+
+<InterviewQuestion
+  question="What is shaft work?"
+  answer="Shaft work is mechanical work transferred through rotating equipment such as pumps, compressors, and turbines."
+/>
+
+<InterviewQuestion
+  question="Why is enthalpy used in open-system energy balances?"
+  answer="Enthalpy includes both internal energy and flow work, simplifying open-system calculations."
+/>
+
+---
+
+<QuizCard
+  title="Energy Balances Quiz"
+  description="Test your understanding of energy balance equations, steady-state analysis, shaft work, flow work, and industrial applications."
+/>
+
+---
+
+# Related Topics
+
+- First Law of Thermodynamics
+- Thermodynamic Systems
+- Properties of Pure Substances
+- Steady Flow Energy Equation
+- Heat Transfer
+- Fluid Mechanics
+- Pumps and Compressors
+- Process Design
+
+---
+
+# References / Further Reading
+
+- Introduction to Chemical Engineering Thermodynamics by Smith, Van Ness and Abbott
+- Fundamentals of Engineering Thermodynamics by Moran and Shapiro
+- Thermodynamics by Yunus Cengel
+- Basic Principles and Calculations in Chemical Engineering by Himmelblau
+
+---
+
+# Summary
+
+Energy balances are fundamental engineering tools based on the First Law of Thermodynamics.
+
+They account for all energy entering, leaving, and accumulating within a system and are used extensively in industrial process analysis.
+
+Understanding steady-state and unsteady-state balances, shaft work, flow work, and energy transfer mechanisms is essential for solving real-world chemical engineering problems.

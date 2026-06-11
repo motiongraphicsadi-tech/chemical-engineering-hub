@@ -17,16 +17,5 @@ export const homepageCategories = [
       href: "/industrial-safety/safety-basics/introduction",
       icon: "⚠️",
     },
-    {
-      name: "Case Studies",
-      description: "Real industrial incidents and lessons",
-      href: "/case-studies/startup/introduction",
-      icon: "📊",
-    },
-    {
-      name: "Tools",
-      description: "Engineering calculators and utilities",
-      href: "/tools/calculators/introduction",
-      icon: "🧮",
-    },
+    
   ];

@@ -1,0 +1,651 @@
+---
+title: "Vapor-Liquid Equilibrium (VLE)"
+description: "Learn vapor-liquid equilibrium fundamentals, Raoult's Law, Henry's Law, bubble point, dew point, relative volatility, VLE diagrams, and applications in distillation, absorption, and stripping."
+keywords:
+  - vapor liquid equilibrium
+  - VLE
+  - raoults law
+  - henrys law
+  - bubble point
+  - dew point
+  - relative volatility
+  - Txy diagram
+  - Pxy diagram
+  - distillation
+---
+
+<TopicHero
+  title="Vapor-Liquid Equilibrium (VLE)"
+  description="Understand vapor-liquid equilibrium principles used in separation processes such as distillation, absorption, and stripping."
+/>
+
+# Introduction
+
+Vapor-Liquid Equilibrium (VLE) describes the condition where a liquid phase and a vapor phase coexist in equilibrium.
+
+At equilibrium:
+
+- Evaporation occurs continuously.
+- Condensation occurs continuously.
+- No net mass transfer exists between phases.
+
+VLE is one of the most important concepts in chemical engineering because most separation processes rely on vapor-liquid equilibrium behavior.
+
+Examples include:
+
+- Distillation
+- Absorption
+- Stripping
+- Evaporation
+- Flash separation
+
+---
+
+# Why It Matters
+
+VLE calculations are essential for:
+
+- Distillation column design
+- Separation process design
+- Process simulation
+- Petroleum refining
+- Natural gas processing
+
+Engineers use VLE data to determine:
+
+- Phase compositions
+- Boiling temperatures
+- Condensation conditions
+- Separation feasibility
+
+Without VLE principles, modern separation processes could not be designed effectively.
+
+---
+
+# Core Concept
+
+When vapor and liquid coexist at equilibrium:
+
+Temperature is equal:
+
+$$
+T_V=T_L
+$$
+
+Pressure is equal:
+
+$$
+P_V=P_L
+$$
+
+Chemical potential is equal:
+
+$$
+\mu_V=\mu_L
+$$
+
+At equilibrium:
+
+$$
+Rate\ of\ Evaporation
+=
+Rate\ of\ Condensation
+$$
+
+This condition defines vapor-liquid equilibrium.
+
+---
+
+# Working Principle
+
+Consider a closed vessel containing a liquid.
+
+Initially:
+
+- Molecules escape from the liquid surface.
+- Vapor concentration increases.
+
+As vapor accumulates:
+
+- Condensation begins.
+
+Eventually:
+
+$$
+Evaporation = Condensation
+$$
+
+At this point:
+
+- Vapor composition remains constant.
+- Liquid composition remains constant.
+- Equilibrium is established.
+
+---
+
+# Mathematical Definition
+
+For component \(i\):
+
+$$
+f_i^V=f_i^L
+$$
+
+Where:
+
+- \(f_i^V\) = Fugacity in Vapor Phase
+- \(f_i^L\) = Fugacity in Liquid Phase
+
+This equality is the fundamental criterion for VLE.
+
+For ideal systems, simpler equations such as Raoult's Law may be used.
+
+---
+
+# VLE Fundamentals
+
+VLE describes how components distribute between:
+
+- Vapor Phase
+- Liquid Phase
+
+The distribution depends on:
+
+- Temperature
+- Pressure
+- Composition
+
+More volatile components preferentially enter the vapor phase.
+
+Less volatile components remain in the liquid phase.
+
+This behavior forms the basis of separation processes.
+
+---
+
+# Bubble Point
+
+The Bubble Point is the condition at which the first bubble of vapor forms from a liquid mixture.
+
+At the bubble point:
+
+- Liquid composition is known.
+- Vapor begins to form.
+
+Mathematically:
+
+$$
+\sum y_i = 1
+$$
+
+The bubble point is important for:
+
+- Distillation calculations
+- Flash calculations
+- VLE analysis
+
+---
+
+# Dew Point
+
+The Dew Point is the condition at which the first drop of liquid forms from a vapor mixture.
+
+At the dew point:
+
+- Vapor composition is known.
+- Liquid begins to condense.
+
+Applications:
+
+- Condenser design
+- Gas processing
+- Refrigeration systems
+
+Dew point calculations are widely used in process engineering.
+
+---
+
+# Relative Volatility
+
+Relative volatility measures the ease of separation between two components.
+
+For components A and B:
+
+$$
+\alpha_{AB}
+=
+\frac{K_A}{K_B}
+$$
+
+Where:
+
+$$
+K=\frac{y}{x}
+$$
+
+Interpretation:
+
+- \(\alpha > 1\) → Separation possible
+- Larger \(\alpha\) → Easier separation
+
+Relative volatility is one of the most important parameters in distillation design.
+
+---
+
+# Raoult's Law
+
+Raoult's Law applies to ideal liquid solutions.
+
+For component \(i\):
+
+$$
+P_i=x_iP_i^{sat}
+$$
+
+Where:
+
+- \(P_i\) = Partial Pressure
+- \(x_i\) = Liquid Mole Fraction
+- \(P_i^{sat}\) = Saturation Pressure
+
+Total pressure:
+
+$$
+P=\sum P_i
+$$
+
+Raoult's Law is widely used for ideal mixture calculations.
+
+---
+
+# Henry's Law
+
+Henry's Law describes the solubility of dilute gases in liquids.
+
+$$
+P_i=H_ix_i
+$$
+
+Where:
+
+- \(H_i\) = Henry's Constant
+
+Applications:
+
+- Gas absorption
+- Environmental engineering
+- Dissolved gas calculations
+
+Henry's Law is especially useful for dilute systems.
+
+---
+
+# Ideal Solutions
+
+Ideal solutions obey:
+
+- Raoult's Law
+- No excess properties
+- Similar molecular interactions
+
+Characteristics:
+
+$$
+\gamma_i=1
+$$
+
+Examples:
+
+- Benzene-Toluene mixtures
+
+Ideal solutions are easier to analyze mathematically.
+
+---
+
+# Non-Ideal Solutions
+
+Real solutions often deviate from ideality.
+
+Reasons:
+
+- Molecular size differences
+- Polarity differences
+- Hydrogen bonding
+
+For non-ideal systems:
+
+$$
+\gamma_i \neq 1
+$$
+
+Activity coefficient models are required.
+
+Examples:
+
+- Ethanol-Water
+- Acetone-Water
+
+---
+
+# VLE Diagrams
+
+VLE behavior is commonly represented using graphical diagrams.
+
+Important diagrams include:
+
+- T-x-y Diagram
+- P-x-y Diagram
+- x-y Diagram
+
+These diagrams are extensively used in separation process design.
+
+---
+
+# T-x-y Diagram
+
+The Temperature-Composition Diagram shows equilibrium behavior at constant pressure.
+
+Variables:
+
+- Temperature
+- Liquid Composition (\(x\))
+- Vapor Composition (\(y\))
+
+Applications:
+
+- Distillation analysis
+- Bubble point calculations
+- Dew point calculations
+
+T-x-y diagrams are among the most widely used VLE diagrams.
+
+---
+
+# P-x-y Diagram
+
+The Pressure-Composition Diagram shows equilibrium behavior at constant temperature.
+
+Variables:
+
+- Pressure
+- Liquid Composition
+- Vapor Composition
+
+Applications:
+
+- Flash calculations
+- VLE analysis
+- Pressure-dependent separations
+
+---
+
+# x-y Diagram
+
+The x-y Diagram directly compares:
+
+$$
+x
+$$
+
+Liquid Composition
+
+and
+
+$$
+y
+$$
+
+Vapor Composition
+
+Applications:
+
+- McCabe-Thiele Method
+- Distillation design
+- Stage calculations
+
+This is one of the most important diagrams used in separation engineering.
+
+---
+
+# Applications
+
+VLE is fundamental to many separation operations.
+
+Major applications include:
+
+- Distillation
+- Absorption
+- Stripping
+
+---
+
+# Distillation
+
+Distillation separates components based on volatility differences.
+
+VLE determines:
+
+- Number of stages
+- Reflux ratio
+- Product purity
+- Energy requirements
+
+Distillation is the largest industrial application of VLE.
+
+---
+
+# Absorption
+
+Absorption transfers a component from:
+
+- Gas Phase
+- To Liquid Phase
+
+Applications:
+
+- Gas purification
+- CO₂ removal
+- Sulfur removal
+
+Henry's Law is commonly used in absorption calculations.
+
+---
+
+# Stripping
+
+Stripping transfers a component from:
+
+- Liquid Phase
+- To Gas Phase
+
+Applications:
+
+- Solvent recovery
+- Wastewater treatment
+- VOC removal
+
+Stripping is essentially the reverse of absorption.
+
+---
+
+# Industrial Applications
+
+VLE is used in:
+
+- Distillation Columns
+- Absorbers
+- Strippers
+- Flash Drums
+- Petroleum Refineries
+- LNG Plants
+- Petrochemical Industries
+
+Nearly every separation process relies on VLE principles.
+
+---
+
+# Advantages
+
+VLE analysis allows engineers to:
+
+- Design separation systems
+- Predict phase behavior
+- Optimize operating conditions
+- Improve product purity
+- Reduce operating costs
+
+It forms the basis of modern separation engineering.
+
+---
+
+# Limitations
+
+VLE models:
+
+- Require thermodynamic data
+- May require activity coefficient models
+- Become complex for multicomponent mixtures
+- Require EOS models for high-pressure systems
+
+Advanced software is often needed for industrial applications.
+
+---
+
+# Engineering Perspective
+
+Chemical engineers use VLE calculations daily in:
+
+- Process simulation
+- Distillation design
+- Process troubleshooting
+- Plant optimization
+- Separation system design
+
+A strong understanding of VLE is essential for process engineers.
+
+---
+
+# Solved Example
+
+A binary mixture has:
+
+$$
+y_A=0.80
+$$
+
+$$
+x_A=0.50
+$$
+
+Determine the equilibrium constant.
+
+Using:
+
+$$
+K_A=\frac{y_A}{x_A}
+$$
+
+Substituting:
+
+$$
+K_A=\frac{0.80}{0.50}
+$$
+
+$$
+K_A=1.60
+$$
+
+The component is more concentrated in the vapor phase.
+
+---
+
+# Common Mistakes
+
+Students commonly:
+
+- Confuse bubble point and dew point
+- Mix up liquid and vapor compositions
+- Misapply Raoult's Law to non-ideal systems
+- Ignore activity coefficients
+- Misinterpret VLE diagrams
+
+<WarningBox>
+Bubble point calculations start from liquid composition, while dew point calculations start from vapor composition.
+</WarningBox>
+
+---
+
+# Key Takeaways
+
+- VLE occurs when vapor and liquid coexist in equilibrium.
+- Bubble point marks the formation of the first vapor bubble.
+- Dew point marks the formation of the first liquid droplet.
+- Relative volatility determines separation difficulty.
+- Raoult's Law applies to ideal solutions.
+- Henry's Law applies to dilute gas-liquid systems.
+- VLE diagrams are essential for distillation design.
+- Distillation, absorption, and stripping rely heavily on VLE principles.
+
+---
+
+# Interview Questions
+
+<InterviewQuestion
+  question="What is Vapor-Liquid Equilibrium?"
+  answer="VLE is the condition where vapor and liquid phases coexist without net mass transfer between them."
+/>
+
+<InterviewQuestion
+  question="What is the difference between bubble point and dew point?"
+  answer="Bubble point is where vapor first forms from a liquid, while dew point is where liquid first forms from a vapor."
+/>
+
+<InterviewQuestion
+  question="What is relative volatility?"
+  answer="Relative volatility measures the ease of separation between two components in a mixture."
+/>
+
+<InterviewQuestion
+  question="Why is Raoult's Law important?"
+  answer="Raoult's Law provides a simple method for calculating VLE behavior in ideal solutions."
+/>
+
+---
+
+<QuizCard
+  title="Vapor-Liquid Equilibrium Quiz"
+  description="Test your understanding of VLE fundamentals, Raoult's Law, Henry's Law, relative volatility, and VLE diagrams."
+/>
+
+---
+
+# Related Topics
+
+- Phase Equilibrium
+- Thermodynamic Relations
+- Distillation
+- Mass Transfer
+- Equations of State
+- Activity Coefficient Models
+- Separation Processes
+- Flash Calculations
+
+---
+
+# References / Further Reading
+
+- Introduction to Chemical Engineering Thermodynamics by Smith, Van Ness and Abbott
+- Molecular Thermodynamics of Fluid Phase Equilibria by Prausnitz
+- Separation Process Principles by Seader, Henley and Roper
+- Transport Processes and Separation Process Principles by Geankoplis
+
+---
+
+# Summary
+
+Vapor-Liquid Equilibrium (VLE) describes the equilibrium relationship between vapor and liquid phases and forms the foundation of separation process engineering.
+
+Concepts such as bubble point, dew point, relative volatility, Raoult's Law, Henry's Law, and VLE diagrams are essential for analyzing and designing distillation, absorption, and stripping operations.
+
+A strong understanding of VLE is critical for every chemical engineer involved in process design and simulation.
+

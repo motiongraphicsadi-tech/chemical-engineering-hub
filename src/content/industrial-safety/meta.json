@@ -1,22 +1,10 @@
 [
-    {
-      "slug": "safety-basics",
-      "title": "Safety Basics"
-    },
+   
     {
       "slug": "hazard-analysis",
       "title": "Hazard Analysis"
-    },
-    {
-      "slug": "hse-work-permits",
-      "title": "HSE Work Permits"
-    },
-    {
-      "slug": "safety-systems",
-      "title": "Safety Systems"
-    },
-    {
-      "slug": "industrial-disasters",
-      "title": "Industrial Disasters"
     }
+
+    
+
   ]

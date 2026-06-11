@@ -254,56 +254,7 @@ export default function MobileSidebarClient({
               </p>
             </Link>
 
-            <Link
-              href="/case-studies/startup/introduction"
-              onClick={() =>{
-                setShowCategorySelector(false);
-                setOpen(false);
-              }}
-              className="
-                block
-
-                rounded-2xl
-                border
-                border-gray-800
-
-                p-5
-              "
-            >
-              <h3 className="text-emerald-400 font-semibold">
-                Case Studies 📊
-              </h3>
-
-              <p className="mt-2 text-sm text-gray-400">
-                Real industrial incidents and lessons.
-              </p>
-            </Link>
-
-            <Link
-              href="/tools/calculators/introduction"
-              onClick={() =>{
-                setShowCategorySelector(false);
-                setOpen(false);
-              }}
-              className="
-                block
-
-                rounded-2xl
-                border
-                border-gray-800
-
-                p-5
-              "
-            >
-              <h3 className="text-emerald-400 font-semibold">
-                Tools 🧮
-              </h3>
-
-              <p className="mt-2 text-sm text-gray-400">
-                Engineering calculators and utilities.
-              </p>
-            </Link>
-
+            
           </div>
 
         ) : (

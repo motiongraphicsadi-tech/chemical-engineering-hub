@@ -164,7 +164,66 @@ import secondOrderSystemsOscillatoryBehavior from "./core-subjects/ipc/second-or
 import secondOrderSystemsPerformanceParameter from "./core-subjects/ipc/second-order-systems-performance-parameter";
 import stabilityAnalysis from "./core-subjects/ipc/stability-analysis";
 
+//thermodynamics //
 
+import carnotCycle from "./core-subjects/thermodynamics/carnot-cycle";
+import chemicalPotential from "./core-subjects/thermodynamics/chemical-potential";
+import entropy from "./core-subjects/thermodynamics/entropy";
+import equationsOfState from "./core-subjects/thermodynamics/equations-of-state";
+import energyBalances from "./core-subjects/thermodynamics/energy-balances";
+import firstLawOfThermodynamics from "./core-subjects/thermodynamics/first-law-of-thermodynamics";
+import fugacity from "./core-subjects/thermodynamics/fugacity";
+//import introduction from "./core-subjects/thermodynamics/introduction";//
+import phaseEquilibrium from "./core-subjects/thermodynamics/phase-equilibrium";
+import propertiesOfPureSubstances from "./core-subjects/thermodynamics/properties-of-pure-substances";
+import secondLawOfThermodynamics from "./core-subjects/thermodynamics/second-law-of-thermodynamics";
+import thermodynamicCycles from "./core-subjects/thermodynamics/thermodynamic-cycles";
+import thermodynamicRelations from "./core-subjects/thermodynamics/thermodynamic-relations";
+import thermodynamicSystems from "./core-subjects/thermodynamics/thermodynamic-systems";
+import thermodynamicsBasics from "./core-subjects/thermodynamics/thermodynamics-basics";
+import thermodynamicsOfSolutions from "./core-subjects/thermodynamics/thermodynamics-of-solutions";
+import vaporLiquidEquilibrium from "./core-subjects/thermodynamics/vapor-liquid-equilibrium";
+import zerothLaw from "./core-subjects/thermodynamics/zeroth-law";
+
+//fluid mechanics//
+
+import fluidMechanicsBasics from "./core-subjects/fluid-mechanics/fluid-mechanics-basics";
+import fluidProperties from "./core-subjects/fluid-mechanics/fluid-properties";
+import viscosityAndNewtonsLawOfViscosity from "./core-subjects/fluid-mechanics/viscosity-and-newtons-law-of-viscosity";
+import newtonianAndNonNewtonianFluids from "./core-subjects/fluid-mechanics/newtonian-and-non-newtonian-fluids";
+import surfacePhenomena from "./core-subjects/fluid-mechanics/surface-phenomena";
+import pressureAndFluidStatics from "./core-subjects/fluid-mechanics/pressure-and-fluid-statics";
+import pressureMeasurementDevices from "./core-subjects/fluid-mechanics/pressure-measurement-devices";
+import buoyancyAndFloatation from "./core-subjects/fluid-mechanics/buoyancy-and-floatation";
+import fluidKinematicsAndTypesOfFlow from "./core-subjects/fluid-mechanics/fluid-kinematics-and-types-of-flow";
+import flowVisualizationAndFluidMotion from "./core-subjects/fluid-mechanics/flow-visualization-and-fluid-motion";
+import continuityEquation from "./core-subjects/fluid-mechanics/continuity-equation";
+import fluidDynamicsAndBernoulliEquation from "./core-subjects/fluid-mechanics/fluid-dynamics-and-bernoulli-equation";
+import flowMeasurementAndMomentumEquation from "./core-subjects/fluid-mechanics/flow-measurement-and-momentum-equation";
+import flowThroughPipesAndLosses from "./core-subjects/fluid-mechanics/flow-through-pipes-and-losses";
+import laminarAndTurbulentFlow from "./core-subjects/fluid-mechanics/laminar-and-turbulent-flow";
+import frictionFactorAndBoundaryLayerTheory from "./core-subjects/fluid-mechanics/friction-factor-and-boundary-layer-theory";
+import pumpsAndPumpingSystems from "./core-subjects/fluid-mechanics/pumps-and-pumping-systems";
+
+//mass transfer//
+
+import adsorptionMembraneSeparationAndAdvancedMassTransfer from "./core-subjects/mass-transfer/adsorption-membrane-separation-and-advanced-mass-transfer";
+import binaryDistillationAndMccabeThieleMethod from "./core-subjects/mass-transfer/binary-distillation-and-mccabe-thiele-method";
+import diffusionFundamentals from "./core-subjects/mass-transfer/diffusion-fundamentals";
+import diffusivityAndDiffusionCalculations from "./core-subjects/mass-transfer/diffusivity-and-diffusion-calculations";
+import dimensionlessAnalysisInMassTransfer from "./core-subjects/mass-transfer/dimensionless-analysis-inmass-transfer";
+import distillationFundamentals from "./core-subjects/mass-transfer/distillation-fundamentals";
+import equilibriumRelationsInMassTransfer from "./core-subjects/mass-transfer/equilibrium-relations-in-mass-transfer";
+import ficksLawsOfDiffusion from "./core-subjects/mass-transfer/ficks-laws-of-diffusion";
+import gasAbsorptionAndStripping from "./core-subjects/mass-transfer/gas-absorption-and-stripping";
+import htuNtuAndTowerDesign from "./core-subjects/mass-transfer/htu-ntu-and-tower-design";
+import humidificationDryingAndCrystallization from "./core-subjects/mass-transfer/humidification-drying-and-crystallization";
+import interphaseMassTransferAndTwoFilmTheory from "./core-subjects/mass-transfer/interphase-mass-transfer-and-two-film-theory";
+import liquidLiquidExtraction from "./core-subjects/mass-transfer/liquid-liquid-extraction";
+import massTransferBasics from "./core-subjects/mass-transfer/mass-transfer-basics";
+import massTransferCoefficients from "./core-subjects/mass-transfer/mass-transfer-coefficients";
+import packedAndTrayTowers from "./core-subjects/mass-transfer/packed-and-tray-towers";
+import theoriesOfMassTransfer from "./core-subjects/mass-transfer/theories-of-mass-transfer";
 
 export const quizzes = {
 
@@ -336,4 +395,109 @@ export const quizzes = {
   "second-order-systems-oscillatory-behavior": secondOrderSystemsOscillatoryBehavior,
   "second-order-systems-performance-parameter":secondOrderSystemsPerformanceParameter,
   "stability-analysis": stabilityAnalysis,
+
+ // thermodynamics //
+
+  "carnot-cycle": carnotCycle,
+
+  "chemical-potential": chemicalPotential,
+
+  "entropy": entropy,
+
+  "equations-of-state": equationsOfState,
+
+  "energy-balances": energyBalances,
+
+  "first-law-of-thermodynamics": firstLawOfThermodynamics,
+
+  "fugacity": fugacity,
+
+  //"introduction": introduction,//
+
+  "phase-equilibrium": phaseEquilibrium,
+
+  "properties-of-pure-substances": propertiesOfPureSubstances,
+
+  "second-law-of-thermodynamics": secondLawOfThermodynamics,
+
+  "thermodynamic-cycles": thermodynamicCycles,
+
+  "thermodynamic-relations": thermodynamicRelations,
+
+  "thermodynamic-systems": thermodynamicSystems,
+
+  "thermodynamics-basics": thermodynamicsBasics,
+
+  "thermodynamics-of-solutions": thermodynamicsOfSolutions,
+
+  "vapor-liquid-equilibrium": vaporLiquidEquilibrium,
+
+  "zeroth-law": zerothLaw,
+
+  //fluid mechanics//
+
+  "fluid-mechanics-basics": fluidMechanicsBasics,
+"fluid-properties": fluidProperties,
+"viscosity-and-newtons-law-of-viscosity": viscosityAndNewtonsLawOfViscosity,
+"newtonian-and-non-newtonian-fluids": newtonianAndNonNewtonianFluids,
+"surface-phenomena": surfacePhenomena,
+"pressure-and-fluid-statics": pressureAndFluidStatics,
+"pressure-measurement-devices": pressureMeasurementDevices,
+"buoyancy-and-floatation": buoyancyAndFloatation,
+"fluid-kinematics-and-types-of-flow": fluidKinematicsAndTypesOfFlow,
+"flow-visualization-and-fluid-motion": flowVisualizationAndFluidMotion,
+"continuity-equation": continuityEquation,
+"fluid-dynamics-and-bernoulli-equation": fluidDynamicsAndBernoulliEquation,
+"flow-measurement-and-momentum-equation": flowMeasurementAndMomentumEquation,
+"flow-through-pipes-and-losses": flowThroughPipesAndLosses,
+"laminar-and-turbulent-flow": laminarAndTurbulentFlow,
+"friction-factor-and-boundary-layer-theory": frictionFactorAndBoundaryLayerTheory,
+"pumps-and-pumping-systems": pumpsAndPumpingSystems,
+
+//mass transfer//
+"mass-transfer-basics": massTransferBasics,
+
+"diffusion-fundamentals": diffusionFundamentals,
+
+"ficks-laws-of-diffusion": ficksLawsOfDiffusion,
+
+"diffusivity-and-diffusion-calculations": diffusivityAndDiffusionCalculations,
+
+"theories-of-mass-transfer": theoriesOfMassTransfer,
+
+"mass-transfer-coefficients": massTransferCoefficients,
+
+"interphase-mass-transfer-and-two-film-theory":
+  interphaseMassTransferAndTwoFilmTheory,
+
+"dimensionless-analysis-inmass-transfer":
+  dimensionlessAnalysisInMassTransfer,
+
+"equilibrium-relations-in-mass-transfer":
+  equilibriumRelationsInMassTransfer,
+
+"gas-absorption-and-stripping":
+  gasAbsorptionAndStripping,
+
+"packed-and-tray-towers":
+  packedAndTrayTowers,
+
+"htu-ntu-and-tower-design":
+  htuNtuAndTowerDesign,
+
+"distillation-fundamentals":
+  distillationFundamentals,
+
+"binary-distillation-and-mccabe-thiele-method":
+  binaryDistillationAndMccabeThieleMethod,
+
+"liquid-liquid-extraction":
+  liquidLiquidExtraction,
+
+"humidification-drying-and-crystallization":
+  humidificationDryingAndCrystallization,
+
+"adsorption-membrane-separation-and-advanced-mass-transfer":
+  adsorptionMembraneSeparationAndAdvancedMassTransfer,
+
 };

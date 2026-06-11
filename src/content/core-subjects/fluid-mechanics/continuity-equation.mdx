@@ -1,0 +1,513 @@
+---
+title: "Continuity Equation"
+description: "Learn conservation of mass, continuity equation, differential and integral forms, and applications in pipe flow and nozzle flow analysis."
+keywords:
+  - continuity equation
+  - conservation of mass
+  - fluid mechanics
+  - differential continuity equation
+  - integral continuity equation
+  - nozzle flow
+  - pipe flow
+  - mass balance
+  - fluid flow
+  - chemical engineering
+---
+
+<TopicHero
+  title="Continuity Equation"
+  description="Understand the conservation of mass principle and perform mass balance calculations for flowing fluids."
+/>
+
+# Introduction
+
+One of the most fundamental principles in fluid mechanics is the conservation of mass.
+
+Mass can neither be created nor destroyed during fluid flow.
+
+The continuity equation is the mathematical expression of this principle and is used extensively in:
+
+- Pipe flow analysis
+- Nozzle design
+- Pump calculations
+- Chemical process design
+- Fluid transport systems
+
+The continuity equation forms the foundation of fluid flow analysis and is often used together with momentum and energy equations.
+
+---
+
+# Why It Matters
+
+Chemical engineers deal with fluids flowing through:
+
+- Pipelines
+- Reactors
+- Heat exchangers
+- Distillation columns
+- Pumps
+- Compressors
+
+To design and operate these systems properly, engineers must ensure that mass is conserved.
+
+The continuity equation helps determine:
+
+- Flow rates
+- Velocity changes
+- Mass flow rates
+- Fluid distribution
+
+It is one of the most frequently used equations in engineering calculations.
+
+---
+
+# Definition
+
+The continuity equation is the mathematical statement of conservation of mass.
+
+It states:
+
+> The rate of mass entering a system minus the rate of mass leaving a system equals the rate of mass accumulation within the system.
+
+For steady-state systems:
+
+> Mass entering equals mass leaving.
+
+This principle applies to liquids, gases, and multiphase systems.
+
+---
+
+# Physical Significance
+
+The continuity equation ensures that mass is conserved during fluid motion.
+
+Consider water flowing through a pipe:
+
+- Water cannot disappear.
+- Water cannot be generated spontaneously.
+- Whatever mass enters must either leave or accumulate.
+
+This principle governs every fluid flow system.
+
+Without continuity, meaningful fluid flow calculations would not be possible.
+
+---
+
+# Mathematical Definition
+
+General conservation of mass:
+
+$$
+\text{Mass In}
+-
+\text{Mass Out}
+=
+\text{Accumulation}
+$$
+
+For a control volume:
+
+$$
+\frac{dm_{CV}}{dt}
+=
+\dot{m}_{in}
+-
+\dot{m}_{out}
+$$
+
+Where:
+
+- \(m_{CV}\) = Mass inside control volume
+- \(\dot{m}\) = Mass flow rate
+
+This equation is the basis of all continuity relationships.
+
+---
+
+# Conservation of Mass
+
+Conservation of mass states:
+
+$$
+\text{Mass cannot be created or destroyed}
+$$
+
+Therefore:
+
+$$
+\sum \dot{m}_{in}
+=
+\sum \dot{m}_{out}
++
+\frac{dm_{CV}}{dt}
+$$
+
+For steady-state flow:
+
+$$
+\frac{dm_{CV}}{dt}=0
+$$
+
+Therefore:
+
+$$
+\sum \dot{m}_{in}
+=
+\sum \dot{m}_{out}
+$$
+
+This is the simplest form of mass balance.
+
+---
+
+# Continuity Equation
+
+Mass flow rate is defined as:
+
+$$
+\dot{m}
+=
+\rho A V
+$$
+
+Where:
+
+- \(\dot{m}\) = Mass Flow Rate
+- \(\rho\) = Density
+- \(A\) = Cross-sectional Area
+- \(V\) = Average Velocity
+
+For steady flow:
+
+$$
+\rho_1 A_1 V_1
+=
+\rho_2 A_2 V_2
+$$
+
+This is the general continuity equation.
+
+---
+
+# Differential Form
+
+The differential form describes conservation of mass at a point within a fluid.
+
+General three-dimensional form:
+
+$$
+\frac{\partial \rho}{\partial t}
++
+\nabla \cdot (\rho \vec{V})
+=
+0
+$$
+
+Where:
+
+- \(\rho\) = Density
+- \(\vec{V}\) = Velocity Vector
+
+This equation is widely used in:
+
+- Computational Fluid Dynamics (CFD)
+- Advanced fluid mechanics
+- Numerical simulations
+
+---
+
+## Differential Form for Incompressible Flow
+
+If density is constant:
+
+$$
+\nabla \cdot \vec{V}
+=
+0
+$$
+
+In Cartesian coordinates:
+
+$$
+\frac{\partial u}{\partial x}
++
+\frac{\partial v}{\partial y}
++
+\frac{\partial w}{\partial z}
+=
+0
+$$
+
+This is the continuity equation for incompressible flow.
+
+---
+
+# Integral Form
+
+The integral form applies to an entire control volume.
+
+General form:
+
+$$
+\frac{d}{dt}
+\int_{CV}
+\rho dV
++
+\int_{CS}
+\rho \vec{V}\cdot d\vec{A}
+=
+0
+$$
+
+Where:
+
+- CV = Control Volume
+- CS = Control Surface
+
+This form is useful for engineering systems such as:
+
+- Pipes
+- Tanks
+- Reactors
+- Heat exchangers
+
+---
+
+# Applications of Continuity Equation
+
+The continuity equation is used whenever fluid flow is analyzed.
+
+Common applications include:
+
+### Flow Rate Calculations
+
+Determining unknown velocities or flow rates.
+
+### Pipe Networks
+
+Mass balancing at junctions.
+
+### Nozzle Analysis
+
+Relating velocity and area changes.
+
+### Chemical Processes
+
+Tracking material flow between units.
+
+### Process Simulation
+
+Building mathematical flow models.
+
+---
+
+# Flow Through Nozzles and Pipes
+
+Consider fluid flowing through a pipe with varying diameter.
+
+For incompressible flow:
+
+$$
+A_1V_1
+=
+A_2V_2
+$$
+
+If pipe area decreases:
+
+$$
+A_2 < A_1
+$$
+
+Then velocity increases:
+
+$$
+V_2 > V_1
+$$
+
+This principle explains nozzle operation.
+
+---
+
+## Nozzle Example
+
+A nozzle reduces flow area.
+
+Using continuity:
+
+$$
+A_1V_1=A_2V_2
+$$
+
+If:
+
+$$
+A_2=\frac{A_1}{2}
+$$
+
+Then:
+
+$$
+V_2=2V_1
+$$
+
+The fluid accelerates as it passes through the nozzle.
+
+---
+
+# Factors Affecting It
+
+Several factors influence continuity calculations.
+
+### Density
+
+Important in compressible flow.
+
+### Cross-Sectional Area
+
+Changes velocity distribution.
+
+### Flow Velocity
+
+Directly affects mass flow rate.
+
+### Compressibility
+
+Significant in gas systems.
+
+### Flow Regime
+
+May influence practical measurements.
+
+---
+
+# Industrial Applications
+
+### Chemical Reactors
+
+Material balance calculations.
+
+### Pipeline Systems
+
+Flow rate analysis.
+
+### Pumping Systems
+
+Determining discharge rates.
+
+### Compressors
+
+Gas flow calculations.
+
+### Distillation Columns
+
+Vapor and liquid flow balancing.
+
+### Heat Exchangers
+
+Flow distribution analysis.
+
+### Water Treatment Plants
+
+Mass conservation calculations.
+
+---
+
+# Advantages / Importance
+
+Understanding the continuity equation helps engineers:
+
+- Perform mass balances
+- Design piping systems
+- Calculate flow rates
+- Analyze process equipment
+- Develop simulation models
+
+It is one of the most important equations in fluid mechanics and chemical engineering.
+
+---
+
+# Common Mistakes
+
+Students often:
+
+- Forget density changes in compressible flow
+- Confuse volumetric flow rate with mass flow rate
+- Ignore unit consistency
+- Apply incompressible assumptions to gases
+- Use incorrect pipe areas
+
+<WarningBox>
+Mass flow rate is conserved, not necessarily volumetric flow rate. In compressible systems, density changes must be considered.
+</WarningBox>
+
+---
+
+# Key Takeaways
+
+- The continuity equation is based on conservation of mass.
+- Mass cannot be created or destroyed.
+- Mass flow rate is given by \(\dot{m}=\rho AV\).
+- For steady flow, mass entering equals mass leaving.
+- Incompressible flow follows \(A_1V_1=A_2V_2\).
+- Differential continuity equations are used in CFD.
+- Integral continuity equations apply to control volumes.
+- Continuity is fundamental to fluid mechanics and process engineering.
+
+---
+
+# Interview Questions
+
+<InterviewQuestion
+  question="What is the continuity equation?"
+  answer="The continuity equation is the mathematical statement of conservation of mass for flowing fluids."
+/>
+
+<InterviewQuestion
+  question="What is the continuity equation for incompressible flow?"
+  answer="For incompressible flow, the continuity equation reduces to A₁V₁ = A₂V₂."
+/>
+
+<InterviewQuestion
+  question="Why is the continuity equation important in chemical engineering?"
+  answer="It is used for mass balance calculations, flow rate determination, equipment design, and process analysis."
+/>
+
+---
+
+<QuizCard
+  title="Continuity Equation Quiz"
+  description="Test your understanding of the continuity equation, conservation of mass, flow rate calculations, incompressible flow, and fluid flow analysis."
+/>
+
+---
+
+# Related Topics
+
+- Fluid Kinematics and Types of Flow
+- Flow Visualization and Fluid Motion
+- Bernoulli Equation
+- Reynolds Number
+- Fluid Dynamics
+- Pipe Flow
+- Mass Balance
+- Transport Phenomena
+
+---
+
+# References / Further Reading
+
+- Fluid Mechanics by Frank M. White
+- Fluid Mechanics by R. K. Rajput
+- Fox and McDonald's Introduction to Fluid Mechanics
+- Transport Processes and Separation Process Principles by Geankoplis
+- Engineering Fluid Mechanics by Crowe
+
+---
+
+# Summary
+
+The continuity equation is the mathematical expression of conservation of mass and forms one of the most important principles in fluid mechanics. It states that mass entering a system must either leave the system or accumulate within it.
+
+The equation is used extensively in pipe flow, nozzle analysis, process equipment design, and chemical engineering mass balance calculations. Understanding both the differential and integral forms of continuity is essential for analyzing real engineering systems.
+
