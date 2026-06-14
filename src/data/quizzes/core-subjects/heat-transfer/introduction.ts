@@ -14,10 +14,6 @@ const quiz = [
     answer:
       "Temperature difference",
 
-      /* Explanation:
-         Heat transfer occurs when there is a difference in temperature between two regions.
-         Thermal energy naturally flows from the higher-temperature region to the lower-temperature 
-         region until thermal equilibrium is reached. */
   },
   
     {
