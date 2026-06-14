@@ -225,6 +225,10 @@ import massTransferCoefficients from "./core-subjects/mass-transfer/mass-transfe
 import packedAndTrayTowers from "./core-subjects/mass-transfer/packed-and-tray-towers";
 import theoriesOfMassTransfer from "./core-subjects/mass-transfer/theories-of-mass-transfer";
 
+//heat transfer//
+
+import heatTransferIntroduction from "./core-subjects/heat-transfer/introduction";
+
 export const quizzes = {
 
   /* Industry Basics */
@@ -499,5 +503,9 @@ export const quizzes = {
 
 "adsorption-membrane-separation-and-advanced-mass-transfer":
   adsorptionMembraneSeparationAndAdvancedMassTransfer,
+
+//heat transfer//
+
+"introduction": heatTransferIntroduction,
 
 };

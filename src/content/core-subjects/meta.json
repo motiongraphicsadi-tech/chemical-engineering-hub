@@ -13,7 +13,11 @@
       "title": "Mass Transfer"
     },
   
- 
+    {
+      "slug": "heat-transfer",
+      "title": "Heat-Transfer"
+    },
+
     {
       "slug": "ipc",
       "title": "Instrumentation & Process Control"
