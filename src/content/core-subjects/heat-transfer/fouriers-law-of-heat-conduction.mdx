@@ -1,0 +1,411 @@
+---
+title: Fourier's Law of Heat Conduction
+description: Learn Fourier's Law of Heat Conduction, the fundamental equation governing heat transfer by conduction, including its physical meaning, mathematical form, assumptions, applications, and engineering significance.
+keywords:
+  - Fourier's Law
+  - Heat Conduction
+  - Conduction Heat Transfer
+  - Heat Flux
+  - Thermal Conductivity
+  - Fourier Equation
+---
+
+<TopicHero />
+
+# Fourier's Law of Heat Conduction
+
+
+A steam pipe is carrying hot steam at 200°C.Every second, heat is escaping through the pipe wall.How do engineers calculate that heat loss?
+
+The answer begins with **Fourier's Law of Heat Conduction**.
+
+$$
+Q_x = -kA\frac{dT}{dx}
+$$
+
+Fourier's Law is one of the most important equations in heat transfer because it provides a quantitative relationship between heat flow and temperature gradient.
+
+<DiagramBox
+  title=""
+  image="/images/core-subject/heat-transfer/fouriers-law-of-heat-conduction/fouriers-law-of-heat-conduction.webp"
+/>
+---
+
+##  Why It Matters
+
+chemical engineers need Fouriers law for calculations of :
+<InfoBox>
+- Heat transfer through reactor walls
+- Heat loss from pipelines
+- Furnace wall heating
+- Insulation systems
+- Heat exchangers
+</InfoBox>
+
+<DiagramBox
+  title=""
+  image="/images/core-subject/heat-transfer/fouriers-law-of-heat-conduction/why-fourier-law-matters.webp"
+/>
+---
+## Physical Meaning
+
+Fourier's Law simply tells us:
+
+Heat prefers the easiest path.
+
+More temperature difference pushes more heat.
+
+Better conducting materials allow more heat to flow.
+
+Longer distances resist heat flow.
+
+This is very similar to water flowing through a pipe:
+
+More pressure difference → More flow
+
+More temperature difference → More heat flow
+
+---
+
+# Fourier's Law statement
+
+> The rate of heat transfer by conduction is directly proportional to the area normal to heat flow and the temperature difference, and inversely proportional to the distance over which heat transfer occurs.
+
+or
+
+> Heat flux in a any direction is directly proportional to the temperature gradient .
+
+
+---
+
+##  Mathematical Definition
+
+For one-dimensional conduction:
+
+$$
+Q_x = -kA\frac{dT}{dx}
+$$
+
+Where:
+
+- $Q_x$ = Heat Transfer Rate (W)
+- $k$ = Thermal Conductivity (W/m·K)
+- $A$ = Area Normal to Heat Flow (m²)
+- $\frac{dT}{dx}$ = Temperature Gradient (K/m)
+
+
+## What Does Fourier's Law Tell Us?
+
+From the equation we can immediately conclude:
+
+↑ Thermal Conductivity (k) → ↑ Heat Transfer
+
+↑ Area (A) → ↑ Heat Transfer
+
+↑ Temperature Gradient → ↑ Heat Transfer
+
+↑ Distance (L) → ↓ Heat Transfer
+
+---
+
+##  Meaning of the Negative Sign
+
+The negative sign is extremely important.
+
+Heat always flows in the direction of decreasing temperature.
+
+If temperature decreases along the x-direction:
+
+$$
+\frac{dT}{dx} < 0
+$$
+
+The negative sign ensures that:
+
+$$
+Q_x > 0
+$$
+
+Thus, heat flow is always predicted in the correct physical direction.
+
+---
+
+##  Heat Flux Form
+
+Fourier's Law is often written in terms of heat flux.
+
+Heat flux is heat transfer per unit area.
+
+$$
+q_x = \frac{Q_x}{A}
+$$
+
+Substituting into Fourier's Law:
+
+$$
+q_x = -k\frac{dT}{dx}
+$$
+
+Where:
+
+- $q_x$ = Heat Flux (W/m²)
+- $k$ = Thermal Conductivity
+- $\frac{dT}{dx}$ = Temperature Gradient
+
+
+<DiagramBox
+  title=""
+  image="/images/core-subject/heat-transfer/fouriers-law-of-heat-conduction/fourier-law-mathematical-equation.webp"
+/>
+
+---
+
+##  Plane Wall Equation :
+
+under steady-state conditions
+
+$$
+Q = kA\frac{T_1-T_2}{L}
+$$
+
+Where:
+
+- $Q$ = Heat Transfer Rate
+- $k$ = Thermal Conductivity
+- $A$ = Area
+- $L$ = Thickness
+- $T_1$ = Hot-Side Temperature
+- $T_2$ = Cold-Side Temperature
+
+This equation is obtained directly from Fourier's Law.
+
+
+<DiagramBox
+  title=""
+  image="/images/core-subject/heat-transfer/fouriers-law-of-heat-conduction/heat-conduction-through-plan-wall.webp"
+/>
+
+---
+
+##  Assumptions
+
+The basic form of Fourier's Law assumes:
+
+- Continuous medium
+- Local thermal equilibrium
+- One-dimensional heat flow
+- Homogeneous material
+- Isotropic material properties
+- No internal heat generation
+
+These assumptions simplify conduction analysis.
+
+<DiagramBox
+  title=""
+  image="/images/core-subject/heat-transfer/fouriers-law-of-heat-conduction/assumptions-of fouriers-law.webp"
+/>
+---
+
+# Thermal Conductivity
+
+Thermal conductivity indicates how easily heat moves through a material.
+
+Higher thermal conductivity means better heat conduction.
+
+Examples:
+
+| Material | Thermal Conductivity |
+|------------|------------|
+| Copper | Very High |
+| Aluminum | High |
+| Steel | Moderate |
+| Glass | Low |
+| Wood | Very Low |
+| Air | Extremely Low |
+
+Materials with low thermal conductivity are commonly used as insulation.
+
+---
+
+# Design Considerations
+
+When applying Fourier's Law, engineers must consider:
+
+- Material selection
+- Wall thickness
+- Temperature difference
+- Heat transfer area
+- Thermal conductivity
+- Insulation requirements
+
+Proper design can significantly reduce energy losses.
+
+---
+
+# Industrial Applications
+
+Fourier's Law is used in:
+
+| Equipment | Application |
+|------------|------------|
+| Heat Exchangers | Heat transfer through tube walls |
+| Reactors | Heat transfer through reactor walls |
+| Furnaces | Heat loss calculations |
+| Pipelines | Insulation design |
+| Storage Tanks | Heat gain and heat loss analysis |
+| Boilers | Heat transfer through tubes |
+
+---
+
+##  Advantages
+
+- Simple mathematical relationship
+- Forms the foundation of conduction analysis
+- Applicable to many engineering systems
+- Enables equipment design and optimization
+- Predicts heat transfer rates accurately
+
+---
+
+##  Limitations
+
+Fourier's Law becomes less accurate when:
+
+- Material properties vary significantly
+- Heat transfer is multidimensional
+- Extremely small scales are involved
+- Non-equilibrium conditions exist
+- Thermal conductivity changes rapidly with temperature
+
+Advanced models may be required in such cases.
+
+---
+
+# Think Like an Engineer
+
+Suppose a steam pipeline is losing too much heat.
+
+An engineer immediately asks:
+
+- Can insulation be added?
+- Can a material with lower thermal conductivity be used?
+- Can wall thickness be increased?
+- How much money is being lost as heat?
+
+Fourier's Law provides the answers.
+
+---
+
+# Solved Example
+
+A steel wall has:
+
+- Thermal conductivity = 50 W/m·K
+- Area = 2 m²
+- Thickness = 0.1 m
+- Hot side temperature = 200°C
+- Cold side temperature = 100°C
+
+Calculate the heat transfer rate.
+
+### Solution
+
+Using:
+
+$$
+Q = kA\frac{T_1-T_2}{L}
+$$
+
+Substituting values:
+
+$$
+Q = 50 \times 2 \times \frac{200-100}{0.1}
+$$
+
+$$
+Q = 100000\;W
+$$
+
+Therefore:
+
+$$
+Q = 100\;kW
+$$
+
+---
+
+##  Common Mistakes
+
+Students often:
+
+- Forget the negative sign.
+- Confuse heat flux with heat transfer rate.
+- Use incorrect units.
+- Ignore area effects.
+- Ignore wall thickness effects.
+
+---
+
+# Key Takeaways
+
+- Fourier's Law is the fundamental law of heat conduction.
+- Heat flows from higher temperature to lower temperature.
+- Heat transfer rate depends on thermal conductivity, area, temperature gradient, and wall thickness.
+- The negative sign ensures correct heat flow direction.
+- Fourier's Law is widely used in heat exchangers, reactors, furnaces, and insulation design.
+
+---
+
+# Interview Questions
+
+<InterviewQuestion
+  question="What is Fourier's Law of Heat Conduction?"
+  answer="Fourier's Law states that heat transfer by conduction is proportional to the temperature gradient and occurs in the direction of decreasing temperature."
+/>
+
+<InterviewQuestion
+  question="Why does Fourier's Law contain a negative sign?"
+  answer="The negative sign indicates that heat flows from a region of higher temperature to a region of lower temperature."
+/>
+
+<InterviewQuestion
+  question="What is thermal conductivity?"
+  answer="Thermal conductivity is a material property that indicates how easily heat can pass through a material."
+/>
+
+<InterviewQuestion
+  question="What is heat flux?"
+  answer="Heat flux is the rate of heat transfer per unit area."
+/>
+---
+
+<QuizCard
+  title="Fourier's Law of Heat Conduction Quiz"
+  description="Test your understanding of Fourier's Law, heat flux, thermal conductivity, temperature gradients, and conduction heat transfer."
+/>
+
+---
+
+# Related Topics
+
+- Thermal Conductivity
+- Steady-State Conduction
+- Heat Diffusion Equation
+- Thermal Resistance
+- Conduction Through Plane Walls
+
+---
+
+# References / Further Reading
+
+1. Holman – Heat Transfer
+2. Kern – Process Heat Transfer
+3. Incropera and DeWitt – Fundamentals of Heat and Mass Transfer
+4. Geankoplis – Transport Processes
+5. McCabe, Smith and Harriott – Unit Operations
+
+---
+
+# Summary
+
+Fourier's Law of Heat Conduction is the fundamental relationship governing heat transfer through solids. It states that the heat transfer rate is proportional to the temperature gradient and thermal conductivity of the material. This law forms the basis of conduction analysis and is widely used in the design of reactors, heat exchangers, furnaces, pipelines, and insulation systems.

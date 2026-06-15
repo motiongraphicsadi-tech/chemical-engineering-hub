@@ -83,7 +83,7 @@ export default function HomePage() {
             >
 
               <a
-                href="/core-subjects/heat-transfer/introduction"
+                href="/core-subjects/thermodynamics/introduction"
                 className="
                   group
                   rounded-2xl
@@ -133,7 +133,7 @@ export default function HomePage() {
               </a>
 
               <a
-                href="/industrial-safety/safety-basics/introduction"
+                href="/industrial-safety/hazard-analysis/introduction"
                 className="
                   group
                   rounded-2xl
