@@ -4,6 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+import {
+  ChevronRight,
+  FileText,
+} from "lucide-react";
+
 type ContentNode = {
   name: string;
   slug: string;
@@ -22,85 +27,200 @@ export default function TreeNode({
   level = 0,
 }: Props) {
 
-  const pathname = usePathname();
+  const pathname =
+    usePathname();
 
+  /*
+    Auto-expand folders that
+    contain the current page.
+  */
   const [open, setOpen] =
     useState(
-      pathname.startsWith(node.path)
+      pathname.startsWith(
+        node.path
+      )
     );
 
   const isActive =
     pathname === node.path;
 
+  /*
+    =====================================
+    PAGE
+    =====================================
+  */
   if (node.type === "page") {
+
     return (
+
       <Link
         href={node.path}
         className={`
-          block
-          py-2
+          group
+
+          flex
+          items-center
+          gap-2
+
           px-3
-          rounded-md
-          text-sm
+          py-1.5
+
+          rounded-lg
+
+          text-[13px]
+
+          transition-all
+          duration-200
 
           ${
             isActive
-              ? "bg-emerald-500/20 text-white"
-              : "text-gray-400 hover:text-white hover:bg-zinc-900"
+              ? `
+                bg-zinc-900
+
+                text-white
+
+                ring-1
+                ring-emerald-500/20
+
+                shadow-[0_0_0_1px_rgba(16,185,129,0.15)]
+              `
+              : `
+                text-zinc-400
+
+                hover:text-white
+                hover:bg-zinc-900
+              `
           }
         `}
         style={{
-          marginLeft: `${level * 12}px`,
+          marginLeft:
+            `${level * 14}px`,
         }}
       >
-        {node.name}
+
+        <FileText
+          className={`
+            h-3.5
+            w-3.5
+
+            shrink-0
+
+            ${
+              isActive
+                ? "text-emerald-400"
+                : "text-zinc-500"
+            }
+          `}
+        />
+
+        <span className="truncate">
+          {node.name}
+        </span>
+
       </Link>
+
     );
   }
 
+  /*
+    =====================================
+    FOLDER
+    =====================================
+  */
   return (
+
     <div>
 
       <button
         onClick={() =>
           setOpen(!open)
         }
-        className="
-          w-full
-          flex
-          justify-between
-          items-center
+        className={`
+          group
 
-          py-2
+          w-full
+
+          flex
+          items-center
+          justify-between
+
           px-3
+          py-2
+
+          rounded-lg
 
           text-left
 
-          text-white
-          font-medium
-        "
+          transition-all
+          duration-200
+
+          ${
+            level === 0
+              ? `
+                text-emerald-400
+                text-sm
+                font-semibold
+              `
+              : `
+                text-zinc-400
+                text-[13px]
+                font-medium
+              `
+          }
+
+          hover:bg-zinc-900
+        `}
         style={{
-          marginLeft: `${level * 12}px`,
+          marginLeft:
+            `${level * 14}px`,
         }}
       >
-        <span>{node.name}</span>
 
-        <span>
-          {open ? "▼" : "▶"}
+        <span className="truncate">
+          {node.name}
         </span>
+
+        <ChevronRight
+          className={`
+            h-4
+            w-4
+
+            text-zinc-500
+
+            transition-transform
+            duration-200
+
+            ${
+              open
+                ? "rotate-90"
+                : ""
+            }
+          `}
+        />
 
       </button>
 
-      {open &&
-        node.children?.map(
-          (child) => (
-            <TreeNode
-              key={child.path}
-              node={child}
-              level={level + 1}
-            />
-          )
-        )}
+      {open && (
+
+        <div className="mt-1">
+
+          {node.children?.map(
+            (child) => (
+              <TreeNode
+                key={child.path}
+                node={child}
+                level={
+                  level + 1
+                }
+              />
+            )
+          )}
+
+        </div>
+
+      )}
+
     </div>
+
   );
 }

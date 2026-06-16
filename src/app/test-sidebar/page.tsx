@@ -1,5 +1,5 @@
 import SidebarV2
-from "@/components/navigation/SidebarV2";
+from "@/components/navigation/Sidebar";
 
 export default function TestSidebar() {
 

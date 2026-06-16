@@ -1,0 +1,22 @@
+{
+  "order": [
+    "introduction",
+    "fluid-mechanics-basics",
+    "fluid-properties",
+    "viscosity-and-newtons-law-of-viscosity",
+    "newtonian-and-non-newtonian-fluids",
+    "surface-phenomena",
+    "pressure-and-fluid-statics",
+    "pressure-measurement-devices",
+    "buoyancy-and-floatation",
+    "fluid-kinematics-and-types-of-flow",
+    "flow-visualization-and-fluid-motion",
+    "continuity-equation",
+    "fluid-dynamics-and-bernoulli-equation",
+    "flow-measurement-and-momentum-equation",
+    "flow-through-pipes-and-losses",
+    "laminar-and-turbulent-flow",
+    "friction-factor-and-boundary-layer-theory",
+    "pumps-and-pumping-systems"
+  ]
+}
