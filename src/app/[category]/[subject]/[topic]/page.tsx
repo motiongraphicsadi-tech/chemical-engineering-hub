@@ -33,6 +33,9 @@ import QuizModal from "@/components/mdx/QuizModal";
 
 import  InfoBox  from "@/components/mdx/InfoBox";
 
+import TopicNavigation from "@/components/mdx/topic-navigation";
+
+
 
 
 
@@ -130,6 +133,7 @@ export default async function TopicPage({
 
       QuizModal,
       InfoBox,
+      TopicNavigation,
     };
 
     /*
