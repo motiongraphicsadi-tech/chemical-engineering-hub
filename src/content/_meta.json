@@ -1,0 +1,17 @@
+{
+    "order": [
+      "case-studies",
+      "core-subjects",
+      "industrial-knowledge",
+      "industrial-safety",
+      "Interview-Prep",
+      "software"
+    ],
+  
+    "hidden": [
+      "case-studies",
+       "Interview-Prep",
+       "software"
+      
+    ]
+  }
