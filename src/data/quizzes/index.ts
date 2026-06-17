@@ -230,6 +230,7 @@ import theoriesOfMassTransfer from "./core-subjects/mass-transfer/theories-of-ma
 import heatTransferIntroduction from "./core-subjects/heat-transfer/introduction";
 import fouriersLawOfHeatConduction from "./core-subjects/heat-transfer/fouriers-law-of-heat-conduction";
 import thermalConductivity from "./core-subjects/heat-transfer/thermal-conductivity";
+import heatingMechanismsInMaterials from "./core-subjects/heat-transfer/heating-mechanisms-in-materials";
 
 export const quizzes = {
 
@@ -513,5 +514,7 @@ export const quizzes = {
 "fouriers-law-of-heat-conduction":fouriersLawOfHeatConduction,
 
 "thermal-conductivity": thermalConductivity,
+
+"heating-mechanisms-in-materials": heatingMechanismsInMaterials,
 
 };

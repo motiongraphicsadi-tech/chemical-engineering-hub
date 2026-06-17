@@ -12,5 +12,10 @@
     {
       "slug": "thermal-conductivity",
       "title": "Thermal Conductivity"
+    },
+
+    {
+      "slug": "heating-mechanisms-in-materials",
+      "title": "Heating Mechanisms In Materials"
     }
   ]
