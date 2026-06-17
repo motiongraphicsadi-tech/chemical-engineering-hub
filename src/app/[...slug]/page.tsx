@@ -1,6 +1,12 @@
 import fs from "fs";
 import path from "path";
 
+import { getTopicNavigation }
+from "@/lib/getTopicNavigation";
+
+import TopicNavigation
+from "@/components/navigation/TopicNavigation";
+
 import { redirect } from "next/navigation";
 
 import { compileMDX } from "next-mdx-remote/rsc";
@@ -24,7 +30,7 @@ import DiagramBox from "@/components/mdx/DiagramBox";
 import QuizCard from "@/components/mdx/QuizCard";
 import QuizModal from "@/components/mdx/QuizModal";
 import InfoBox from "@/components/mdx/InfoBox";
-import TopicNavigation from "@/components/mdx/topic-navigation";
+
 
 import { quizzes } from "@/data/quizzes";
 
@@ -135,6 +141,16 @@ export default async function Page({
       relativePath
     );
 
+/*
+  Previous / Next navigation
+  generated from _meta.json
+*/
+const navigation =
+  getTopicNavigation(
+    mdxFile
+  );
+
+
   const topic =
     slug.at(-1) ?? "";
 
@@ -168,7 +184,6 @@ export default async function Page({
 
     InfoBox,
 
-    TopicNavigation,
   };
 
   const mdx =
@@ -210,15 +225,24 @@ export default async function Page({
         <Breadcrumb />
 
         <article
-          className="
-            prose
-            prose-invert
-            max-w-5xl
-            mt-8
-          "
-        >
-          {mdx.content}
-        </article>
+           className="
+               prose
+               prose-invert
+               max-w-5xl
+               mt-8
+              "
+          >
+        {mdx.content}
+          </article>
+
+           <TopicNavigation
+          previous={
+              navigation.previous
+              }
+         next={
+             navigation.next
+           }
+         />
 
       </main>
 
