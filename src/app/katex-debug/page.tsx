@@ -2,6 +2,8 @@ import "katex/dist/katex.min.css";
 
 import katex from "katex";
 
+
+
 export default function KatexDebug() {
   const matrix = katex.renderToString(
     String.raw`\begin{bmatrix}

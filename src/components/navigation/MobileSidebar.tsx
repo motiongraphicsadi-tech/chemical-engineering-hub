@@ -1,22 +1,31 @@
 "use client";
 
+import TreeNode from "./TreeNode";
+
+type ContentNode = {
+  name: string;
+  slug: string;
+  path: string;
+  type: "folder" | "page";
+  children?: ContentNode[];
+};
+
 type Props = {
   open: boolean;
   onClose: () => void;
+  tree: ContentNode[];
 };
 
 export default function MobileSidebar({
   open,
   onClose,
+  tree,
 }: Props) {
 
   return (
     <>
 
-      {/* Overlay */}
-
       {open && (
-
         <div
           onClick={onClose}
           className="
@@ -28,10 +37,7 @@ export default function MobileSidebar({
             z-[1000]
           "
         />
-
       )}
-
-      {/* Drawer */}
 
       <aside
         className={`
@@ -65,8 +71,6 @@ export default function MobileSidebar({
         `}
       >
 
-        {/* Header */}
-
         <div
           className="
             p-5
@@ -97,8 +101,6 @@ export default function MobileSidebar({
               text-zinc-400
 
               hover:text-white
-
-              transition-colors
             "
           >
             ✕
@@ -106,66 +108,29 @@ export default function MobileSidebar({
 
         </div>
 
-        {/* Temporary Content */}
-
         <div
           className="
-            p-5
+            p-4
 
-            space-y-3
+            space-y-1
           "
         >
 
-          <div
-            className="
-              rounded-lg
+          {tree.map(
+            (node) => (
 
-              border
-              border-zinc-800
+              <TreeNode
+                key={node.path}
+                node={node}
+              />
 
-              p-4
-
-              text-zinc-300
-            "
-          >
-            ChemE Basics
-          </div>
-
-          <div
-            className="
-              rounded-lg
-
-              border
-              border-zinc-800
-
-              p-4
-
-              text-zinc-300
-            "
-          >
-            Industrial Knowledge
-          </div>
-
-          <div
-            className="
-              rounded-lg
-
-              border
-              border-zinc-800
-
-              p-4
-
-              text-zinc-300
-            "
-          >
-            Industrial Safety
-          </div>
+            )
+          )}
 
         </div>
 
       </aside>
 
     </>
-
   );
 }

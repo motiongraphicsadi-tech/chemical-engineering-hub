@@ -59,6 +59,7 @@ function resolveMdxPath(slug: string[]) {
   );
 }
 
+
 export async function generateMetadata({
   params,
 }: {
@@ -202,6 +203,18 @@ const navigation =
           </h1>
         );
       },
+
+      table: (props: any) => (
+        <div
+          style={{
+            overflowX: "auto",
+            width: "100%",
+           
+          }}
+        >
+          <table {...props} />
+        </div>
+      ),
     
       TopicHero,
     
@@ -252,7 +265,7 @@ const navigation =
 
     return (
 
-      <div className="flex">
+      <div className="flex overflow-x-hidden">
     
         <Sidebar
           currentSlug={slug}
@@ -261,16 +274,17 @@ const navigation =
         <div
           className="
             flex-1
-    
             flex
-            gap-10
+            min-w-0
           "
         >
     
           <main
             className="
               flex-1
-              px-8
+              min-w-0
+              px-4
+              md:px-8
               py-8
             "
           >
@@ -278,38 +292,39 @@ const navigation =
             <Breadcrumb />
     
             {progress && (
-             <TopicProgress
-               current={progress.current}
-               total={progress.total}
-             />
-           )}
-           
-           <div className="max-w-5xl">
-           
-             <article
-               className="
-                 prose
-                 prose-invert
-                 mt-8
-               "
-             >
-               {mdx.content}
-             </article>
-           
-             <TopicNavigation
-               previous={navigation.previous}
-               next={navigation.next}
-             />
-           
-           </div>
+              <TopicProgress
+                current={progress.current}
+                total={progress.total}
+              />
+            )}
+    
+            <div className="max-w-5xl min-w-0">
+    
+              <article
+                className="
+                  prose
+                  prose-invert
+                  mt-8
+                  max-w-none
+                "
+              >
+                {mdx.content}
+              </article>
+    
+              <TopicNavigation
+                previous={navigation.previous}
+                next={navigation.next}
+              />
+    
+            </div>
     
           </main>
     
-          <TableOfContents
-            headings={
-              headings
-            }
-          />
+          <div className="hidden xl:block shrink-0">
+            <TableOfContents
+              headings={headings}
+            />
+          </div>
     
         </div>
     

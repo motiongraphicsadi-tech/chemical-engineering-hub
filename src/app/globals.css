@@ -164,12 +164,16 @@
   font-weight: 600;
 }
 
-/* Tables */
+/* ====================================
+   Tables
+==================================== */
 
 .prose table {
-  width: 100%;
+  width: max-content;
+  min-width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
+  border: 1px solid #27272a;
 }
 
 .prose thead {
@@ -186,7 +190,8 @@
   vertical-align: middle;
   font-weight: 600;
   color: white;
-  background-color: #18181b;
+  background: #18181b;
+  border: 1px solid #27272a;
 }
 
 .prose td {
@@ -194,28 +199,39 @@
   text-align: center;
   vertical-align: middle;
   color: #d4d4d4;
+  border: 1px solid #27272a;
 }
 
 .prose tr:hover {
-  background-color: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.03);
 }
 
-/* Table overflow support for mobile */
-.prose table {
+/* Table Scroll Container */
+
+.table-scroll {
   width: 100%;
-  border-collapse: collapse;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   margin: 1.5rem 0;
-  border: 1px solid #27272a;
 }
 
-.prose th,
-.prose td {
-  padding: 0.9rem 1rem;
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid #27272a;
+.table-scroll::-webkit-scrollbar {
+  height: 6px;
 }
 
+.table-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.7);
+}
 /* ====================================
    Modern Scrollbar
 ==================================== */

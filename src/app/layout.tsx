@@ -1,10 +1,9 @@
 import "./globals.css";
 import "katex/dist/katex.min.css";
 
-
 import Layout from "../components/layout/Layout";
 
-import Header from "@/components/navigation/Header";
+import HeaderWrapper from "@/components/navigation/HeaderWrapper";
 
 import { Inter } from "next/font/google";
 
@@ -14,7 +13,8 @@ const inter = Inter({
 
 export const metadata = {
   title: "Chemical Engineering Platform",
-  description: "Structured engineering knowledge platform",
+  description:
+    "Structured engineering knowledge platform",
 };
 
 export default function RootLayout({
@@ -22,15 +22,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
+
     <html lang="en">
 
       <body className={inter.className}>
 
-        {/* Global Fixed Header */}
-        <Header />
+        <HeaderWrapper />
 
-        {/* Website Content */}
         <Layout>
           {children}
         </Layout>
@@ -38,5 +38,6 @@ export default function RootLayout({
       </body>
 
     </html>
+
   );
 }

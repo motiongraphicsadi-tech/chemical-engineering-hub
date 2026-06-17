@@ -34,7 +34,19 @@ const categories = [
   },
 ];
 
-export default function Header() {
+type ContentNode = {
+  name: string;
+  slug: string;
+  path: string;
+  type: "folder" | "page";
+  children?: ContentNode[];
+};
+
+export default function Header({
+  tree,
+}: {
+  tree: ContentNode[];
+}) {
 
   const pathname =
     usePathname();
@@ -252,11 +264,12 @@ export default function Header() {
       </header>
 
       <MobileSidebar
-        open={open}
-        onClose={() =>
-          setOpen(false)
-        }
-      />
+           open={open}
+           onClose={() =>
+             setOpen(false)
+           }
+           tree={tree}
+         />         
 
     </>
 
