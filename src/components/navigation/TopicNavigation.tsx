@@ -1,16 +1,14 @@
 import Link from "next/link";
 
-type Props = {
-  previous?: {
+type TopicLink = {
     title: string;
     href: string;
   };
-
-  next?: {
-    title: string;
-    href: string;
+  
+  type Props = {
+    previous: TopicLink | null;
+    next: TopicLink | null;
   };
-};
 
 export default function TopicNavigation({
   previous,
@@ -26,20 +24,23 @@ export default function TopicNavigation({
     <div
       className="
         mt-12
-        pt-6
+
+        w-full
 
         border-t
         border-zinc-800
+
+        pt-6
       "
     >
 
       <div
         className="
           flex
-          items-center
           justify-between
+          items-start
 
-          gap-6
+          gap-8
         "
       >
 
@@ -62,9 +63,9 @@ export default function TopicNavigation({
                   text-xs
                   text-zinc-500
 
-                  group-hover:text-emerald-400
-
                   transition-colors
+
+                  group-hover:text-emerald-400
                 "
               >
                 ← Previous
@@ -74,12 +75,14 @@ export default function TopicNavigation({
                 className="
                   mt-1
 
-                  text-sm
+                  text-base
+                  font-medium
+
                   text-white
 
-                  group-hover:text-emerald-400
-
                   transition-colors
+
+                  group-hover:text-emerald-400
                 "
               >
                 {previous.title}
@@ -115,9 +118,9 @@ export default function TopicNavigation({
                   text-xs
                   text-zinc-500
 
-                  group-hover:text-emerald-400
-
                   transition-colors
+
+                  group-hover:text-emerald-400
                 "
               >
                 Next →
@@ -127,12 +130,14 @@ export default function TopicNavigation({
                 className="
                   mt-1
 
-                  text-sm
+                  text-base
+                  font-medium
+
                   text-white
 
-                  group-hover:text-emerald-400
-
                   transition-colors
+
+                  group-hover:text-emerald-400
                 "
               >
                 {next.title}

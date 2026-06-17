@@ -278,37 +278,30 @@ const navigation =
             <Breadcrumb />
     
             {progress && (
-    
-              <TopicProgress
-                current={
-                  progress.current
-                }
-                total={
-                  progress.total
-                }
-              />
-    
-            )}
-    
-            <article
-              className="
-                prose
-                prose-invert
-                max-w-5xl
-                mt-8
-              "
-            >
-              {mdx.content}
-            </article>
-    
-            <TopicNavigation
-              previous={
-                navigation.previous
-              }
-              next={
-                navigation.next
-              }
-            />
+             <TopicProgress
+               current={progress.current}
+               total={progress.total}
+             />
+           )}
+           
+           <div className="max-w-5xl">
+           
+             <article
+               className="
+                 prose
+                 prose-invert
+                 mt-8
+               "
+             >
+               {mdx.content}
+             </article>
+           
+             <TopicNavigation
+               previous={navigation.previous}
+               next={navigation.next}
+             />
+           
+           </div>
     
           </main>
     
