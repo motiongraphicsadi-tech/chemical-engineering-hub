@@ -4,7 +4,7 @@
     "mass-transfer",
     "ipc",
     "heat-transfer",
-    "fluid-mechanics"
-    
+    "fluid-mechanics",
+    "cre"
   ]
 }

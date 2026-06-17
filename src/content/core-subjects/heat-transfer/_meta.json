@@ -1,8 +1,8 @@
 {
   "order": [
     "introduction",
-    "heating-mechanisms-in-materials",
     "fouriers-law-of-heat-conduction",
-    "thermal-conductivity"
+    "thermal-conductivity",
+    "heating-mechanisms-in-materials"
   ]
 }
