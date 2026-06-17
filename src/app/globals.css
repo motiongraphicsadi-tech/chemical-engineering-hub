@@ -82,7 +82,7 @@
 }
 
 .prose h1 {
-  color: #50C878;
+  color:  #00d492;
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.15;
@@ -216,6 +216,12 @@
   border: 1px solid #27272a;
 }
 
+
+/* topic navigation */
+
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   --background: oklch(1 0 0);

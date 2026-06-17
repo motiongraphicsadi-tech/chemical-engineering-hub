@@ -7,6 +7,23 @@ from "@/lib/getTopicNavigation";
 import TopicNavigation
 from "@/components/navigation/TopicNavigation";
 
+import {
+  getTopicProgress
+} from "@/lib/getTopicProgress";
+
+import TopicProgress
+from "@/components/navigation/TopicProgress";
+
+import {
+  extractHeadings
+} from "@/lib/extractHeadings";
+
+import TableOfContents
+from "@/components/navigation/TableOfContents";
+
+import { slugify }
+from "@/lib/slugify";
+
 import { redirect } from "next/navigation";
 
 import { compileMDX } from "next-mdx-remote/rsc";
@@ -141,6 +158,11 @@ export default async function Page({
       relativePath
     );
 
+
+    const headings =
+      extractHeadings(
+        content
+      );    
 /*
   Previous / Next navigation
   generated from _meta.json
@@ -150,6 +172,10 @@ const navigation =
     mdxFile
   );
 
+  const progress =
+  getTopicProgress(
+    mdxFile
+  );
 
   const topic =
     slug.at(-1) ?? "";
@@ -159,32 +185,48 @@ const navigation =
       topic as keyof typeof quizzes
     ] || [];
 
-  const components = {
+    const components = {
 
-    TopicHero,
-
-    IndustrialInsight,
-
-    InterviewQuestion,
-
-    EquationBlock,
-
-    WarningBox,
-
-    DiagramBox,
-
-    QuizCard: (props: any) => (
-      <QuizCard
-        {...props}
-        questions={quiz}
-      />
-    ),
-
-    QuizModal,
-
-    InfoBox,
-
-  };
+      h1: (props: any) => {
+    
+        const text =
+          String(
+            props.children
+          );
+    
+        return (
+          <h1
+            id={slugify(text)}
+          >
+            {props.children}
+          </h1>
+        );
+      },
+    
+      TopicHero,
+    
+      IndustrialInsight,
+    
+      InterviewQuestion,
+    
+      EquationBlock,
+    
+      WarningBox,
+    
+      DiagramBox,
+    
+      QuizCard: (props: any) => (
+        <QuizCard
+          {...props}
+          questions={quiz}
+        />
+      ),
+    
+      QuizModal,
+    
+      InfoBox,
+    
+    };
 
   const mdx =
     await compileMDX({
@@ -208,44 +250,77 @@ const navigation =
       },
     });
 
-  return (
+    return (
 
-    <div className="flex">
-
-      <Sidebar currentSlug={slug} />
-
-      <main
-        className="
-          flex-1
-          px-8
-          py-8
-        "
-      >
-
-        <Breadcrumb />
-
-        <article
-           className="
-               prose
-               prose-invert
-               max-w-5xl
-               mt-8
-              "
+      <div className="flex">
+    
+        <Sidebar
+          currentSlug={slug}
+        />
+    
+        <div
+          className="
+            flex-1
+    
+            flex
+            gap-10
+          "
+        >
+    
+          <main
+            className="
+              flex-1
+              px-8
+              py-8
+            "
           >
-        {mdx.content}
-          </article>
-
-           <TopicNavigation
-          previous={
-              navigation.previous
+    
+            <Breadcrumb />
+    
+            {progress && (
+    
+              <TopicProgress
+                current={
+                  progress.current
+                }
+                total={
+                  progress.total
+                }
+              />
+    
+            )}
+    
+            <article
+              className="
+                prose
+                prose-invert
+                max-w-5xl
+                mt-8
+              "
+            >
+              {mdx.content}
+            </article>
+    
+            <TopicNavigation
+              previous={
+                navigation.previous
               }
-         next={
-             navigation.next
-           }
-         />
-
-      </main>
-
-    </div>
-  );
+              next={
+                navigation.next
+              }
+            />
+    
+          </main>
+    
+          <TableOfContents
+            headings={
+              headings
+            }
+          />
+    
+        </div>
+    
+      </div>
+    
+    );
 }
