@@ -1,0 +1,14 @@
+{
+  "order": [
+    "introduction",
+    "continuous-plant-operation",
+    "shift-system",
+    "control-room-basics",
+    "dcs-overview",
+    "alarms-and-interlocks",
+    "sops",
+    "startup-shutdown",
+    "troubleshooting-basics",
+    "utility-systems"
+  ]
+}

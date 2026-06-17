@@ -17,13 +17,6 @@ const CONTENT_ROOT = path.join(
 /*
   Convert slug names into
   human readable titles.
-
-  Example:
-
-  fluid-mechanics
-  →
-
-  Fluid Mechanics
 */
 function formatName(
   slug: string
@@ -37,22 +30,25 @@ function formatName(
 }
 
 /*
-  Reads optional folder ordering
-  from _meta.json
+  Reads folder metadata from
+  _meta.json
 
   Example:
 
   {
     "order": [
       "introduction",
-      "entropy",
+      "entropy"
+    ],
+
+    "hidden": [
       "fugacity"
     ]
   }
 */
-function getFolderOrder(
+function getFolderMeta(
   dir: string
-): string[] {
+) {
 
   const metaPath = path.join(
     dir,
@@ -60,7 +56,10 @@ function getFolderOrder(
   );
 
   if (!fs.existsSync(metaPath)) {
-    return [];
+    return {
+      order: [],
+      hidden: [],
+    };
   }
 
   try {
@@ -72,11 +71,19 @@ function getFolderOrder(
       )
     );
 
-    return meta.order || [];
+    return {
+      order:
+        meta.order || [],
+      hidden:
+        meta.hidden || [],
+    };
 
   } catch {
 
-    return [];
+    return {
+      order: [],
+      hidden: [],
+    };
   }
 }
 
@@ -98,9 +105,6 @@ function scanDirectory(
 
   for (const entry of entries) {
 
-    /*
-      Ignore metadata files.
-    */
     if (
       entry.name === "_meta.json"
     ) {
@@ -145,11 +149,6 @@ function scanDirectory(
 
     /*
       MDX Page
-
-      Using filename extension only
-      because Windows + OneDrive can
-      sometimes report file types
-      inconsistently.
     */
     if (
       entry.name.endsWith(".mdx")
@@ -162,7 +161,9 @@ function scanDirectory(
         );
 
       nodes.push({
-        name: formatName(slug),
+        name: formatName(
+          slug
+        ),
 
         slug,
 
@@ -179,24 +180,38 @@ function scanDirectory(
     }
   }
 
-  const order =
-    getFolderOrder(dir);
+  const {
+    order,
+    hidden,
+  } = getFolderMeta(dir);
 
   /*
-    Apply custom ordering from
-    _meta.json when available.
-
-    Otherwise fallback to
-    alphabetical sorting.
+    Hide topics/folders listed
+    in _meta.json
   */
-  return nodes.sort(
+  const visibleNodes =
+    nodes.filter(
+      (node) =>
+        !hidden.includes(
+          node.slug
+        )
+    );
+
+  /*
+    Apply custom ordering
+  */
+  return visibleNodes.sort(
     (a, b) => {
 
       const aIndex =
-        order.indexOf(a.slug);
+        order.indexOf(
+          a.slug
+        );
 
       const bIndex =
-        order.indexOf(b.slug);
+        order.indexOf(
+          b.slug
+        );
 
       if (
         aIndex === -1 &&
@@ -215,7 +230,9 @@ function scanDirectory(
         return -1;
       }
 
-      return aIndex - bIndex;
+      return (
+        aIndex - bIndex
+      );
     }
   );
 }

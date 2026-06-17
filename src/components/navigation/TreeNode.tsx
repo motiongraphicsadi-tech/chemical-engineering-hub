@@ -158,7 +158,7 @@ export default function TreeNode({
             level === 0
               ? `
                 text-emerald-400
-                text-sm
+                text-base
                 font-semibold
               `
               : `

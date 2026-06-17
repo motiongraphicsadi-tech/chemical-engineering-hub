@@ -4,7 +4,15 @@ import Link from "next/link";
 
 import { usePathname } from "next/navigation";
 
-import { Home } from "lucide-react";
+import { useState } from "react";
+
+import {
+  Home,
+  Menu,
+} from "lucide-react";
+
+import MobileSidebar
+from "@/components/navigation/MobileSidebar";
 
 const categories = [
   {
@@ -24,193 +32,233 @@ const categories = [
     href: "/industrial-safety/hazard-analysis/introduction",
     match: "/industrial-safety",
   },
-
-  // {
-  //   name: "Case Studies",
-  //   href: "/case-studies/startup/introduction",
-  //   match: "/case-studies",
-  // },
-
-  // {
-  //   name: "Tools",
-  //   href: "/tools/calculators/introduction",
-  //   match: "/tools",
-  // },
 ];
 
 export default function Header() {
 
-  const pathname = usePathname();
+  const pathname =
+    usePathname();
+
+  const [open, setOpen] =
+    useState(false);
 
   return (
 
-    <header
-      className="
-        fixed
-        top-0
-        left-0
-        right-0
+    <>
 
-        z-[999]
-
-        h-14
-
-        border-b
-        border-gray-800
-
-        bg-black/95
-        backdrop-blur
-
-        text-white
-      "
-    >
-
-      <div
+      <header
         className="
-          h-full
+          fixed
+          top-0
+          left-0
+          right-0
 
-          px-4
+          z-[999]
 
-          flex
-          items-center
-          justify-between
+          h-14
 
-          gap-4
+          border-b
+          border-zinc-800
+
+          bg-black/95
+          backdrop-blur
+
+          text-white
         "
       >
 
-        {/* LEFT SIDE */}
         <div
           className="
+            h-full
+
+            px-4
+
             flex
             items-center
+            justify-between
 
-            min-w-0
-
-            md:ml-0
-            ml-10
+            gap-4
           "
         >
+
+          {/* MOBILE MENU */}
+
+          <button
+            onClick={() =>
+              setOpen(true)
+            }
+            className="
+              lg:hidden
+
+              flex
+              items-center
+              justify-center
+
+              text-white
+            "
+          >
+            <Menu
+              className="
+                h-5
+                w-5
+              "
+            />
+          </button>
+
+          {/* LOGO */}
+
+          <div
+            className="
+              flex
+              items-center
+
+              min-w-0
+
+              flex-1
+              lg:flex-none
+            "
+          >
+
+            <Link
+              href="/"
+              className="
+                font-bold
+
+                truncate
+
+                text-base
+                md:text-xl
+              "
+            >
+
+              <span className="hidden md:inline">
+                ChemicalEngineeringHub.com
+              </span>
+
+              <span className="md:hidden">
+                ChemE Hub
+              </span>
+
+            </Link>
+
+          </div>
+
+          {/* DESKTOP NAV */}
+
+          <nav
+            className="
+              hidden
+              md:flex
+
+              flex-1
+
+              items-center
+
+              gap-6
+
+              ml-8
+
+              text-sm
+            "
+          >
+
+            {categories.map(
+              (category) => {
+
+                const isActive =
+                  pathname.includes(
+                    category.match
+                  );
+
+                return (
+
+                  <Link
+                    key={category.name}
+                    href={category.href}
+                    className={`
+                      whitespace-nowrap
+
+                      transition-all
+
+                      hover:text-white
+
+                      ${
+                        isActive
+                          ? "text-white border-b-2 border-emerald-500 pb-1"
+                          : "text-zinc-400"
+                      }
+                    `}
+                  >
+                    {category.name}
+                  </Link>
+
+                );
+              }
+            )}
+
+          </nav>
+
+          {/* HOME BUTTON */}
 
           <Link
             href="/"
             className="
-              font-bold
+              shrink-0
 
-              truncate
+              flex
+              items-center
+              justify-center
 
-              text-base
-              md:text-xl
+              h-9
+              w-9
+
+              md:h-auto
+              md:w-auto
+
+              md:px-3
+              md:py-1.5
+
+              rounded-lg
+
+              border
+              border-zinc-800
+
+              text-zinc-300
+
+              hover:text-white
+              hover:border-emerald-500
+
+              transition-all
             "
           >
 
-            <span className="hidden md:inline">
-              ChemicalEngineeringHub.com
-            </span>
+            <Home
+              className="
+                h-4
+                w-4
 
-            <span className="md:hidden">
-              CEH
+                md:hidden
+              "
+            />
+
+            <span className="hidden md:inline">
+              Home
             </span>
 
           </Link>
 
         </div>
 
-        {/* DESKTOP NAVIGATION */}
-        <nav
-          className="
-            hidden
-            md:flex
+      </header>
 
-            flex-1
+      <MobileSidebar
+        open={open}
+        onClose={() =>
+          setOpen(false)
+        }
+      />
 
-            items-center
-
-            gap-5
-
-            ml-8
-
-            text-sm
-          "
-        >
-
-          {categories.map((category) => {
-
-            const isActive =
-              pathname.includes(category.match);
-
-            return (
-
-              <Link
-                key={category.name}
-                href={category.href}
-                className={`
-                  whitespace-nowrap
-
-                  transition-all
-                  duration-200
-
-                  hover:text-white
-
-                  ${
-                    isActive
-                      ? "text-white border-b-2 border-blue-500 pb-1"
-                      : "text-gray-400"
-                  }
-                `}
-              >
-                {category.name}
-              </Link>
-
-            );
-          })}
-
-        </nav>
-
-        {/* HOME BUTTON */}
-        <Link
-          href="/"
-          className="
-            shrink-0
-
-            flex
-            items-center
-            justify-center
-
-            h-9
-            w-9
-
-            md:h-auto
-            md:w-auto
-
-            md:px-3
-            md:py-1.5
-
-            rounded-lg
-
-            border
-            border-zinc-800
-
-            text-zinc-300
-
-            hover:text-white
-            hover:border-emerald-500
-
-            transition-all
-          "
-        >
-
-          <Home className="w-4 h-4 md:hidden" />
-
-          <span className="hidden md:inline">
-            Home
-          </span>
-
-        </Link>
-
-      </div>
-
-    </header>
+    </>
 
   );
 }

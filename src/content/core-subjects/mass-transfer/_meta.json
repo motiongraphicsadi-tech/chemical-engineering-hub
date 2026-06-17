@@ -1,0 +1,31 @@
+{
+  "order": [
+    "introduction",
+    "mass-transfer-basics",
+
+    "diffusion-fundamentals",
+    "ficks-laws-of-diffusion",
+    "diffusivity-and-diffusion-calculations",
+
+    "theories-of-mass-transfer",
+    "mass-transfer-coefficients",
+    "interphase-mass-transfer-and-two-film-theory",
+
+    "equilibrium-relations-in-mass-transfer",
+    "dimensionless-analysis-inmass-transfer",
+
+    "gas-absorption-and-stripping",
+
+    "distillation-fundamentals",
+    "binary-distillation-and-mccabe-thiele-method",
+
+    "liquid-liquid-extraction",
+
+    "humidification-drying-and-crystallization",
+
+    "packed-and-tray-towers",
+    "htu-ntu-and-tower-design",
+
+    "adsorption-membrane-separation-and-advanced-mass-transfer"
+  ]
+}

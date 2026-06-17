@@ -44,15 +44,12 @@ export default function TableOfContents({
 
       <h3
         className="
-          mb-4
-
-          text-xs
-          font-semibold
-
-          uppercase
-          tracking-wider
-
-          text-zinc-500
+           mb-3
+    text-[11px]
+    font-semibold
+    uppercase
+    tracking-widest
+    text-zinc-600
         "
       >
         On This Page

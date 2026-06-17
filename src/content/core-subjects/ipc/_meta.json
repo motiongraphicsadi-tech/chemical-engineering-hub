@@ -1,0 +1,33 @@
+{
+  "order": [
+    "introduction",
+    "ipc-basics",
+    "process-modeling",
+    "dynamic-systems",
+
+    "first-order-systems",
+    "first-order-systems-basics",
+    "first-order-systems-responses",
+    "first-order-systems-examples",
+
+    "second-order-systems-basics",
+    "second-order-systems-oscillatory-behavior",
+    "second-order-systems-performance-parameter",
+
+    "inverse-response",
+
+    "laplace-transform-fundamentals",
+    "laplace-transform-applications",
+
+    "controllers",
+    "closed-loop-control",
+
+    "control-valves",
+
+    "controller-tuning",
+
+    "stability-analysis",
+
+    "advanced-control-strategies"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "order": [
+    "introduction",
+    "power-distribution",
+    "steam-system",
+    "boiler-basics",
+    "cooling-water-system",
+    "chilled-water",
+    "compressed-air",
+    "nitrogen-system",
+    "vacuum-system",
+    "hvac-basics"
+  ]
+}

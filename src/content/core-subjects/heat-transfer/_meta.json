@@ -4,5 +4,9 @@
     "fouriers-law-of-heat-conduction",
     "thermal-conductivity",
     "heating-mechanisms-in-materials"
+  ],
+
+  "hidden": [
+    "t"
   ]
 }

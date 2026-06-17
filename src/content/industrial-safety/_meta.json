@@ -1,0 +1,20 @@
+{
+  "order": [
+    "hazard-analysis",
+    "safety-basics",
+    "safety-systems",
+    "hse-work-permits",
+    "industrial-disasters"
+
+  ],
+
+  "hidden": [
+    "safety-basics",
+    "safety-systems",
+    "hse-work-permits",
+    "industrial-disasters"
+    
+  ]
+
+}
+
