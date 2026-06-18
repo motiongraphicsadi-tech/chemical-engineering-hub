@@ -231,6 +231,7 @@ import heatTransferIntroduction from "./core-subjects/heat-transfer/introduction
 import fouriersLawOfHeatConduction from "./core-subjects/heat-transfer/fouriers-law-of-heat-conduction";
 import thermalConductivity from "./core-subjects/heat-transfer/thermal-conductivity";
 import heatingMechanismsInMaterials from "./core-subjects/heat-transfer/heating-mechanisms-in-materials";
+import basicsOfConvection from "./core-subjects/heat-transfer/basics-of-convection";
 
 export const quizzes = {
 
@@ -516,5 +517,7 @@ export const quizzes = {
 "thermal-conductivity": thermalConductivity,
 
 "heating-mechanisms-in-materials": heatingMechanismsInMaterials,
+
+"basics-of-convection": basicsOfConvection,
 
 };
