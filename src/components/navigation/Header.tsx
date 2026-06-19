@@ -9,6 +9,7 @@ import { useState } from "react";
 import {
   Home,
   Menu,
+  LayoutDashboard,
 } from "lucide-react";
 
 import MobileSidebar
@@ -210,54 +211,107 @@ export default function Header({
 
           </nav>
 
-          {/* HOME BUTTON */}
+          {/* HOME + DASHBOARD */}
 
-          <Link
-            href="/"
-            className="
-              shrink-0
+<div
+  className="
+    flex
+    items-center
+    gap-2
+    shrink-0
+  "
+>
 
-              flex
-              items-center
-              justify-center
+<Link
+  href="/dashboard"
+  className="
+    flex
+    items-center
+    justify-center
 
-              h-9
-              w-9
+    h-9
+    w-9
 
-              md:h-auto
-              md:w-auto
+    md:h-auto
+    md:w-auto
 
-              md:px-3
-              md:py-1.5
+    md:px-3
+    md:py-1.5
 
-              rounded-lg
+    rounded-lg
+    
 
-              border
-              border-zinc-800
+    text-white
+    border-zinc-800
+    
+    text-zinc-300
+    
+    hover:text-white
+    hover:border-emerald-500
+       "
+    >
 
-              text-zinc-300
+<LayoutDashboard
+  className="
+    h-4
+    w-4
 
-              hover:text-white
-              hover:border-emerald-500
+    md:hidden
+  "
+/>
 
-              transition-all
-            "
-          >
+<span className="hidden md:inline">
+  Dashboard
+</span>
 
-            <Home
-              className="
-                h-4
-                w-4
+</Link>
 
-                md:hidden
-              "
-            />
+  <Link
+    href="/"
+    className="
+      flex
+      items-center
+      justify-center
 
-            <span className="hidden md:inline">
-              Home
-            </span>
+      h-9
+      w-9
 
-          </Link>
+      md:h-auto
+      md:w-auto
+
+      md:px-3
+      md:py-1.5
+
+      rounded-lg
+
+      border
+      border-zinc-800
+
+      text-zinc-300
+
+      hover:text-white
+      hover:border-emerald-500
+
+      transition-all
+    "
+  >
+
+    <Home
+      className="
+        h-4
+        w-4
+
+        md:hidden
+      "
+    />
+
+    <span className="hidden md:inline">
+      Home
+    </span>
+
+  </Link>
+
+</div>
 
         </div>
 
