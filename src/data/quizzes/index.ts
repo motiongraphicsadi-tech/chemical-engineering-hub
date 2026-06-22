@@ -233,6 +233,11 @@ import thermalConductivity from "./core-subjects/heat-transfer/thermal-conductiv
 import heatingMechanismsInMaterials from "./core-subjects/heat-transfer/heating-mechanisms-in-materials";
 import basicsOfConvection from "./core-subjects/heat-transfer/basics-of-convection";
 
+// heat
+
+import thermalRadiation from "./core-subjects/heat-transfer/radiation/thermal-radiation";
+
+
 export const quizzes = {
 
   /* Industry Basics */
@@ -519,5 +524,8 @@ export const quizzes = {
 "heating-mechanisms-in-materials": heatingMechanismsInMaterials,
 
 "basics-of-convection": basicsOfConvection,
+
+// heat
+"thermal-radiation": thermalRadiation,
 
 };

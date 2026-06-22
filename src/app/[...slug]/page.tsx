@@ -37,6 +37,8 @@ import { compileMDX } from "next-mdx-remote/rsc";
 
 import { getMDXContent } from "@/lib/mdx";
 
+import { getTopicRoadmap } from "@/lib/getTopicRoadmap";
+
 import Breadcrumb from "@/components/navigation/Breadcrumb";
 
 import Sidebar from "@/components/navigation/Sidebar";
@@ -54,6 +56,8 @@ import DiagramBox from "@/components/mdx/DiagramBox";
 import QuizCard from "@/components/mdx/QuizCard";
 import QuizModal from "@/components/mdx/QuizModal";
 import InfoBox from "@/components/mdx/InfoBox";
+import TopicRoadmap from "@/components/mdx/TopicRoadmap";
+
 
 
 import { quizzes } from "@/data/quizzes";
@@ -65,6 +69,7 @@ function resolveMdxPath(slug: string[]) {
     ...slug
   );
 }
+
 
 
 export async function generateMetadata({
@@ -155,6 +160,16 @@ export default async function Page({
     );
   }
 
+  const roadmap =
+  getTopicRoadmap(
+    mdxFile
+  );
+
+  console.log(
+    "ROADMAP:",
+    roadmap
+  );
+
   const relativePath =
     path.relative(
       process.cwd(),
@@ -194,6 +209,30 @@ const navigation =
     ] || [];
 
     const components = {
+
+      TopicRoadmap: () => (
+
+        <TopicRoadmap
+          roadmap={roadmap}
+          currentSlug={topic}
+          current={
+            progress?.current ?? 1
+          }
+          total={
+            progress?.total ?? 1
+          }
+          basePath={
+            "/" +
+            slug
+              .slice(
+                0,
+                slug.length - 1
+              )
+              .join("/")
+          }
+        />
+      
+      ),
 
       h1: (props: any) => {
     
