@@ -126,7 +126,7 @@ from "./industrial-safety/hazard-analysis/incident-reporting";
 
 
 import jobSafetyAndHazardAnalysis
-from "./industrial-safety/hazard-analysis/job-safety-&-hazard-analysis";
+from "./industrial-safety/hazard-analysis/job-safety-and-hazard-analysis";
 
 import nearMissInvestigation
 from "./industrial-safety/hazard-analysis/near-miss-investigation";
@@ -379,7 +379,7 @@ export const quizzes = {
 "what-if-analysis":
   whatIfAnalysis,
 
-"job-safety-&-hazard-analysis":
+"job-safety-and-hazard-analysis":
   jobSafetyAndHazardAnalysis,
 
 "risk-matrix":
