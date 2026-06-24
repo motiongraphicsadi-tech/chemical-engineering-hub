@@ -2,6 +2,9 @@ import fs from "fs";
 import path from "path";
 
 
+import PageReadTracker
+from "@/components/analytics/PageReadTracker";
+
 import MasteryBar
 from "@/components/navigation/MasteryBar";
 
@@ -312,7 +315,12 @@ const navigation =
 
     return (
 
-      <div className="flex overflow-x-hidden">
+      <>
+  <PageReadTracker
+    topicId={slug.join("/")}
+  />
+
+  <div className="flex overflow-x-hidden">
     
         <Sidebar
           currentSlug={slug}
@@ -434,7 +442,7 @@ const navigation =
     
         </div>
     
-      </div>
-    
-    );
+        </div>
+</>
+);
 }

@@ -4,6 +4,9 @@ import { useState } from "react";
 
 import QuizModal from "./QuizModal";
 
+import { trackEvent } from "@/lib/analytics";
+
+
 type Question = {
   question: string;
 
@@ -92,9 +95,16 @@ export default function QuizCard({
           </span>
 
           <button
-            onClick={() =>
-              setOpen(true)
-            }
+             onClick={async () => {
+           
+               await trackEvent({
+                topicId: topicId || "",
+                 eventType: "quiz_started",
+                      });
+           
+               setOpen(true);
+           
+              }}           
 
             className="
               rounded-xl

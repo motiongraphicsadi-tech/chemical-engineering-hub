@@ -6,6 +6,8 @@ import {
 
 import { supabase } from "@/lib/supabase";
 
+import { trackEvent } from "@/lib/analytics";
+
 import { useState, useEffect } from "react";
 
 import { X } from "lucide-react";
@@ -80,6 +82,12 @@ export default function QuizModal({
       const percentage = Math.round(
         (score / questions.length) * 100
       );
+
+      await trackEvent({
+        topicId,
+        eventType: "quiz_completed",
+        score: percentage,
+      });
     
       const existing = JSON.parse(
         localStorage.getItem(
