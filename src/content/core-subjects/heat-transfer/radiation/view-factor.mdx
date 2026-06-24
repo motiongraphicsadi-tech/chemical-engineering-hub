@@ -1,1 +1,266 @@
+---
+title: View Factor
+description: Learn how geometry affects radiation heat transfer and understand the concept of view factor between radiating surfaces.
+keywords:
+  - View Factor
+  - Shape Factor
+  - Configuration Factor
+  - Radiation Heat Transfer
+  - Thermal Radiation
+  - Furnace Design
+---
+
+# View Factor
+
 <TopicRoadmap />
+
+
+## Does Geometry Affect Radiation Heat Transfer?
+
+Consider two situations:
+
+### Case 1
+
+```text
+██████████
+Surface 1
+
+██████████
+Surface 2
+```
+
+Large surfaces directly facing each other.
+
+---
+
+### Case 2
+
+```text
+██████████
+
+          ██████████
+```
+
+The same surfaces, but positioned differently.
+
+Will the radiation heat transfer be the same?
+
+**No.**
+
+Even if temperature and emissivity remain unchanged, geometry affects how much radiation reaches the other surface.
+
+This geometric effect is described by the **View Factor**.
+
+---
+
+# What Is View Factor?
+
+The View Factor represents the fraction of radiation leaving one surface that directly reaches another surface.
+
+It is usually written as:
+
+$$
+F_{12}
+$$
+
+Where:
+
+- Surface 1 is the emitting surface.
+- Surface 2 is the receiving surface.
+
+---
+
+# Physical Meaning
+
+If:
+
+$$
+F_{12}=1
+$$
+
+All radiation leaving Surface 1 reaches Surface 2.
+
+---
+
+If:
+
+$$
+F_{12}=0
+$$
+
+No radiation leaving Surface 1 reaches Surface 2.
+
+---
+
+If:
+
+$$
+F_{12}=0.5
+$$
+
+Only 50% of the radiation leaving Surface 1 reaches Surface 2.
+
+---
+
+# Visualization
+
+```text
+Surface 1
+
+████████
+
+↘ ↓ ↙
+↘ ↓ ↙
+
+████████
+
+Surface 2
+```
+
+Most radiation leaving Surface 1 reaches Surface 2.
+
+Therefore:
+
+$$
+F_{12}
+\approx
+1
+$$
+
+---
+
+# Example: Parallel Plates
+
+Two large parallel plates facing each other.
+
+```text
+████████████
+ Plate 1
+
+████████████
+ Plate 2
+```
+
+Almost all emitted radiation reaches the opposite plate.
+
+Therefore:
+
+$$
+F_{12}
+\approx
+1
+$$
+
+---
+
+# Example: Furnace Walls
+
+Inside a furnace:
+
+```text
+ ┌──────────┐
+ │          │
+ │  Tube    │
+ │          │
+ └──────────┘
+```
+
+Radiation emitted by hot refractory walls reaches process tubes.
+
+The amount received depends on:
+
+- Wall geometry
+- Tube position
+- Distance between surfaces
+
+View factors help engineers calculate this radiation exchange.
+
+---
+
+# Example: Tube Banks
+
+In heat recovery equipment and fired heaters, tubes are often arranged in banks.
+
+```text
+O   O   O
+
+O   O   O
+
+O   O   O
+```
+
+Not every tube "sees" every other tube equally.
+
+Some radiation is blocked by neighboring tubes.
+
+Therefore geometry strongly influences heat transfer.
+
+---
+
+# Why View Factor Matters
+
+Radiative heat transfer depends on:
+
+- Temperature
+- Emissivity
+- Surface Area
+- Geometry
+
+View factor accounts for the geometric part of the problem.
+
+Without view factors, accurate radiation calculations would not be possible.
+
+---
+
+# Engineering Applications
+
+View factors are used in:
+
+- Furnace design
+- Fired heaters
+- Boilers
+- Radiation shields
+- Spacecraft thermal analysis
+- Heat treatment furnaces
+
+They help determine how much radiation actually reaches a target surface.
+
+---
+
+# Engineering Perspective
+
+When a process engineer looks inside a furnace, they should think:
+
+- Which surfaces can "see" each other?
+- How much radiation reaches the tubes?
+- Are there obstructions blocking radiation?
+
+These questions are answered using view factors.
+
+---
+<QuizCard
+  title="View Factor Quiz"
+  description="Test your understanding of view factors, shape factors, geometric radiation exchange, reciprocity and summation rules, enclosure radiation analysis, and engineering applications of radiative heat transfer."
+/>
+---
+
+
+# Key Takeaways
+
+- Geometry affects radiation heat transfer.
+- View Factor represents the fraction of radiation leaving one surface that reaches another surface.
+- It is denoted by:
+
+$$
+F_{12}
+$$
+
+- Values range from 0 to 1.
+- Parallel plates often have view factors close to 1.
+- View factors are essential in furnace and radiation calculations.
+
+---
+
+# Summary
+
+View Factor is a geometric parameter used in radiation heat transfer analysis. It represents the fraction of radiation leaving one surface that directly reaches another surface. Even when temperature and emissivity remain unchanged, geometry can significantly affect radiation exchange. View factors are widely used in furnace design, tube-bank analysis, radiation shields, and industrial thermal systems.

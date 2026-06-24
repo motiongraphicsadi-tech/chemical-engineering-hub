@@ -1,1 +1,241 @@
+---
+title: Emissivity
+description: Learn the concept of emissivity, how real surfaces compare with a black body, and why emissivity is important in radiation heat transfer calculations.
+keywords:
+  - Emissivity
+  - Radiation Heat Transfer
+  - Black Body
+  - Thermal Radiation
+  - Surface Properties
+  - Radiation Emission
+---
+
+# Emissivity
+
 <TopicRoadmap />
+
+
+## Why does polished steel feel different from black paint?
+
+Imagine two metal plates at the same temperature:
+
+- One is coated with black paint.
+- The other is polished steel.
+
+Even though both are at the same temperature, the black surface emits much more thermal radiation.
+
+Why?
+
+The answer lies in a property called **Emissivity**.
+
+---
+
+# What Is Emissivity?
+
+Emissivity measures how effectively a real surface emits thermal radiation compared to a black body at the same temperature.
+
+It is defined as:
+
+$$
+\varepsilon =
+\frac{\text{Actual Emission}}
+{\text{Black Body Emission}}
+$$
+
+Where:
+
+- \(\varepsilon\) = Emissivity
+
+Since no real surface can emit more radiation than a black body:
+
+$$
+0 \leq \varepsilon \leq 1
+$$
+
+---
+
+# Physical Meaning
+
+## High Emissivity Surface
+
+- Emits radiation efficiently
+- Loses heat rapidly by radiation
+- Behaves similarly to a black body
+
+Examples:
+
+- Black paint
+- Refractory surfaces
+- Oxidized metals
+
+---
+
+## Low Emissivity Surface
+
+- Emits less radiation
+- Reflects more radiation
+- Loses less heat through radiation
+
+Examples:
+
+- Polished aluminum
+- Polished steel
+- Reflective metallic surfaces
+
+---
+
+# Black Body vs Real Surface
+
+| Surface | Emissivity (\(\varepsilon\)) |
+|----------|----------|
+| Black Body | 1.0 |
+| Real Surface | Less than 1 |
+
+A black body is the maximum possible emitter.
+
+All real materials emit less radiation than a black body at the same temperature.
+
+---
+
+# Common Emissivity Values
+
+| Material | Emissivity |
+|----------|----------|
+| Black Paint | 0.95 |
+| Refractory Brick | 0.85 – 0.95 |
+| Oxidized Steel | 0.70 – 0.90 |
+| Stainless Steel (Polished) | 0.10 – 0.30 |
+| Aluminum (Polished) | 0.03 – 0.10 |
+
+---
+
+# Visualization
+
+```text
+Same Temperature
+
+Black Paint
+██████████
+ε ≈ 0.95
+
+High Radiation Emission
+↑ ↑ ↑ ↑ ↑ ↑ ↑
+
+--------------------------------
+
+Polished Aluminum
+▓▓▓▓▓▓▓▓▓▓
+ε ≈ 0.05
+
+Low Radiation Emission
+↑
+```
+
+The black surface emits significantly more thermal radiation.
+
+---
+
+# Why Emissivity Matters
+
+Radiation heat transfer depends directly on emissivity.
+
+Higher emissivity:
+
+- More radiation emitted
+- Greater heat loss
+
+Lower emissivity:
+
+- Less radiation emitted
+- Reduced heat loss
+
+This is why surface finish can dramatically affect radiation heat transfer.
+
+---
+
+# Industrial Example: Refractory Lining
+
+Furnace refractory walls typically have high emissivity.
+
+Benefits:
+
+- Efficient radiation heat transfer
+- Improved furnace performance
+- Better heat distribution
+
+---
+
+# Industrial Example: Steel Equipment
+
+Oxidized steel surfaces generally have moderate to high emissivity.
+
+As oxidation increases:
+
+- Radiation emission increases
+- Heat loss increases
+
+---
+
+# Industrial Example: Aluminum Foil
+
+Polished aluminum has very low emissivity.
+
+Benefits:
+
+- Reflects radiation effectively
+- Reduces radiation heat loss
+
+Applications:
+
+- Radiation shields
+- Thermal insulation systems
+- Cryogenic storage tanks
+
+---
+
+# Engineering Perspective
+
+When selecting materials, engineers consider emissivity because it affects:
+
+- Furnace efficiency
+- Heat loss from pipes
+- Radiation shields
+- Thermal insulation
+- Infrared temperature measurements
+
+Two surfaces at the same temperature can emit very different amounts of radiation depending on their emissivity.
+
+---
+<QuizCard
+  title="Emissivity Quiz"
+  description="Test your understanding of emissivity, black bodies and real surfaces, surface radiation characteristics, factors affecting emissivity, Kirchhoff's Law, and the role of emissivity in radiation heat transfer calculations."
+/>
+---
+
+# Key Takeaways
+
+- Emissivity measures how effectively a surface emits thermal radiation.
+- It is defined as:
+
+$$
+\varepsilon =
+\frac{\text{Actual Emission}}
+{\text{Black Body Emission}}
+$$
+
+- A black body has:
+
+$$
+\varepsilon = 1
+$$
+
+- High emissivity surfaces emit more radiation.
+- Low emissivity surfaces emit less radiation.
+- Surface finish significantly affects emissivity.
+- Emissivity is important in furnace design, insulation, and radiation heat transfer calculations.
+
+---
+
+# Summary
+
+Emissivity is the ratio of radiation emitted by a real surface to that emitted by a black body at the same temperature. It indicates how effectively a material radiates thermal energy. Black paint and refractory materials generally have high emissivity, while polished metals such as aluminum have very low emissivity. Understanding emissivity is essential for analyzing radiation heat transfer and designing efficient thermal systems.

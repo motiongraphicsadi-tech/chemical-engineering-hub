@@ -1,1 +1,283 @@
+---
+title: Stefan-Boltzmann Law
+description: Learn how temperature affects radiation heat transfer and understand why radiation dominates in high-temperature equipment such as furnaces and fired heaters.
+keywords:
+  - Stefan Boltzmann Law
+  - Thermal Radiation
+  - Radiation Heat Transfer
+  - Furnace Radiation
+  - Emissivity
+  - Black Body Radiation
+---
+
+
+# Stefan-Boltzmann Law
+
 <TopicRoadmap />
+
+
+## Why does radiation become important in furnaces?
+
+At room temperature, radiation heat transfer is usually small.
+
+However, inside:
+
+- Furnaces
+- Fired heaters
+- Boilers
+- Combustion chambers
+
+radiation becomes the dominant mode of heat transfer.
+
+Why?
+
+The answer lies in the **Stefan-Boltzmann Law**.
+
+Unlike conduction and convection, radiation depends on the **fourth power of temperature**.
+
+This causes radiation to increase extremely rapidly as temperature rises.
+
+---
+
+# Stefan-Boltzmann Law for a Black Body
+
+The total radiation emitted by a black body is given by:
+
+here emissivity is always 1 hence not included .
+
+
+$$
+q = \sigma A T^4
+$$
+
+
+Where:
+
+| Symbol | Description |
+|----------|----------|
+| \(q\) | Radiation heat transfer rate (W) |
+| \(\sigma\) | Stefan-Boltzmann Constant |
+| \(A\) | Surface Area (m²) |
+| \(T\) | Absolute Temperature (K) |
+
+---
+
+# Stefan-Boltzmann Law for Real Surfaces
+
+Real surfaces do not emit as much radiation as a black body.
+
+Therefore emissivity is included:
+
+
+$$
+q = \varepsilon \sigma A T^4
+$$
+
+
+Where:
+
+| Symbol | Description |
+|----------|----------|
+| \(\varepsilon\) | Emissivity |
+| \(\sigma\) | Stefan-Boltzmann Constant |
+| \(A\) | Surface Area |
+| \(T\) | Absolute Temperature |
+
+---
+
+# The Most Important Part: \(T^4\)
+
+Notice the term:
+
+$$
+T^4
+$$
+
+Temperature is raised to the fourth power.
+
+This makes radiation extremely sensitive to temperature.
+
+---
+
+# Understanding the T⁴ Effect
+
+Suppose the temperature doubles.
+
+Then:
+
+$$
+q \propto T^4
+$$
+
+Therefore:
+
+$$
+q_{new}
+=
+(2T)^4
+=
+16T^4
+$$
+
+Thus:
+
+> Doubling temperature increases radiation by 16 times.
+
+---
+
+# Radiation Growth with Temperature
+
+| Temperature (K) | Relative Radiation |
+|----------|----------|
+| 300 | 1 |
+| 600 | 16 |
+| 900 | 81 |
+| 1200 | 256 |
+
+Even a moderate increase in temperature causes a dramatic increase in radiation heat transfer.
+
+---
+
+# Why Furnaces Depend on Radiation
+
+Consider a refinery furnace.
+
+Many students assume:
+
+> The flame heats the tubes mainly through hot gases.
+
+Only partially true.
+
+In reality:
+
+- Flames radiate.
+- Refractory walls radiate.
+- Hot combustion gases radiate.
+
+The process tubes absorb this radiation.
+
+At furnace temperatures, radiation often contributes the majority of the heat transfer.
+
+---
+
+# Industrial Insight: Glowing Hot Objects
+
+As temperature increases:
+
+- Radiation intensity increases rapidly.
+- Visible emission begins to appear.
+
+Examples:
+
+| Object | Appearance |
+|----------|----------|
+| Steam Pipe | No Glow |
+| Furnace Tube | Red Glow |
+| Molten Steel | Orange Glow |
+| Welding Arc | Bright White |
+
+This occurs because both radiation intensity and wavelength distribution change with temperature.
+
+---
+
+# Why Insulation Saves Energy
+
+Consider an uninsulated steam pipe.
+
+```text
+250°C Pipe
+     ↓
+Atmosphere
+```
+
+Large radiation losses occur.
+
+Now add insulation.
+
+```text
+250°C Steam
+      ↓
+    Pipe
+      ↓
+ Insulation
+      ↓
+50°C Surface
+      ↓
+ Atmosphere
+```
+
+The outer surface temperature decreases significantly.
+
+Since radiation depends on:
+
+$$
+T^4
+$$
+
+the heat loss drops dramatically.
+
+This is one reason insulation saves fuel and operating costs.
+
+---
+
+# Engineering Applications
+
+Stefan-Boltzmann Law is used in:
+
+- Furnace design
+- Boiler analysis
+- Fired heaters
+- Flare radiation studies
+- Spacecraft thermal control
+- Radiation shields
+- Insulation calculations
+
+---
+
+# Engineering Perspective
+
+Whenever a process engineer sees:
+
+- A furnace
+- A flare stack
+- A glowing reactor wall
+- A fired heater
+
+they should immediately think:
+
+> Radiation is likely dominating because of the T⁴ effect.
+
+Ignoring radiation at high temperatures can lead to serious design errors.
+
+---
+<QuizCard
+  title="Stefan-Boltzmann Law Quiz"
+  description="Test your understanding of the Stefan-Boltzmann Law, black body radiation, emissivity, radiation heat transfer rate calculations, temperature effects on thermal emission, and industrial radiation heat transfer applications."
+/>
+---
+
+# Key Takeaways
+
+- Stefan-Boltzmann Law predicts total radiation emitted by a surface.
+- For a black body:
+
+$$
+q = \sigma A T^4
+$$
+
+- For a real surface:
+
+$$
+q = \varepsilon \sigma A T^4
+$$
+
+- Radiation is proportional to the fourth power of temperature.
+- Doubling temperature increases radiation by 16 times.
+- Radiation becomes dominant in furnaces and other high-temperature equipment.
+- The T⁴ effect is the primary reason radiation is so important in industrial heat transfer.
+
+---
+
+# Summary
+
+Stefan-Boltzmann Law relates the total radiation emitted by a surface to its temperature and area. For real surfaces, emissivity accounts for deviations from ideal black-body behavior. The most important feature of the law is the T⁴ dependence, which causes radiation heat transfer to increase dramatically with temperature. This explains why radiation becomes the dominant heat transfer mechanism in furnaces, fired heaters, boilers, and other high-temperature industrial systems.

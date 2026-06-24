@@ -22,21 +22,5 @@
   
     "hidden": [
 
-      "electromagnetic-waves",
-      "electromagnetic-spectrum",
-      "infrared-radiation",
-      "black-body",
-      "properties-of-radiation",
-      "emissivity",
-      "kirchhoffs-law",
-      "black-body-radiation-curve",
-      "wiens-displacement-law",
-      "stefan-boltzmann-law",
-      "real-surface-radiation",
-      "radiative-heat-exchange",
-      "radiation-shields",
-      "view-factor",
-      "combined-heat-transfer",
-      "industrial-radiation"
     ]
   }

@@ -3,6 +3,7 @@
 "use client";
 
 
+import { supabase } from "@/lib/supabase";
 
 import { useEffect, useState } from "react";
 
@@ -26,78 +27,150 @@ export default function Dashboard() {
   const [topics, setTopics] =
     useState<TopicData[]>([]);
 
-  useEffect(() => {
+    const [guestMode, setGuestMode] =
+    useState(false);
 
-    const allTopics: TopicData[] = [];
+    function loadLocalStorageData() {
 
-    for (
-      let i = 0;
-      i < localStorage.length;
-      i++
-    ) {
-
-      const key =
-        localStorage.key(i);
-
-      if (
-        !key?.startsWith(
-          "study-"
-        )
+      const allTopics: TopicData[] = [];
+    
+      for (
+        let i = 0;
+        i < localStorage.length;
+        i++
       ) {
-        continue;
-      }
-
-      const raw =
-        localStorage.getItem(
-          key
-        );
-
-      if (!raw) continue;
-
-      try {
-
-        const data =
-          JSON.parse(raw);
-
+    
+        const key =
+          localStorage.key(i);
+    
+        if (
+          !key?.startsWith(
+            "study-"
+          )
+        ) {
+          continue;
+        }
+    
+        const raw =
+          localStorage.getItem(
+            key
+          );
+    
+        if (!raw) continue;
+    
+        try {
+    
+          const data =
+            JSON.parse(raw);
+    
           allTopics.push({
             topicId:
               key.replace(
                 "study-",
                 ""
               ),
-          
+    
             mastery:
               data.mastery ?? 0,
-          
+    
             bestScore:
               data.bestScore ?? 0,
-          
+    
             lastScore:
               data.lastScore ?? 0,
-          
+    
             attempts:
               data.attempts ?? 0,
-          
+    
             revisionStage:
               data.revisionStage ?? 0,
-          
+    
             lastQuizDate:
               data.lastQuizDate ?? "",
           });
-
-      } catch {}
+    
+        } catch {}
+    
+      }
+    
+      setTopics(allTopics);
     }
 
-    console.log(
-      "Dashboard Topics:",
-      allTopics
-    );
-    
-    setTopics(
-      allTopics
-    );
+    useEffect(() => {
 
-  }, []);
+      async function loadProgress() {
+    
+        const {
+          data: { user },
+        } =
+          await supabase.auth.getUser();
+        
+        if (!user) {
+        
+          setGuestMode(true);
+        
+          loadLocalStorageData();
+        
+          return;
+        }
+    
+        const {
+          data,
+          error,
+        } = await supabase
+          .from(
+            "user_topic_progress"
+          )
+          .select("*")
+          .eq(
+            "user_id",
+            user.id
+          );
+    
+        if (error) {
+    
+          console.error(
+            error
+          );
+    
+          return;
+        }
+    
+        const topics =
+          data.map(
+            (item) => ({
+              topicId:
+                item.topic_id,
+    
+              mastery:
+                item.mastery,
+    
+              bestScore:
+                item.best_score,
+    
+              lastScore:
+                item.last_score,
+    
+              attempts:
+                item.attempts,
+    
+              revisionStage:
+                item.revision_stage,
+    
+              lastQuizDate:
+                item.last_quiz_date,
+            })
+          );
+    
+        setTopics(
+          topics
+        );
+      }
+    
+      loadProgress();
+    
+    }, []);
+
 
   const totalTopics =
     topics.length;
@@ -197,15 +270,122 @@ export default function Dashboard() {
       "
     >
 
+
       <h1
-        className="
-          text-3xl
-          font-bold
-          mb-8
-        "
-      >
-        Dashboard
-      </h1>
+  className="
+    text-3xl
+    font-bold
+    mb-8
+  "
+>
+  Dashboard
+</h1>
+
+<p
+  className="
+    mb-8
+    text-zinc-400
+  "
+>
+  Track your learning progress across all subjects.
+</p>
+{guestMode ? (
+
+<div
+  className="
+    mb-8
+    rounded-xl
+    border
+    border-yellow-500/30
+    bg-yellow-500/10
+    p-5
+  "
+>
+
+  <h2
+    className="
+      font-semibold
+      text-yellow-300
+    "
+  >
+    Study as Guest
+  </h2>
+
+  <p
+    className="
+      mt-2
+      text-sm
+      text-yellow-100
+    "
+  >
+    Your progress is stored only in this browser.
+    Login to save progress permanently and sync across devices.
+  </p>
+
+  <button
+    onClick={() =>
+      window.location.href =
+        "/login"
+    }
+    className="
+      mt-4
+      rounded-lg
+      bg-emerald-600
+      px-4
+      py-2
+      text-white
+    "
+  >
+    Sign In With Google
+  </button>
+
+  <div
+    className="
+      mt-4
+      text-sm
+      text-yellow-300
+    "
+  >
+    💻 Local Storage Only
+  </div>
+
+</div>
+
+) : (
+
+<div
+  className="
+    mb-8
+    rounded-xl
+    border
+    border-emerald-500/30
+    bg-emerald-500/10
+    p-5
+  "
+>
+
+  <h2
+    className="
+      font-semibold
+      text-emerald-300
+    "
+  >
+    ☁ Cloud Sync Enabled
+  </h2>
+
+  <p
+    className="
+      mt-2
+      text-sm
+      text-emerald-100
+    "
+  >
+    Your study progress is automatically saved and synced across devices.
+  </p>
+
+</div>
+
+)}
 
 
 

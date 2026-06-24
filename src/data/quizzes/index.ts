@@ -236,7 +236,22 @@ import basicsOfConvection from "./core-subjects/heat-transfer/basics-of-convecti
 // heat
 
 import thermalRadiation from "./core-subjects/heat-transfer/radiation/thermal-radiation";
-
+import electromagneticSpectrum from "./core-subjects/heat-transfer/radiation/electromagnetic-spectrum";
+import electromagneticWaves from "./core-subjects/heat-transfer/radiation/electromagnetic-waves";
+import infraredRadiation from "./core-subjects/heat-transfer/radiation/infrared-radiation";
+import blackBody from "./core-subjects/heat-transfer/radiation/black-body";
+import propertiesOfRadiation from "./core-subjects/heat-transfer/radiation/properties-of-radiation";
+import emissivity from "./core-subjects/heat-transfer/radiation/emissivity";
+import kirchhoffsLaw from "./core-subjects/heat-transfer/radiation/kirchhoffs-law";
+import blackBodyRadiationCurve from "./core-subjects/heat-transfer/radiation/black-body-radiation-curve";
+import wiensDisplacementLaw from "./core-subjects/heat-transfer/radiation/wiens-displacement-law";
+import stefanBoltzmannLaw from "./core-subjects/heat-transfer/radiation/stefan-boltzmann-law";
+import realSurfaceRadiation from "./core-subjects/heat-transfer/radiation/real-surface-radiation";
+import radiativeHeatExchange from "./core-subjects/heat-transfer/radiation/radiative-heat-exchange";
+import radiationShields from "./core-subjects/heat-transfer/radiation/radiation-shields";
+import viewFactor from "./core-subjects/heat-transfer/radiation/view-factor";
+import combinedHeatTransfer from "./core-subjects/heat-transfer/radiation/combined-heat-transfer";
+import industrialRadiation from "./core-subjects/heat-transfer/radiation/industrial-radiation";
 
 export const quizzes = {
 
@@ -526,6 +541,56 @@ export const quizzes = {
 "basics-of-convection": basicsOfConvection,
 
 // heat
-"thermal-radiation": thermalRadiation,
+
+"thermal-radiation":
+  thermalRadiation,
+
+"electromagnetic-spectrum":
+  electromagneticSpectrum,
+
+  "electromagnetic-waves":
+  electromagneticWaves,
+
+"infrared-radiation":
+  infraredRadiation,
+
+"black-body":
+  blackBody,
+
+"properties-of-radiation":
+  propertiesOfRadiation,
+
+"emissivity":
+  emissivity,
+
+"kirchhoffs-law":
+  kirchhoffsLaw,
+
+"black-body-radiation-curve":
+  blackBodyRadiationCurve,
+
+"wiens-displacement-law":
+  wiensDisplacementLaw,
+
+"stefan-boltzmann-law":
+  stefanBoltzmannLaw,
+
+"real-surface-radiation":
+  realSurfaceRadiation,
+
+"radiative-heat-exchange":
+  radiativeHeatExchange,
+
+"radiation-shields":
+  radiationShields,
+
+"view-factor":
+  viewFactor,
+
+"combined-heat-transfer":
+  combinedHeatTransfer,
+
+"industrial-radiation":
+  industrialRadiation,
 
 };

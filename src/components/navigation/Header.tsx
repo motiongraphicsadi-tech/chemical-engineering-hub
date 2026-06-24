@@ -10,6 +10,7 @@ import {
   Home,
   Menu,
   LayoutDashboard,
+  User,
 } from "lucide-react";
 
 import MobileSidebar
@@ -263,6 +264,53 @@ export default function Header({
 <span className="hidden md:inline">
   Dashboard
 </span>
+
+</Link>
+
+{/* user profile */}
+
+<Link
+  href="/profile"
+  className="
+    flex
+    items-center
+    justify-center
+
+    h-9
+    w-9
+
+    md:h-auto
+    md:w-auto
+
+    md:px-3
+    md:py-1.5
+
+    rounded-lg
+
+    border
+    border-zinc-800
+
+    text-zinc-300
+
+    hover:text-white
+    hover:border-emerald-500
+
+    transition-all
+  "
+>
+
+  <User
+    className="
+      h-4
+      w-4
+
+      md:hidden
+    "
+  />
+
+  <span className="hidden md:inline">
+    Profile
+  </span>
 
 </Link>
 

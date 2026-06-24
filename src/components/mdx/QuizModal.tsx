@@ -4,7 +4,9 @@ import {
   calculateMastery
 } from "@/lib/mastery";
 
-import { useState } from "react";
+import { supabase } from "@/lib/supabase";
+
+import { useState, useEffect } from "react";
 
 import { X } from "lucide-react";
 
@@ -42,6 +44,9 @@ export default function QuizModal({
   const [submitted, setSubmitted] =
     useState(false);
 
+  const [saved, setSaved] =
+  useState(false);
+
   const question =
     questions[current];
 
@@ -70,15 +75,11 @@ export default function QuizModal({
   /*
     Quiz Completed
   */
-  if (
-    current >= questions.length
-  ) {
+    async function saveQuiz() {
 
-    const percentage = Math.round(
-      (score / questions.length) * 100
-    );
-    
-    if (typeof window !== "undefined") {
+      const percentage = Math.round(
+        (score / questions.length) * 100
+      );
     
       const existing = JSON.parse(
         localStorage.getItem(
@@ -86,53 +87,132 @@ export default function QuizModal({
         ) || "{}"
       );
     
-     console.log(
-  "Saving Quiz Score",
-  {
-    topicId,
-    percentage,
-  }
-);
-
-const quizData = {
-  ...existing,
-
-  lastScore: percentage,
-
-  bestScore: Math.max(
-    existing.bestScore || 0,
-    percentage
-  ),
-
-  attempts:
-    (existing.attempts || 0) + 1,
-
-  revisionStage:
-    existing.revisionStage || 0,
-
-  mastery: calculateMastery(
-    Math.max(
-      existing.bestScore || 0,
-      percentage
-    ),
-    existing.revisionStage || 0
-  ),
-
-  lastQuizDate:
-    new Date().toISOString(),
-};
-
-localStorage.setItem(
-  `study-${topicId}`,
-  JSON.stringify(quizData)
-);
-
-console.log(
-  "Saved Quiz Data",
-  quizData
-);
-
+      const quizData = {
+        ...existing,
+    
+        lastScore: percentage,
+    
+        bestScore: Math.max(
+          existing.bestScore || 0,
+          percentage
+        ),
+    
+        attempts:
+          (existing.attempts || 0) + 1,
+    
+        revisionStage:
+          existing.revisionStage || 0,
+    
+        mastery: calculateMastery(
+          Math.max(
+            existing.bestScore || 0,
+            percentage
+          ),
+          existing.revisionStage || 0
+        ),
+    
+        lastQuizDate:
+          new Date().toISOString(),
+      };
+    
+      localStorage.setItem(
+        `study-${topicId}`,
+        JSON.stringify(quizData)
+      );
+    
+      const {
+        data: { user }
+      } =
+        await supabase.auth.getUser();
+    
+      if (!user) {
+        setSaved(true);
+        return;
+      }
+    
+      const { error } =
+        await supabase
+          .from("user_topic_progress")
+          .upsert(
+            {
+              user_id: user.id,
+    
+              topic_id: topicId,
+    
+              mastery:
+                quizData.mastery,
+    
+              best_score:
+                quizData.bestScore,
+    
+              last_score:
+                quizData.lastScore,
+    
+              attempts:
+                quizData.attempts,
+    
+              revision_stage:
+                quizData.revisionStage,
+    
+              last_quiz_date:
+                quizData.lastQuizDate,
+            },
+            {
+              onConflict:
+                "user_id,topic_id",
+            }
+          );
+    
+      if (error) {
+    
+        console.error(
+          "Supabase Save Error:",
+          error
+        );
+    
+      } else {
+    
+        console.log(
+          "Saved To Supabase"
+        );
+    
+      }
+    
+      console.log(
+        "Saved Quiz Data",
+        quizData
+      );
+    
+      setSaved(true);
     }
+    
+    useEffect(() => {
+    
+      if (
+        current < questions.length
+      ) return;
+    
+      if (saved) return;
+    
+      saveQuiz();
+    
+    }, [
+      current,
+      saved,
+    ]);
+    
+    /*
+      Quiz Completed
+    */
+    if (
+      current >= questions.length
+    ) {
+    
+      const percentage = Math.round(
+        (score / questions.length) * 100
+      );
+    
+     
 
     return (
 
