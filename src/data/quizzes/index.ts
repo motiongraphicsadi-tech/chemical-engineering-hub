@@ -233,7 +233,7 @@ import thermalConductivity from "./core-subjects/heat-transfer/thermal-conductiv
 import heatingMechanismsInMaterials from "./core-subjects/heat-transfer/heating-mechanisms-in-materials";
 import basicsOfConvection from "./core-subjects/heat-transfer/basics-of-convection";
 
-// heat
+// heat radiation
 
 import thermalRadiation from "./core-subjects/heat-transfer/radiation/thermal-radiation";
 import electromagneticSpectrum from "./core-subjects/heat-transfer/radiation/electromagnetic-spectrum";
@@ -252,6 +252,10 @@ import radiationShields from "./core-subjects/heat-transfer/radiation/radiation-
 import viewFactor from "./core-subjects/heat-transfer/radiation/view-factor";
 import combinedHeatTransfer from "./core-subjects/heat-transfer/radiation/combined-heat-transfer";
 import industrialRadiation from "./core-subjects/heat-transfer/radiation/industrial-radiation";
+
+// heat conduction
+
+import whatIsHeatConduction from "./core-subjects/heat-transfer/conduction/what-is-heat-conduction";
 
 export const quizzes = {
 
@@ -592,5 +596,10 @@ export const quizzes = {
 
 "industrial-radiation":
   industrialRadiation,
+
+  // heat conduction
+
+"what-is-heat-conduction":
+  whatIsHeatConduction,
 
 };
