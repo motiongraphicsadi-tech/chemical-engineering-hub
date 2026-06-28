@@ -1,7 +1,7 @@
 {
     "order": [
         "what-is-heat-conduction",
-        "thermal-conductivity",
+        "thermal-conductivity-k",
         "heat-conduction-mechanism",
         "fouriers-law-of-heat-conduction",
         "one-dimensional-steady-state-conduction",

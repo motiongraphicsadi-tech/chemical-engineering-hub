@@ -256,6 +256,8 @@ import industrialRadiation from "./core-subjects/heat-transfer/radiation/industr
 // heat conduction
 
 import whatIsHeatConduction from "./core-subjects/heat-transfer/conduction/what-is-heat-conduction";
+import thermalConductivityK from "./core-subjects/heat-transfer/conduction/thermal-conductivity-k";
+import heatConductionMechanism from "./core-subjects/heat-transfer/conduction/heat-conduction-mechanism";
 
 export const quizzes = {
 
@@ -601,5 +603,11 @@ export const quizzes = {
 
 "what-is-heat-conduction":
   whatIsHeatConduction,
+
+"thermal-conductivity-k":
+  thermalConductivityK,
+
+"heat-conduction-mechanism":
+  heatConductionMechanism,
 
 };
