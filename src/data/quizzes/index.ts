@@ -258,6 +258,7 @@ import industrialRadiation from "./core-subjects/heat-transfer/radiation/industr
 import whatIsHeatConduction from "./core-subjects/heat-transfer/conduction/what-is-heat-conduction";
 import thermalConductivityK from "./core-subjects/heat-transfer/conduction/thermal-conductivity-k";
 import heatConductionMechanism from "./core-subjects/heat-transfer/conduction/heat-conduction-mechanism";
+import fouriersLaw from "./core-subjects/heat-transfer/conduction/fouriers-law";
 
 export const quizzes = {
 
@@ -609,5 +610,8 @@ export const quizzes = {
 
 "heat-conduction-mechanism":
   heatConductionMechanism,
+
+"fouriers-law":
+  fouriersLaw,
 
 };

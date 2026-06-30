@@ -3,7 +3,7 @@
         "what-is-heat-conduction",
         "thermal-conductivity-k",
         "heat-conduction-mechanism",
-        "fouriers-law-of-heat-conduction",
+        "fouriers-law",
         "one-dimensional-steady-state-conduction",
         "thermal-resistance",
         "composite-wall-conduction",
@@ -18,5 +18,15 @@
   
     "hidden": [
 
+        "one-dimensional-steady-state-conduction",
+        "thermal-resistance",
+        "composite-wall-conduction",
+        "radial-heat-conduction",
+        "critical-radius-of-insulation",
+        "thermal-contact-resistance",
+        "transient-heat-conduction",
+        "biot-number",
+        "lumped-capacitance-method",
+        "industrial-applications-of-conduction"
     ]
   }

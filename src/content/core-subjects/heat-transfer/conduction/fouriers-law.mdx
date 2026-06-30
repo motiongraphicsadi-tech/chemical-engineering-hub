@@ -1,0 +1,358 @@
+---
+title: Fourier's Law Explained with Equation and Examples
+description: Learn Fourier's Law of Heat Conduction, understand its equation, variables, negative sign, heat flux, and how engineers calculate heat transfer through walls and industrial equipment.
+keywords:
+  - Fourier's law
+  - Fourier's law of heat conduction
+  - heat conduction equation
+  - heat flux
+  - temperature gradient
+  - conduction equation
+  - thermal conductivity equation
+---
+
+# Fourier's law ? 
+
+> **The rate of heat conduction through a material is directly proportional to the cross-sectional area and the temperature gradient, and inversely related to the direction of increasing temperature.**
+
+$$
+\boxed{q = -kA \frac{dT}{dx}}
+$$
+
+
+<TopicRoadmap />
+
+##  How do engineers calculate the amount of heat passing through a wall?
+
+Imagine a hot furnace operating at **900°C**.
+
+Its steel wall separates the hot gases inside from the cooler surroundings.
+
+As an engineer, you might ask:
+
+- How much heat is escaping every second?
+- Is the wall thick enough?
+- Do we need insulation?
+- Will the outer surface become too hot for workers?
+
+Simply knowing that **heat flows from hot to cold** is not enough.
+
+We need an equation that tells us **exactly how much heat is transferred.**
+
+That equation is **Fourier's Law of Heat Conduction**.
+
+---
+
+# What is Fourier's Law?
+
+Fourier's Law is the fundamental equation used to calculate **heat transfer by conduction.**
+
+It states:
+
+> **The rate of heat conduction through a material is directly proportional to the cross-sectional area and the temperature gradient, and inversely related to the direction of increasing temperature.**
+
+In simple words,
+
+- Larger temperature difference → More heat transfer
+- Better conducting material → More heat transfer
+- Larger area → More heat transfer
+
+<DiagramBox
+  title=""
+  image="/images/core-subject/heat-transfer/conduction/fouriers-law/fouriers-law-formula.webp"
+/>
+
+---
+
+# Fourier's Law Equation
+
+For one-dimensional heat conduction,
+
+$$
+\boxed{q = -kA \frac{dT}{dx}}
+$$
+
+where,
+
+- **q** = Heat transfer rate (W)
+- **k** = Thermal conductivity (W/m·K)
+- **A** = Area normal to heat flow (m²)
+- **dT/dx** = Temperature gradient (K/m)
+
+This equation forms the foundation of almost every conduction analysis in engineering.
+
+---
+
+# Understanding Each Variable
+
+## Heat Transfer Rate (q)
+
+The symbol **q** represents the amount of heat transferred per unit time.
+
+SI Unit:
+
+$$
+\boxed{\mathrm{W}}
+$$
+
+A larger value of **q** means heat is flowing more rapidly.
+
+---
+
+## Thermal Conductivity (k)
+
+Thermal conductivity indicates how easily heat passes through a material.
+
+- High **k** → Good conductor
+- Low **k** → Good insulator
+
+Examples:
+
+- Copper → High k
+- Carbon steel → Moderate k
+- Wood → Low k
+- Air → Very low k
+
+---
+
+## Area (A)
+
+Heat flows through a surface.
+
+The larger the cross-sectional area,
+
+the greater the amount of heat that can pass through.
+
+Doubling the area approximately doubles the heat transfer rate.
+
+---
+
+## Temperature Gradient $\frac{dT}{dx}$
+
+The temperature gradient describes **how rapidly temperature changes with distance.**
+
+It is expressed as
+
+$$
+\frac{dT}{dx}
+$$
+
+A steeper temperature gradient means heat flows more rapidly.
+
+If temperature changes only slightly over a long distance,
+
+the temperature gradient is small,
+
+and heat transfer is lower.
+
+---
+
+# Why is There a Negative Sign?
+
+One of the most confusing parts of Fourier's Law is the **negative sign**.
+
+$$
+q = -kA \frac{dT}{dx}
+$$
+
+It does **not** mean heat is negative.
+
+Instead, it simply indicates the **direction of heat flow.**
+
+Heat always flows
+
+- from higher temperature
+- toward lower temperature.
+
+Since temperature decreases in the direction of heat flow,
+
+the temperature gradient becomes negative.
+
+The negative sign ensures that the calculated heat transfer rate remains positive in the actual direction of heat flow.
+
+<WarningBox title="Sign Convention">
+The negative sign in Fourier's Law simply indicates that **heat flows in the direction of decreasing temperature.**
+
+It is a sign convention—not a negative amount of heat.
+</WarningBox>
+
+---
+
+# Heat Transfer Through a Composite Wall
+
+Real engineering systems rarely consist of a single material. A furnace wall, refrigerator insulation, or reactor lining is often made of **multiple layers** such as brick, insulation, and steel. Such a wall is called a **composite wall**.
+
+The rate of heat transfer through each layer is calculated using **Fourier's Law of Heat Conduction**.
+
+<DiagramBox
+  title=""
+  image="/images/core-subject/heat-transfer/conduction/fouriers-law/composite-wall.webp"
+/>
+
+### Fourier's Law for a Single Layer
+
+For one-dimensional steady-state conduction,
+
+$$
+q = -kA \frac{dT}{dx}
+$$
+
+For a plane wall of thickness $L$,
+
+$$
+\boxed{q = \frac{kA\left(T_1 - T_2\right)}{L}}
+$$
+
+### Where
+
+- $q$ = Heat Transfer Rate (W)
+- $k$ = Thermal Conductivity (W·m⁻¹·K⁻¹)
+- $A$ = Cross-Sectional Area Normal to Heat Flow (m²)
+- $L$ = Wall Thickness (m)
+- $T_1$ = Hot-Side Temperature (K or °C)
+- $T_2$ = Cold-Side Temperature (K or °C)
+
+
+
+Under **steady-state conditions**, the **same heat transfer rate passes through every layer**.
+
+$$
+q = q_1 = q_2 = q_3
+$$
+
+Each layer offers resistance to heat flow.
+
+$$
+R_i = \frac{L_i}{k_iA}
+$$
+
+The total thermal resistance is the sum of the individual resistances:
+
+$$
+\boxed{R_{\text{total}} = \frac{L_1}{k_1A} + \frac{L_2}{k_2A} + \frac{L_3}{k_3A}}
+$$
+
+Using Fourier's Law,
+
+$$
+\boxed{q = \frac{T_1 - T_2}{R_{\text{total}}}}
+$$
+
+or,
+
+$$
+\boxed{
+q =
+\frac{T_1 - T_2}
+{\displaystyle
+\frac{L_1}{k_1A}
++
+\frac{L_2}{k_2A}
++
+\frac{L_3}{k_3A}
+}
+}
+$$
+
+
+
+---
+
+## Key Points
+
+- Heat transfer through a composite wall is **calculated using Fourier's Law**.
+- Every layer contributes a **thermal resistance**.
+- For layers in **series**, thermal resistances are **added together**.
+- The **same heat transfer rate** flows through every layer under steady-state conditions.
+- A layer with **low thermal conductivity** or **large thickness** contributes the highest resistance and reduces the overall heat transfer rate.
+
+<IndustrialInsight title="Industrial Insight">
+Engineers use the composite wall equation to design furnaces, boilers, cold-storage rooms, cryogenic tanks, insulated pipelines, and building walls. By selecting materials with suitable thermal conductivities and thicknesses, they can control heat loss or heat gain while minimizing energy consumption.
+</IndustrialInsight>
+
+---
+
+# Engineering Significance
+
+Fourier's Law is one of the most frequently used equations in thermal engineering.
+
+It helps engineers calculate:
+
+- Heat loss from furnaces
+- Heat transfer through reactor walls
+- Heat transfer through insulation
+- Heat flow through pipelines
+- Building heat loss
+- Electronic cooling
+- Heat exchanger performance
+
+Without Fourier's Law, designing thermal equipment would be impossible.
+
+<IndustrialInsight title="Foundation of Heat Transfer Design">
+Every commercial heat transfer software package—whether used for heat exchangers, furnaces, reactors, pipelines, or electronic cooling—starts with Fourier's Law to model conduction through solid materials.
+</IndustrialInsight>
+
+---
+
+# Real-Life Example
+
+Suppose two plates have the same thickness.
+
+One is made of copper.
+
+The other is made of wood.
+
+Both experience the same temperature difference.
+
+Since copper has a much higher thermal conductivity,
+
+Fourier's Law predicts that significantly more heat will pass through the copper plate.
+
+This is exactly why cookware is made from metals while insulation panels are made from low-conductivity materials.
+
+---
+
+# Key Takeaways
+
+- Fourier's Law is the fundamental equation of heat conduction.
+- It calculates the rate of heat transfer through a material.
+- Heat transfer increases with thermal conductivity.
+- Heat transfer increases with area.
+- Heat transfer increases with temperature gradient.
+- The negative sign indicates heat always flows toward lower temperature.
+- Heat flux represents heat transfer per unit area.
+
+---
+
+# Quick Revision
+
+✅ Fourier's Law:
+
+$$
+q = -kA \frac{dT}{dx}
+$$
+
+✅ Heat always flows from hot to cold.
+
+✅ The negative sign indicates the direction of heat flow.
+
+✅ Heat flux:
+
+$$
+q'' = -k \frac{dT}{dx} \quad \left(\mathrm{W/m^2}\right)
+$$
+
+✅ Fourier's Law is the foundation of conduction analysis in engineering.
+
+<QuizCard
+  title="Fourier's Law Quiz"
+  description="Test your understanding of Fourier's Law of heat conduction, heat flux, temperature gradients, thermal conductivity, one-dimensional steady-state conduction, composite walls, and engineering heat transfer calculations."
+/>
+
+## Related Topics
+
+- What is Heat Conduction?
+- Thermal Conductivity
+- Mechanism of Heat Conduction
+- One-Dimensional Steady-State Conduction
+- Thermal Resistance
