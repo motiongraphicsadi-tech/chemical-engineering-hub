@@ -259,6 +259,7 @@ import whatIsHeatConduction from "./core-subjects/heat-transfer/conduction/what-
 import thermalConductivityK from "./core-subjects/heat-transfer/conduction/thermal-conductivity-k";
 import heatConductionMechanism from "./core-subjects/heat-transfer/conduction/heat-conduction-mechanism";
 import fouriersLaw from "./core-subjects/heat-transfer/conduction/fouriers-law";
+import oneDimensionalSteadyStateConduction from "./core-subjects/heat-transfer/conduction/one-dimensional-steady-state-conduction";
 
 export const quizzes = {
 
@@ -613,5 +614,8 @@ export const quizzes = {
 
 "fouriers-law":
   fouriersLaw,
+
+"one-dimensional-steady-state-conduction":
+  oneDimensionalSteadyStateConduction,
 
 };

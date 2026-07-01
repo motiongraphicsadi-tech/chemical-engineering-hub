@@ -18,7 +18,7 @@
   
     "hidden": [
 
-        "one-dimensional-steady-state-conduction",
+    
         "thermal-resistance",
         "composite-wall-conduction",
         "radial-heat-conduction",
