@@ -260,6 +260,7 @@ import thermalConductivityK from "./core-subjects/heat-transfer/conduction/therm
 import heatConductionMechanism from "./core-subjects/heat-transfer/conduction/heat-conduction-mechanism";
 import fouriersLaw from "./core-subjects/heat-transfer/conduction/fouriers-law";
 import oneDimensionalSteadyStateConduction from "./core-subjects/heat-transfer/conduction/one-dimensional-steady-state-conduction";
+import thermalResistance from "./core-subjects/heat-transfer/conduction/thermal-resistance";
 
 export const quizzes = {
 
@@ -618,4 +619,6 @@ export const quizzes = {
 "one-dimensional-steady-state-conduction":
   oneDimensionalSteadyStateConduction,
 
+  "thermal-resistance":
+  thermalResistance,
 };

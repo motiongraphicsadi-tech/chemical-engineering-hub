@@ -19,7 +19,7 @@
     "hidden": [
 
     
-        "thermal-resistance",
+       
         "composite-wall-conduction",
         "radial-heat-conduction",
         "critical-radius-of-insulation",
