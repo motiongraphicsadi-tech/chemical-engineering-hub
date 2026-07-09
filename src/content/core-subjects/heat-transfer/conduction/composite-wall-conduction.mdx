@@ -1,2 +1,314 @@
+---
+title: Composite Walls | Heat Conduction Through Multiple Layers
+description: Learn how heat is transferred through composite walls consisting of multiple material layers. Understand overall thermal resistance, temperature drop across layers, and industrial applications.
+keywords:
+  - composite wall
+  - heat conduction through composite wall
+  - multilayer wall
+  - overall thermal resistance
+  - series thermal resistance
+  - composite wall heat transfer
+---
+
+# Conduction Through Multiple Layers
+
+## oneshot 
+
+Many engineering systems, such as **furnace walls, insulated pipes, and cold storage panels**, consist of two or more layers of different materials. Heat flowing through these layers is called **conduction through multiple (composite) layers**.
+
+> **Conduction through multiple layers is analyzed using the thermal resistance method based on Fourier's Law.**
+
+if arranged **in series**
+
+$$
+R_{\text{total}}
+=
+\frac{L_1}{k_1A}
++
+\frac{L_2}{k_2A}
++
+\frac{L_3}{k_3A}
++\cdots
+$$
+
 <TopicRoadmap />
 
+## How does heat travel through multiple insulation layers?
+
+Imagine a steam boiler operating at a very high temperature.
+
+The heat generated inside does not pass through a single material before reaching the surroundings.
+
+Instead, it travels through several layers:
+
+- Steel shell
+- Refractory brick
+- Insulation
+- Protective outer cladding
+
+Each layer slows the flow of heat.
+
+As engineers, we want to answer questions such as:
+
+- How much heat escapes through all these layers?
+- Which layer provides the greatest insulation?
+- Where is the largest temperature drop?
+- How thick should each insulation layer be?
+
+These problems are solved using the concept of **composite walls**.
+
+---
+
+# What is a Composite Wall?
+
+A **composite wall** is a wall made of **two or more different materials arranged one after another** in the direction of heat flow.
+
+Heat must pass through every layer before reaching the other side.
+
+Examples include:
+
+- Furnace walls
+- Cold storage rooms
+- Insulated pipelines
+- Boilers
+- Refrigeration systems
+- Cryogenic storage tanks
+
+---
+
+# Heat Flow Through a Composite Wall
+
+Heat flows continuously from the hot side to the cold side.
+
+As it passes through each material:
+
+- Every layer offers thermal resistance.
+- The temperature decreases across every layer.
+- The same amount of heat passes through each layer under steady-state conditions.
+
+<DiagramBox
+  title=""
+  image="/images/core-subject/heat-transfer/conduction/composite-wall-conduction/heat-through-composite-wall.webp"
+/>
+
+---
+
+# Thermal Resistance of Each Layer
+
+For conduction through a plane wall,
+
+the thermal resistance of each layer is
+
+$$
+R=\frac{L}{kA}
+$$
+
+where
+
+- **L** = Thickness of the layer
+- **k** = Thermal conductivity
+- **A** = Cross-sectional area
+
+Every layer has its own thermal resistance depending on its material and thickness.
+
+---
+
+# Overall Thermal Resistance
+
+Since heat passes through the layers one after another,
+
+their thermal resistances are connected **in series**.
+
+The total thermal resistance is
+
+$$
+R_{\text{total}}=R_1+R_2+R_3+\cdots
+$$
+
+Substituting the expression for each resistance,
+
+$$
+R_{\text{total}}
+=
+\frac{L_1}{k_1A}
++
+\frac{L_2}{k_2A}
++
+\frac{L_3}{k_3A}
++\cdots
+$$
+
+This overall resistance determines how easily heat flows through the entire wall.
+
+---
+
+# Engineering Equation
+
+Once the overall thermal resistance is known,
+
+the heat transfer rate is simply
+
+$$
+q=\frac{T_{\text{hot}}-T_{\text{cold}}}{R_{\text{total}}}
+$$
+
+This equation is identical to the thermal resistance relation studied earlier.
+
+Instead of calculating conduction separately through every layer,
+
+engineers calculate one overall resistance and use a single equation.
+
+
+---
+
+# Temperature Drop Across Each Layer
+
+The temperature does not decrease equally across every material.
+
+The temperature drop depends on the thermal resistance of each layer.
+
+- High thermal resistance → Larger temperature drop
+- Low thermal resistance → Smaller temperature drop
+
+For example,
+
+A thick insulation layer usually experiences a much larger temperature drop than a thin steel wall.
+
+<DiagramBox
+  title=""
+  image="/images/core-subject/heat-transfer/conduction/composite-wall-conduction/composite-wall-graph.webp"
+/>
+
+---
+
+# Which Layer Controls Heat Transfer?
+
+Not every layer contributes equally.
+
+A layer with
+
+- High thickness
+- Low thermal conductivity
+
+has a much higher thermal resistance.
+
+As a result,
+
+it controls the overall heat transfer through the wall.
+
+This is why adding insulation dramatically reduces heat loss even if the insulation layer is relatively thin.
+
+---
+
+# Practical Example
+
+Consider two walls.
+
+### Wall A
+
+- Brick only
+
+### Wall B
+
+- Brick
+- Insulation
+- Steel cladding
+
+Although both walls contain brick,
+
+Wall B has a much larger overall thermal resistance.
+
+Therefore,
+
+less heat escapes through Wall B.
+
+This principle is used in nearly every insulated industrial system.
+
+---
+
+# Industrial Applications
+
+Composite walls are found throughout chemical and process industries.
+
+Common examples include:
+
+- Boiler walls
+- Furnace linings
+- Cold storage rooms
+- Refrigerated warehouses
+- Reactor insulation
+- Steam pipelines
+- LNG storage tanks
+- Cryogenic vessels
+
+Every one of these systems contains multiple layers that work together to control heat transfer.
+
+<IndustrialInsight title="Composite Walls in Industry">
+Industrial equipment rarely consists of a single material. Boilers combine steel, refractory bricks, insulation, and outer cladding. Cryogenic tanks use multiple insulation layers to minimize heat gain, while cold storage facilities rely on composite wall construction to reduce refrigeration loads and energy consumption.
+</IndustrialInsight>
+
+---
+
+# Design Considerations
+
+When designing composite walls, engineers carefully select:
+
+- Material type
+- Thermal conductivity
+- Layer thickness
+- Cost
+- Mechanical strength
+- Corrosion resistance
+- Maximum operating temperature
+
+The objective is to achieve the required thermal performance while ensuring safety and economic operation.
+
+---
+
+# Key Takeaways
+
+- A composite wall consists of multiple material layers.
+- Heat flows through every layer in series.
+- Each layer has its own thermal resistance.
+- Overall thermal resistance is the sum of individual resistances.
+- The largest temperature drop occurs across the layer with the highest thermal resistance.
+- Composite wall analysis simplifies the design of insulated equipment.
+
+---
+
+# Quick Revision
+
+✅ Composite wall = Multiple material layers.
+
+✅ Thermal resistance of each layer:
+
+$$
+R=\frac{L}{kA}
+$$
+
+✅ Overall resistance:
+
+$$
+R_{\text{total}}=R_1+R_2+R_3+\cdots
+$$
+
+✅ Heat transfer rate:
+
+$$
+q=\frac{T_{\text{hot}}-T_{\text{cold}}}{R_{\text{total}}}
+$$
+
+✅ High-resistance layers produce larger temperature drops.
+
+<QuizCard
+  title="Composite Wall Heat Conduction Quiz"
+  description="Test your understanding of heat conduction through multilayer walls, overall thermal resistance, temperature distribution, and industrial applications of composite wall analysis."
+/>
+
+## Related Topics
+
+- Thermal Resistance Concept
+- One-Dimensional Steady-State Conduction
+- Fourier's Law of Heat Conduction
+- Cylindrical and Spherical Conduction
+- Overall Heat Transfer Coefficient

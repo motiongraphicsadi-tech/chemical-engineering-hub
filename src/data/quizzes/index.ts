@@ -261,6 +261,8 @@ import heatConductionMechanism from "./core-subjects/heat-transfer/conduction/he
 import fouriersLaw from "./core-subjects/heat-transfer/conduction/fouriers-law";
 import oneDimensionalSteadyStateConduction from "./core-subjects/heat-transfer/conduction/one-dimensional-steady-state-conduction";
 import thermalResistance from "./core-subjects/heat-transfer/conduction/thermal-resistance";
+import compositeWallConduction from "./core-subjects/heat-transfer/conduction/composite-wall-conduction";
+import radialHeatConduction from "./core-subjects/heat-transfer/conduction/radial-heat-conduction";
 
 export const quizzes = {
 
@@ -621,4 +623,10 @@ export const quizzes = {
 
   "thermal-resistance":
   thermalResistance,
+
+  "composite-wall-conduction":
+  compositeWallConduction,
+
+  "radial-heat-conduction":
+  radialHeatConduction,
 };
